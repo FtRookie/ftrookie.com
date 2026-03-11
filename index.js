@@ -1,3 +1,1 @@
-// hi
-alert("Poopoo peepee")
-console.log("eyezoom")
+alert("This website is a work in progress and is hosted on my own server")
