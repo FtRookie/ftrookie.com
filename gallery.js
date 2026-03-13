@@ -10,4 +10,5 @@ const lightbox = GLightbox({
     closeEffect: "none",
     slideEffect: "none",
     preload: true,
+    keyboardNavigation: true,
 });

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<style>
+    #list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #list a {
+        text-decoration: none;
+        color: var(--primary-text);
+        font-size: 500%;
+    }
+</style>
+
+<head>
+    <title>FtRookie's Artists</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="media/FTRookie_thumbsup.png">
+    <script src="theme.js"></script>
+    <script src="index.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="FtRookie" />
+    <meta property="og:description" content="furball" />
+    <meta property="og:image" content="media/yippee.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="yippee" />
+    <meta property="og:type" content="image" />
+    <meta property="og:logo" content="media/yippee.png" />
+</head>
+
+<body>
+    <button id="theme-toggle" onclick="toggleTheme()">&#127769</button> <!--due for removal when i create my own-->
+    <h1 id="header">FtRookie's Website
+        <img src="media/FTRookie_think.png" alt="thinker" style="width:50px;height:50px;">
+    </h1>
+    <flex class="navbar">
+        <a href="index.html">Homepage</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="projects.html">My Projects</a>
+        <a href="">Placeholder</a>
+    </flex>
+    <h2>Artists I have commissioned</h2>
+    <div id="list">
+        <a href="https://roweniee.carrd.co/"><img src="media/rowen.png" style="width:200px;height:200px;">roweniee</a>
+        <a href="https://x.com/Vulpen8"><img src="media/vulpen.png" style="width:200px;height:200px;">Vylpen</a>
+        <a href="https://b0nette.carrd.co/"><img src="media/b0nette.png" style="width:200px;height:200px;">b0nette</a>
+    </div>
+    <footer class="credits">
+        if you are one of these artists and do not want to be listed <br>
+        contact me via discord about removal <img src="media/discord.png" style="width:1%;height: 1%;">
+    </footer>
+</body>
+
+</html>
