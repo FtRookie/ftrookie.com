@@ -40,20 +40,25 @@ p {
 }
 
 .navbar {
-  display: flex;
+  display: block;
   flex-wrap: nowrap;
+  width: 100vw-30px;
+  white-space: nowrap;
   flex-direction: row;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 15px;
   row-gap: 100px;
   border-radius: 15px;
+  overflow-x: auto;
+  scrollbar-width: thin;
   background-color: var(--navbar-bg);
 }
 
 .navbar a {
   margin: 10px;
   color: var(--navbar-text);
-  font-size: 40px;
+  font-size: 5vmin;
   text-decoration: none;
 }
 
