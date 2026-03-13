@@ -4,12 +4,19 @@
     #list {
         display: flex;
         flex-direction: column;
+        align-items: left;
+        justify-items: center;
     }
 
-    #list a {
+    #list div {
+        margin-left: 30%;
+    }
+
+    #list div a {
         text-decoration: none;
         color: var(--primary-text);
         font-size: 500%;
+        margin-left: 20px;
     }
 </style>
 
@@ -47,14 +54,29 @@
         <a href="projects.html">My Projects</a>
         <a href="">Placeholder</a>
     </flex>
-    <h2>Artists I have commissioned</h2>
-    <div id="list">
-        <a href="https://roweniee.carrd.co/"><img src="media/rowen.png" style="width:200px;height:200px;">roweniee</a>
-        <a href="https://x.com/Vulpen8"><img src="media/vulpen.png" style="width:200px;height:200px;">Vylpen</a>
-        <a href="https://b0nette.carrd.co/"><img src="media/b0nette.png" style="width:200px;height:200px;">b0nette</a>
-        <a href="https://x.com/nange0727"><img src="media/nange0727.jpg" style="width:200px;height:200px;">nange0727
-            &#128286</a>
-    </div>
+    <h2>These are artists I have commissioned art from </h2>
+    <em>Note that none of these artists affiliate with me nor each other, <br>
+        I am linking them because I want you to support them as well
+    </em>
+    <br>
+    <ul id="list">
+        <div>
+            <img src="media/rowen.png" style="width:200px;height:200px;">
+            <a href="https: //roweniee.carrd.co/">roweniee</a>
+        </div>
+        <div>
+            <img src="media/vulpen.png" style="width:200px;height:200px;">
+            <a href="https://x.com/Vulpen8">Vylpen</a>
+        </div>
+        <div>
+            <img src="media/b0nette.png" style="width:200px;height:200px;">
+            <a href="https://b0nette.carrd.co/">b0nette</a>
+        </div>
+        <div>
+            <img src="media/nange0727.jpg" style="width:200px;height:200px;">
+            <a href="https://x.com/nange0727">nange0727 &#128286</a>
+        </div>
+    </ul>
     <footer class="credits">
         if you are one of these artists and do not want to be listed <br>
         contact me via discord about removal <img src="media/discord.png" style="width:1%;height: 1%;">
