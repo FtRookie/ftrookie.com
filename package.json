@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "cp node_modules/glightbox/dist/js/glightbox.min.js . && cp node_modules/glightbox/dist/css/glightbox.min.css ."
+  },
+  "dependencies": {
+    "glightbox": "^3.3.1"
+  }
+}
