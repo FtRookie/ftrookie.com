@@ -1,9 +1,8 @@
 const clankerprompt = document.getElementById("clankerprompt");
 
-if (sessionStorage.getItem("clankerprompted") !== "true") {
+if (sessionStorage.getItem("clankerprompted") != "true") {
     clankerprompt.style.display = "flex";
-    sessionStorage.setItem("clankerPrompted", "true")
-    console.log(sessionStorage.log)
+    sessionStorage.setItem("clankerprompted", "true")
 }
 
 function yesclanker() {
