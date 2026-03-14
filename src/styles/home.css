@@ -1,3 +1,10 @@
+.icon {
+    display: inline;
+    height: 1vw;
+    width: fit-content;
+    object-fit: contain;
+}
+
 #clankerprompt {
     flex-direction: column;
     position: fixed;
