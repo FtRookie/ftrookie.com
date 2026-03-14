@@ -13,7 +13,14 @@ export const partial = true;
         <Head />
     </head>
     <body>
-        <button id="theme-toggle" onclick="toggleTheme()">&#127769</button>
+        <button
+            id="theme-toggle"
+            onclick=`const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);`
+            >&#127769</button
+        >
         <!--due for removal when i create my own-->
         <h1 id="header">
             FtRookie's Website
