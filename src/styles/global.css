@@ -101,8 +101,8 @@ p {
 
 .credits {
     display: block;
+    width: 100vw;
     text-align: center;
-    margin-top: auto;
     padding: 0.25%;
     flex: 1;
     color: var(--credits);
