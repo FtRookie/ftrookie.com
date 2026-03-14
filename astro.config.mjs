@@ -1,8 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
-    site: "https://www.ftrookie.com",
-    trailingSlash: "never",
+  site: "https://www.ftrookie.com",
+  trailingSlash: "never",
+  adapter: cloudflare(),
 });
