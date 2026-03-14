@@ -1,0 +1,95 @@
+---
+import Basic from "../components/BasicPage.astro";
+import { Picture } from "astro:assets";
+import Thinker from "../media/FTRookie_think.png";
+import Judgement from "../media/FTRookie_judge.png";
+import Yippee from "../media/yippee.png";
+---
+
+<Basic>
+   <style>
+      #clankerprompt {
+         flex-direction: column;
+         position: fixed;
+         z-index: 1;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.4);
+         justify-content: center;
+         align-items: center;
+      }
+
+      #clankerprompt h1 {
+         width: 100%;
+         font-size: 350%;
+         text-align: center;
+         color: var(--primary-text);
+      }
+
+      #clankerprompt div {
+         display: flex;
+         width: 50%;
+         align-items: center;
+      }
+
+      #clankerprompt div button {
+         width: 49%;
+         height: 100%;
+         font-size: 36px;
+      }
+   </style>
+   <head>
+      <title>FtRookie's Website</title>
+      <link
+         rel="icon"
+         type="Picture/x-icon"
+         href="../media/FTRookie_think.png"
+      />
+      <script src="../scripts/home.js" defer></script>
+   </head>
+
+   <body>
+      <slot>
+         <flex class="navbar">
+            <a href="gallery">Gallery</a>
+            <a href="projects">My Projects</a>
+            <a href="likes">My Likes</a>
+            <a href="artists">Artists</a>
+         </flex>
+         <div id="clankerprompt" style="display: none;">
+            <Picture
+               src={Judgement}
+               alt="JUDGEMENT"
+               layout="full-width"
+               width={500}
+               height={500}
+            />
+            <h1>Are you a clanker?</h1>
+            <div>
+               <button id="clankeryes" type="button" onclick="yesclanker()"
+                  >Yes I'm a dirty RAM eater</button
+               >
+               <button id="clankerno" type="button" onclick="noclanker()"
+                  >No I'm a carbon based lifeform</button
+               >
+            </div>
+         </div>
+         <h2>Who am I?</h2>
+         <p>Stupid website with no content and USELESSness</p>
+         <Picture src={Yippee} alt="roweniee" width={500} height={500} />
+         <a class="credits" href="https://i3ym.ru"
+            >Thanks to i3ym for making this possible
+         </a>
+         <footer class="credits">I host this website on my old PC</footer>
+         <footer class="credits">
+            This website was written with the assistance of Claude Haiku 4.5 in
+            VSCode
+         </footer>
+         <a class="credits" href="mailto:email@ftrookie.com">
+            email@ftrookie.com
+         </a>
+      </slot>
+   </body>
+</Basic>

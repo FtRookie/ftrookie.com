@@ -1,0 +1,122 @@
+---
+import Basic from "../components/BasicPage.astro";
+import { Picture } from "astro:assets";
+import "../styles/glightbox.min.css";
+import "../styles/global.css";
+import "../styles/gallery.css";
+import FullBodyKoi from "../media/fullbodykoi.png";
+import AngryAlt from "../media/FTRookie_angry-alt.png";
+import Rizz from "../media/rizz.png";
+import Angry from "../media/FTRookie_angry.png";
+import Thinker from "../media/FTRookie_think.png";
+import Judgment from "../media/FTRookie_judge.png";
+import BungsUp from "../media/FTRookie_thumbsup.png";
+import Yippee from "../media/yippee.png";
+import Yayy from "../media/yayy.png";
+import Fullbody from "../media/fullbody.png";
+---
+
+<Basic>
+      <head>
+            <title>FtRookie's Website</title>
+            <link
+                  rel="icon"
+                  type="Picture/x-icon"
+                  href="../media/FTRookie_think.png"
+            />
+            <script src="../scripts/gallery.js" defer></script>
+      </head>
+
+      <body>
+            <slot>
+                  <flex class="navbar">
+                        <a href="home">Homepage</a>
+                        <a href="projects">My Projects</a>
+                        <a href="likes">My Likes</a>
+                        <a href="artists">Artists</a>
+                  </flex>
+                  <div class="container">
+                        <a
+                              href="../media/rizz.png"
+                              data-title="rizz"
+                              data-description="artist: b0nette, based on fortuneisacat"
+                              class="glightbox"
+                        >
+                              <Picture src={Rizz} alt="rizz" />
+                        </a>
+                        <a
+                              href="../media/fullbodykoi.png"
+                              data-title="Full Body Koi"
+                              data-description="artist: Vulpen, commissioned by KENEMONY"
+                              class="glightbox"
+                        >
+                              <Picture src={FullBodyKoi} alt="fullbodykoi" />
+                        </a>
+                        <a
+                              href="../media/FTRookie_angry-alt.png"
+                              data-title="Angry Alt"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={AngryAlt} alt="angry alt" />
+                        </a>
+                        <a
+                              href="../media/FTRookie_angry.png"
+                              data-title="Angry"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={Angry} alt="angry" />
+                        </a>
+                        <a
+                              href="../media/FTRookie_judge.png"
+                              data-title="Judgement"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={Judgment} alt="JUDGEMENT" />
+                        </a>
+                        <a
+                              href="../media/FTRookie_think.png"
+                              data-title="Thinker"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={Thinker} alt="thinker" />
+                        </a>
+                        <a
+                              href="../media/FTRookie_thumbsup.png"
+                              data-title="Thumbs Up"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={BungsUp} alt="bungs up" />
+                        </a>
+                        <a
+                              href="../media/yippee.png"
+                              data-title="Yippee"
+                              data-description="artist: roweniee, my second commission"
+                              class="glightbox"
+                        >
+                              <Picture src={Yippee} alt="yippee" />
+                        </a>
+                        <a
+                              href="../media/yayy.png"
+                              data-title="Yayy"
+                              data-description="artist: badjellbungus, from Rate My Avatar"
+                              class="glightbox"
+                        >
+                              <Picture src={Yayy} alt="yayy" />
+                        </a>
+                        <a
+                              href="../media/fullbody.png"
+                              data-title="Full Body"
+                              data-description="artist: Vulpen, very old first commission"
+                              class="glightbox"
+                        >
+                              <Picture src={Fullbody} alt="fullbody" />
+                        </a>
+                  </div>
+            </slot>
+      </body>
+</Basic>

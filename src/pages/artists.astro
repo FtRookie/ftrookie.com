@@ -1,0 +1,100 @@
+---
+import Picture from "astro/components/Picture.astro";
+import Basic from "../components/BasicPage.astro";
+import Discord from "../media/discord.png";
+import Rowen from "../media/rowen.png";
+import Vulpen from "../media/vulpen.png";
+import b0nette from "../media/b0nette.png";
+import nange0727 from "../media/nange0727.jpg";
+---
+
+<Basic>
+    <style>
+        #list {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-items: center;
+        }
+
+        #list div {
+            margin-left: 30%;
+        }
+
+        #list div a {
+            text-decoration: none;
+            color: var(--primary-text);
+            font-size: 500%;
+            margin-left: 20px;
+        }
+    </style>
+    <head>
+        <title>FtRookie's Artists</title>
+        <link
+            rel="icon"
+            type="Picture/x-icon"
+            href="../media/FTRookie_thumbsup.png"
+        />
+        <script defer></script>
+    </head>
+    <body>
+        <slot>
+            <flex class="navbar">
+                <a href="home">Homepage</a>
+                <a href="gallery">Gallery</a>
+                <a href="projects">My Projects</a>
+                <a href="likes">My Likes</a>
+            </flex>
+            <h2>These are artists I have commissioned art from</h2>
+            <em
+                >Note that none of these artists affiliate with me nor each
+                other, <br />
+                I am linking them because I want you to support them as well
+            </em>
+            <br />
+            <ul id="list">
+                <div>
+                    <Picture
+                        src={Rowen}
+                        alt="roweniee"
+                        style="width:200px;height:200px;"
+                    />
+                    <a href="https: //roweniee.carrd.co/">roweniee</a>
+                </div>
+                <div>
+                    <Picture
+                        src={Vulpen}
+                        alt="vylpen"
+                        style="width:200px;height:200px;"
+                    />
+                    <a href="https://x.com/Vulpen8">Vylpen</a>
+                </div>
+                <div>
+                    <Picture
+                        src={b0nette}
+                        alt="b0nette"
+                        style="width:200px;height:200px;"
+                    />
+                    <a href="https://b0nette.carrd.co/">b0nette</a>
+                </div>
+                <div>
+                    <Picture
+                        src={nange0727}
+                        alt="nange0727"
+                        style="width:200px;height:200px;"
+                    />
+                    <a href="https://x.com/nange0727">nange0727 &#128286</a>
+                </div>
+            </ul>
+            <footer class="credits">
+                if you are one of these artists and do not want to be listed <br
+                />
+                contact me via discord about removal <Picture
+                    src={Discord}
+                    alt="Discord"
+                    style="width:1%;height: 1%;"
+                />
+            </footer>
+        </slot>
+    </body>
+</Basic>

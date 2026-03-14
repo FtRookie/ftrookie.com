@@ -8,7 +8,8 @@
 
 .container img {
     height: 20vw;
-    flex: 1 1 15vw;
+    width: auto;
+    display: block;
     object-fit: contain;
 }
 

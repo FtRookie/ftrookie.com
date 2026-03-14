@@ -6,7 +6,7 @@ if (sessionStorage.getItem("clankerprompted") != "true") {
 }
 
 function yesclanker() {
-    window.location.replace("SHOOCLANKER.html");
+    window.location.replace("SHOOCLANKER");
 }
 function noclanker() {
     clankerprompt.style.display = "none";
