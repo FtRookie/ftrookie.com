@@ -28,7 +28,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a,
+em {
     color: var(--primary-text);
 }
 
@@ -47,10 +49,6 @@ h6 {
 p {
     color: var(--primary-text);
     font-size: 20px;
-}
-
-em {
-    color: var(--primary-text);
 }
 
 .navbar {
