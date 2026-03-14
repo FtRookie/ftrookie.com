@@ -1,0 +1,27 @@
+---
+import Basic from "../components/BasicPage.astro";
+---
+
+<Basic>
+    <head>
+        <title>FtRookie's Likes</title>
+        <link
+            rel="icon"
+            type="Picture/x-icon"
+            href="../media/FTRookie_think.png"
+        />
+        <script defer></script>
+    </head>
+
+    <body>
+        <slot>
+            <flex class="navbar">
+                <a href="home">Homepage</a>
+                <a href="gallery">Gallery</a>
+                <a href="projects">My Projects</a>
+                <a href="artists">Artists</a>
+            </flex>
+            <p>durrrrr</p>
+        </slot>
+    </body>
+</Basic>
