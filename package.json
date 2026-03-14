@@ -7,10 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build . && cp node_modules/glightbox/dist/js/glightbox.min.js . && cp node_modules/glightbox/dist/css/glightbox.min.css .",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "generate-types": "wrangler types"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/node": "^10.0.1",
