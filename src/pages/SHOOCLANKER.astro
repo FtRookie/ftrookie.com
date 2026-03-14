@@ -1,17 +1,25 @@
 ---
+import { Picture } from "astro:assets";
 import Head from "../components/Head.astro";
-import "../styles/global.css";
+import CLANKER from "../media/CLANKER.png";
 ---
 
 <html lang="en_US">
     <style>
-        body {
-            background-picture: url(../media/CLANKER.png);
-            background-size: 100%;
+        img {
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: block;
+            height: 100vh;
+            width: 100vw;
         }
     </style>
 
     <title>DIRTY CLANKER</title>
     <link rel="icon" type="Picture/x-icon" href="../media/FTRookie_angry.png" />
     <Head />
+    <body>
+        <Picture src={CLANKER} alt="GO AWAY CLANKER" />
+    </body>
 </html>

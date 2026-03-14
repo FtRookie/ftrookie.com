@@ -17,11 +17,17 @@ import Yippee from "../media/yippee.png";
          width: 100%;
          height: 100%;
          background-color: rgba(0, 0, 0, 0.4);
-         justify-content: center;
-         align-items: center;
+      }
+
+      #clankerprompt img {
+         display: block;
+         margin: auto;
+         height: 75vh;
+         width: 75vh;
       }
 
       #clankerprompt h1 {
+         display: block;
          width: 100%;
          font-size: 350%;
          text-align: center;
@@ -29,15 +35,15 @@ import Yippee from "../media/yippee.png";
       }
 
       #clankerprompt div {
-         display: flex;
-         width: 50%;
+         display: block;
+         margin: auto;
+         width: 50vw;
          align-items: center;
       }
 
       #clankerprompt div button {
          width: 49%;
-         height: 100%;
-         font-size: 36px;
+         font-size: 275%;
       }
    </style>
    <head>
@@ -58,20 +64,19 @@ import Yippee from "../media/yippee.png";
             <a href="likes">My Likes</a>
             <a href="artists">Artists</a>
          </flex>
-         <div id="clankerprompt" style="display: none;">
-            <Picture
-               src={Judgement}
-               alt="JUDGEMENT"
-               layout="full-width"
-               width={500}
-               height={500}
-            />
+         <div id="clankerprompt">
+            <Picture src={Judgement} alt="JUDGEMENT" layout="full-width" />
             <h1>Are you a clanker?</h1>
             <div>
-               <button id="clankeryes" type="button" onclick="yesclanker()"
-                  >Yes I'm a dirty RAM eater</button
+               <button
+                  id="clankeryes"
+                  onclick="window.location.replace('SHOOCLANKER');"
+                  type="button">Yes I'm a dirty RAM eater</button
                >
-               <button id="clankerno" type="button" onclick="noclanker()"
+               <button
+                  id="clankerno"
+                  type="button"
+                  onclick="clankerprompt.style.display = 'none';"
                   >No I'm a carbon based lifeform</button
                >
             </div>
