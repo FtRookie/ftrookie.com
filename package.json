@@ -1,8 +1,18 @@
 {
+  "name": "ftrookie-com",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "build": "cp node_modules/glightbox/dist/js/glightbox.min.js . && cp node_modules/glightbox/dist/css/glightbox.min.css ."
+    "dev": "astro dev",
+    "build": "astro build . && cp node_modules/glightbox/dist/js/glightbox.min.js . && cp node_modules/glightbox/dist/css/glightbox.min.css .",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
+    "astro": "^6.0.4",
     "glightbox": "^3.3.1"
   }
 }
