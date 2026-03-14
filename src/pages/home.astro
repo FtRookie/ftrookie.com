@@ -1,51 +1,12 @@
 ---
 import Basic from "../components/BasicPage.astro";
 import { Picture } from "astro:assets";
-import Thinker from "../media/FTRookie_think.png";
 import Judgement from "../media/FTRookie_judge.png";
 import Yippee from "../media/yippee.png";
+import "../styles/home.css";
 ---
 
 <Basic>
-   <style>
-      #clankerprompt {
-         flex-direction: column;
-         position: fixed;
-         z-index: 1;
-         left: 0;
-         top: 0;
-         width: 100%;
-         height: 100%;
-         background-color: rgba(0, 0, 0, 0.4);
-      }
-
-      #clankerprompt img {
-         display: block;
-         margin: auto;
-         height: 75vh;
-         width: 75vh;
-      }
-
-      #clankerprompt h1 {
-         display: block;
-         width: 100%;
-         font-size: 350%;
-         text-align: center;
-         color: var(--primary-text);
-      }
-
-      #clankerprompt div {
-         display: block;
-         margin: auto;
-         width: 50vw;
-         align-items: center;
-      }
-
-      #clankerprompt div button {
-         width: 49%;
-         font-size: 275%;
-      }
-   </style>
    <head>
       <title>FtRookie's Website</title>
       <link
@@ -64,7 +25,7 @@ import Yippee from "../media/yippee.png";
             <a href="likes">My Likes</a>
             <a href="artists">Artists</a>
          </flex>
-         <div id="clankerprompt">
+         <div id="clankerprompt" style="display:none">
             <Picture src={Judgement} alt="JUDGEMENT" layout="full-width" />
             <h1>Are you a clanker?</h1>
             <div>
@@ -81,8 +42,14 @@ import Yippee from "../media/yippee.png";
                >
             </div>
          </div>
-         <h2>Who am I?</h2>
-         <p>Stupid website with no content and USELESSness</p>
+         <h2 style="display:inline-block">Who am I?</h2>
+         <p>I am the bunger, you will be bungled</p>
+         <div id="info">
+            <h2>Species:</h2>
+            <p>Domestic Cat / Furred Dragon - Hybrid</p>
+            <h2>Birthday:</h2>
+            <p>December 29</p>
+         </div>
          <Picture src={Yippee} alt="roweniee" width={500} height={500} />
          <a class="credits" href="https://i3ym.ru"
             >Thanks to i3ym for making this possible

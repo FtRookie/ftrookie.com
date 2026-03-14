@@ -1,0 +1,41 @@
+#clankerprompt {
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#clankerprompt img {
+    display: block;
+    margin: auto;
+    height: 75vh;
+    width: 75vh;
+}
+
+#clankerprompt h1 {
+    display: block;
+    width: 100%;
+    font-size: 350%;
+    text-align: center;
+    color: var(--primary-text);
+}
+
+#clankerprompt div {
+    display: block;
+    margin: auto;
+    width: 50vw;
+    align-items: center;
+}
+
+#clankerprompt div button {
+    width: 49%;
+    font-size: 275%;
+}
+
+#info {
+    float: right;
+}
