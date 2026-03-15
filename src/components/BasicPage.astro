@@ -5,7 +5,7 @@ import Thinker from "../media/FTRookie_think.png";
 import "../styles/global.css";
 export const partial = true;
 
-const { title = "FtRookie's Website", favicon = "/thumbsup.png" } = Astro.props;
+const { title = "FtRookie", favicon = "/thumbsup.png" } = Astro.props;
 ---
 
 <html lang="en_US" transition:name="root" transition:animate="slide">
@@ -36,7 +36,7 @@ const { title = "FtRookie's Website", favicon = "/thumbsup.png" } = Astro.props;
         >
         <!--due for removal when i create my own-->
         <h1 id="header" transition:animate="none">
-            FtRookie's Website
+            FtRookie's {title}
             <Picture src={Thinker} alt="thinker" />
         </h1>
         <slot />
