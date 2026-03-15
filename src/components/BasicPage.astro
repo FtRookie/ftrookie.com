@@ -40,5 +40,17 @@ const { title = "FtRookie's Website", favicon = "/thumbsup.png" } = Astro.props;
             <Picture src={Thinker} alt="thinker" />
         </h1>
         <slot />
+        <a class="credits" href="https://i3ym.ru"
+            >Thanks to i3ym for making this possible
+        </a>
+        <footer class="credits">
+            I host this website on my old PC, it might be slow
+        </footer>
+        <footer class="credits">
+            Portions of this website were written with the assistance of LLMs
+        </footer>
+        <a class="credits" href="mailto:email@ftrookie.com">
+            email@ftrookie.com
+        </a>
     </body>
 </html>

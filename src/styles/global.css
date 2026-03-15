@@ -36,6 +36,7 @@ em {
 
 #header {
     color: var(--primary-text);
+    display: block;
     text-align: center;
     font-size: 500%;
     text-decoration: dashed;

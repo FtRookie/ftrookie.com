@@ -43,20 +43,6 @@ import "../styles/home.css";
       <h2>Gender:</h2>
       <p>Cisgender Male (he/him)</p>
       <h2>Country and current time:</h2>
-      <script>
-         setInterval(function () {
-            let m = new Date(
-               new Date().toLocaleString("en-US", {
-                  timeZone: "PST",
-               }),
-            );
-
-            const d = document.getElementById("timenow");
-            if (d) {
-               d.innerHTML = `${m}`;
-            }
-         });
-      </script>
       <p>
          United States
          <img class="icon" src="/USFlag.svg" alt="🇺🇸" />
@@ -79,18 +65,6 @@ import "../styles/home.css";
       poopoo peepee <br />
       mcstinky
       <Picture src={blehh} alt="freaky" style="display:block" />
-      <a class="credits" href="https://i3ym.ru"
-         >Thanks to i3ym for making this possible
-      </a>
-      <footer class="credits">
-         I host this website on my old PC, it might be slow
-      </footer>
-      <footer class="credits">
-         Portions of this website were written with the assistance of LLMs
-      </footer>
-      <a class="credits" href="mailto:email@ftrookie.com">
-         email@ftrookie.com
-      </a>
    </p>
-   <script src="../scripts/home.js"></script>
 </Basic>
+<script src="../scripts/home.js"></script>
