@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 const { title = "My Astro Website", ...props } = Astro.props;
 export const partial = true;
 ---
@@ -21,3 +22,4 @@ export const partial = true;
 <meta name="twitter:title" content="FtRookie's Website" />
 <meta name="twitter:description" content="the fuzz are calling, pick up" />
 <meta name="twitter:image" content="https://www.ftrookie.com/yippee.png" />
+<ClientRouter />
