@@ -26,6 +26,7 @@ const { title = "FtRookie's Website", favicon = "/thumbsup.png" } = Astro.props;
     </head>
     <body>
         <button
+            transition:animate="none"
             id="theme-toggle"
             onclick=`const currentTheme = document.documentElement.getAttribute('data-theme');
                     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -34,7 +35,7 @@ const { title = "FtRookie's Website", favicon = "/thumbsup.png" } = Astro.props;
             >&#127769</button
         >
         <!--due for removal when i create my own-->
-        <h1 id="header">
+        <h1 id="header" transition:animate="none">
             FtRookie's Website
             <Picture src={Thinker} alt="thinker" />
         </h1>
