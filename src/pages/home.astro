@@ -3,6 +3,7 @@ import Basic from "../components/BasicPage.astro";
 import { Picture } from "astro:assets";
 import Judgement from "../media/FTRookie_judge.png";
 import Yippee from "../media/yippee.png";
+import blehh from "../media/blehh.gif";
 import "../styles/home.css";
 ---
 
@@ -77,18 +78,19 @@ import "../styles/home.css";
       <br />
       poopoo peepee <br />
       mcstinky
-      <br />
-      <br />
+      <Picture src={blehh} alt="freaky" style="display:block" />
+      <a class="credits" href="https://i3ym.ru"
+         >Thanks to i3ym for making this possible
+      </a>
+      <footer class="credits">
+         I host this website on my old PC, it might be slow
+      </footer>
+      <footer class="credits">
+         Portions of this website were written with the assistance of LLMs
+      </footer>
+      <a class="credits" href="mailto:email@ftrookie.com">
+         email@ftrookie.com
+      </a>
    </p>
-   <a class="credits" href="https://i3ym.ru"
-      >Thanks to i3ym for making this possible
-   </a>
-   <footer class="credits">
-      I host this website on my old PC, it might be slow
-   </footer>
-   <footer class="credits">
-      Portions of this website were written with the assistance of LLMs
-   </footer>
-   <a class="credits" href="mailto:email@ftrookie.com"> email@ftrookie.com </a>
+   <script src="../scripts/home.js"></script>
 </Basic>
-<script src="../scripts/home.js"></script>
