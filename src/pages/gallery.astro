@@ -16,105 +16,96 @@ import Yayy from "../media/yayy.png";
 import Fullbody from "../media/fullbody.png";
 ---
 
-<Basic>
-      <head>
-            <title>FtRookie's Gallery</title>
-            <link rel="icon" type="image/png" href="/thumbsup.png" />
-            <script src="../scripts/glightbox.min.js"></script>
-            <script src="../scripts/gallery.js" defer></script>
-      </head>
-
-      <body>
-            <slot>
-                  <flex class="navbar">
-                        <a href="home">Homepage</a>
-                        <a href="projects">My Projects</a>
-                        <a href="likes">My Likes</a>
-                        <a href="socials">Socials</a>
-                        <a href="artists">Artists</a>
-                  </flex>
-                  <div class="container">
-                        <a
-                              href={Rizz.src}
-                              data-title="rizz"
-                              data-description="artist: b0nette, based on fortuneisacat"
-                              class="glightbox"
-                        >
-                              <Picture src={Rizz} alt="rizz" />
-                        </a>
-                        <a
-                              href={FullBodyKoi.src}
-                              data-title="Full Body Koi"
-                              data-description="artist: Vulpen, commissioned by KENEMONY"
-                              class="glightbox"
-                        >
-                              <Picture src={FullBodyKoi} alt="fullbodykoi" />
-                        </a>
-                        <a
-                              href={AngryAlt.src}
-                              data-title="Angry Alt"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={AngryAlt} alt="angry alt" />
-                        </a>
-                        <a
-                              href={Angry.src}
-                              data-title="Angry"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={Angry} alt="angry" />
-                        </a>
-                        <a
-                              href={Judgment.src}
-                              data-title="Judgement"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={Judgment} alt="JUDGEMENT" />
-                        </a>
-                        <a
-                              href={Thinker.src}
-                              data-title="Thinker"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={Thinker} alt="thinker" />
-                        </a>
-                        <a
-                              href={BungsUp.src}
-                              data-title="Thumbs Up"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={BungsUp} alt="bungs up" />
-                        </a>
-                        <a
-                              href={Yippee.src}
-                              data-title="Yippee"
-                              data-description="artist: roweniee, my second commission"
-                              class="glightbox"
-                        >
-                              <Picture src={Yippee} alt="yippee" />
-                        </a>
-                        <a
-                              href={Yayy.src}
-                              data-title="Yayy"
-                              data-description="artist: badjellbungus, from Rate My Avatar"
-                              class="glightbox"
-                        >
-                              <Picture src={Yayy} alt="yayy" />
-                        </a>
-                        <a
-                              href={Fullbody.src}
-                              data-title="Full Body"
-                              data-description="artist: Vulpen, very old first commission"
-                              class="glightbox"
-                        >
-                              <Picture src={Fullbody} alt="fullbody" />
-                        </a>
-                  </div>
-            </slot>
-      </body>
+<Basic title="FtRookie's Gallery" favicon="/thumbsup.png">
+      <flex class="navbar">
+            <a href="home">Homepage</a>
+            <a href="projects">My Projects</a>
+            <a href="likes">My Likes</a>
+            <a href="socials">Socials</a>
+            <a href="artists">Artists</a>
+      </flex>
+      <div class="container">
+            <a
+                  href={Rizz.src}
+                  data-title="rizz"
+                  data-description="artist: b0nette, based on fortuneisacat"
+                  class="glightbox"
+            >
+                  <Picture src={Rizz} alt="rizz" />
+            </a>
+            <a
+                  href={FullBodyKoi.src}
+                  data-title="Full Body Koi"
+                  data-description="artist: Vulpen, commissioned by KENEMONY"
+                  class="glightbox"
+            >
+                  <Picture src={FullBodyKoi} alt="fullbodykoi" />
+            </a>
+            <a
+                  href={AngryAlt.src}
+                  data-title="Angry Alt"
+                  data-description="artist: roweniee, part of a sticker pack"
+                  class="glightbox"
+            >
+                  <Picture src={AngryAlt} alt="angry alt" />
+            </a>
+            <a
+                  href={Angry.src}
+                  data-title="Angry"
+                  data-description="artist: roweniee, part of a sticker pack"
+                  class="glightbox"
+            >
+                  <Picture src={Angry} alt="angry" />
+            </a>
+            <a
+                  href={Judgment.src}
+                  data-title="Judgement"
+                  data-description="artist: roweniee, part of a sticker pack"
+                  class="glightbox"
+            >
+                  <Picture src={Judgment} alt="JUDGEMENT" />
+            </a>
+            <a
+                  href={Thinker.src}
+                  data-title="Thinker"
+                  data-description="artist: roweniee, part of a sticker pack"
+                  class="glightbox"
+            >
+                  <Picture src={Thinker} alt="thinker" />
+            </a>
+            <a
+                  href={BungsUp.src}
+                  data-title="Thumbs Up"
+                  data-description="artist: roweniee, part of a sticker pack"
+                  class="glightbox"
+            >
+                  <Picture src={BungsUp} alt="bungs up" />
+            </a>
+            <a
+                  href={Yippee.src}
+                  data-title="Yippee"
+                  data-description="artist: roweniee, my second commission"
+                  class="glightbox"
+            >
+                  <Picture src={Yippee} alt="yippee" />
+            </a>
+            <a
+                  href={Yayy.src}
+                  data-title="Yayy"
+                  data-description="artist: badjellbungus, from Rate My Avatar"
+                  class="glightbox"
+            >
+                  <Picture src={Yayy} alt="yayy" />
+            </a>
+            <a
+                  href={Fullbody.src}
+                  data-title="Full Body"
+                  data-description="artist: Vulpen, very old first commission"
+                  class="glightbox"
+            >
+                  <Picture src={Fullbody} alt="fullbody" />
+            </a>
+      </div>
 </Basic>
+<script src="../scripts/glightbox.min.js"></script>
+<script src="../scripts/gallery.js"></script>

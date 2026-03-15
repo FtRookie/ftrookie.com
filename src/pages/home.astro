@@ -6,80 +6,89 @@ import Yippee from "../media/yippee.png";
 import "../styles/home.css";
 ---
 
-<Basic>
-   <head>
-      <title>FtRookie's Website</title>
-      <link rel="icon" type="image/png" href="/thinker.png" />
-      <script src="../scripts/home.js" defer></script>
-   </head>
+<Basic favicon="/thinker.png">
+   <flex class="navbar">
+      <a href="gallery">Gallery</a>
+      <a href="projects">My Projects</a>
+      <a href="likes">My Likes</a>
+      <a href="socials">Socials</a>
+      <a href="artists">Artists</a>
+   </flex>
+   <div id="clankerprompt" style="display:none">
+      <Picture src={Judgement} alt="JUDGEMENT" layout="full-width" />
+      <h1>Are you a clanker?</h1>
+      <div>
+         <button
+            id="clankeryes"
+            onclick="window.location.replace('SHOOCLANKER');"
+            type="button">Yes I'm a dirty RAM eater</button
+         >
+         <button
+            id="clankerno"
+            type="button"
+            onclick="clankerprompt.style.display = 'none';"
+            >No I'm a carbon based lifeform</button
+         >
+      </div>
+   </div>
+   <h2 style="display:inline-block">Who am I?</h2>
+   <br />
+   <p>I am the bunger, you will be bungled</p>
+   <div id="info">
+      <h2>Species:</h2>
+      <p>Domestic Cat / Furred Dragon - Hybrid</p>
+      <h2>Birthday:</h2>
+      <p>December 29</p>
+      <h2>Gender:</h2>
+      <p>Cisgender Male (he/him)</p>
+      <h2>Country and current time:</h2>
+      <script>
+         setInterval(function () {
+            let m = new Date(
+               new Date().toLocaleString("en-US", {
+                  timeZone: "PST",
+               }),
+            );
 
-   <body>
-      <slot>
-         <flex class="navbar">
-            <a href="gallery">Gallery</a>
-            <a href="projects">My Projects</a>
-            <a href="likes">My Likes</a>
-            <a href="socials">Socials</a>
-            <a href="artists">Artists</a>
-         </flex>
-         <div id="clankerprompt" style="display:none">
-            <Picture src={Judgement} alt="JUDGEMENT" layout="full-width" />
-            <h1>Are you a clanker?</h1>
-            <div>
-               <button
-                  id="clankeryes"
-                  onclick="window.location.replace('SHOOCLANKER');"
-                  type="button">Yes I'm a dirty RAM eater</button
-               >
-               <button
-                  id="clankerno"
-                  type="button"
-                  onclick="clankerprompt.style.display = 'none';"
-                  >No I'm a carbon based lifeform</button
-               >
-            </div>
-         </div>
-         <h2 style="display:inline-block">Who am I?</h2>
-         <p>I am the bunger, you will be bungled</p>
-         <div id="info">
-            <h2>Species:</h2>
-            <p>Domestic Cat / Furred Dragon - Hybrid</p>
-            <h2>Birthday:</h2>
-            <p>December 29</p>
-            <h2>Gender:</h2>
-            <p>Cisgender Male (he/him)</p>
-            <h2>Country:</h2>
-            <p>
-               United States
-               <img class="icon" src="/USFlag.svg" alt="🇺🇸" />
-            </p>
-            <h2>How to address me:</h2>
-            <p>
-               &#10004 Rook <br />
-               &#10004 Rookie <br />
-               &#10004 Bung <br />
-               &#10004 Bunger <br />
-               &#10006 F T (you sound stupid)<br />
-               &#10006 FtRookie (sounds awkward) <br />
-            </p>
-         </div>
-         <Picture src={Yippee} alt="roweniee" width={500} height={500} />
-         <p>
-            poopoo peepee <br />
-            mcstinky
-         </p>
-         <a class="credits" href="https://i3ym.ru"
-            >Thanks to i3ym for making this possible
-         </a>
-         <footer class="credits">
-            I host this website on my old PC, it might be slow
-         </footer>
-         <footer class="credits">
-            Portions of this website were written with the assistance of LLMs
-         </footer>
-         <a class="credits" href="mailto:email@ftrookie.com">
-            email@ftrookie.com
-         </a>
-      </slot>
-   </body>
+            const d = document.getElementById("timenow");
+            if (d) {
+               d.innerHTML = `${m}`;
+            }
+         });
+      </script>
+      <p>
+         United States
+         <img class="icon" src="/USFlag.svg" alt="🇺🇸" />
+      </p>
+      <p id="timenow"></p>
+      <h2>How to address me:</h2>
+      <p>
+         &#10004 Rook <br />
+         &#10004 Rookie <br />
+         &#10004 Bung <br />
+         &#10004 Bunger <br />
+         &#10006 F T (you sound stupid)<br />
+         &#10006 FtRookie (sounds awkward) <br />
+      </p>
+   </div>
+   <br />
+   <Picture src={Yippee} alt="roweniee" width={500} height={500} />
+   <p>
+      <br />
+      poopoo peepee <br />
+      mcstinky
+      <br />
+      <br />
+   </p>
+   <a class="credits" href="https://i3ym.ru"
+      >Thanks to i3ym for making this possible
+   </a>
+   <footer class="credits">
+      I host this website on my old PC, it might be slow
+   </footer>
+   <footer class="credits">
+      Portions of this website were written with the assistance of LLMs
+   </footer>
+   <a class="credits" href="mailto:email@ftrookie.com"> email@ftrookie.com </a>
 </Basic>
+<script src="../scripts/home.js"></script>

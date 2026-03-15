@@ -1,3 +1,7 @@
+p {
+    display: inline;
+}
+
 .icon {
     display: inline;
     height: 1vw;

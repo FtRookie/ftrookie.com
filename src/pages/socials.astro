@@ -2,23 +2,13 @@
 import Basic from "../components/BasicPage.astro";
 ---
 
-<Basic>
-    <head>
-        <title>FtRookie's Socials</title>
-        <link rel="icon" type="image/png" href="/thinker.png" />
-        <script defer></script>
-    </head>
-
-    <body>
-        <slot>
-            <flex class="navbar">
-                <a href="home">Homepage</a>
-                <a href="gallery">Gallery</a>
-                <a href="projects">My Projects</a>
-                <a href="projects">My Likes</a>
-                <a href="artists">Artists</a>
-            </flex>
-            <p>text</p>
-        </slot>
-    </body>
+<Basic title="FtRookie's Socials" favicon="/thumbsup.png">
+    <flex class="navbar">
+        <a href="home">Homepage</a>
+        <a href="gallery">Gallery</a>
+        <a href="projects">My Projects</a>
+        <a href="projects">My Likes</a>
+        <a href="artists">Artists</a>
+    </flex>
+    <p>text</p>
 </Basic>
