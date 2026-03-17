@@ -38,14 +38,15 @@ const {
             <Picture src={favicon} alt="thinker" />
         </h1>
         <slot />
-        <a class="credits" href="https://i3ym.ru"
-            >Thanks to i3ym for making this possible
-        </a>
-        <footer class="credits">
-            I host this website on my old PC, it might be slow
-        </footer>
-        <footer class="credits">
-            Portions of this website were written with the assistance of LLMs
-        </footer>
+        <div class="credits">
+            <a href="https://i3ym.ru">
+                Thanks to i3ym for making this possible
+            </a>
+            <footer>I host this website on my old PC, it might be slow</footer>
+            <footer>
+                Portions of this website were written with the assistance of
+                LLMs
+            </footer>
+        </div>
     </body>
 </html>

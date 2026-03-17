@@ -102,9 +102,17 @@ p {
 }
 
 .credits {
-    display: block;
-    position: relative;
+    display: flex;
     width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.credits a,
+.credits footer {
+    display: block;
     text-align: center;
     padding: 0.25%;
     color: var(--credits);
