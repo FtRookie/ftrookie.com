@@ -12,6 +12,6 @@ jobs:
       - run: |
           cd /var/www/html
           git pull
-          npm install
+          npm ci
           npm run build
           sudo systemctl restart deploy
