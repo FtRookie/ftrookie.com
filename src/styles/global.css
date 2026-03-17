@@ -22,9 +22,9 @@ body {
 #viewport {
     display: block;
     justify-self: center;
-    width: clamp(20vh, 2560px, 177.777777777vh);
+    width: clamp(400px, 2560px, min(177.777777777vh, 100vw));
     height: auto;
-    padding: 3%;
+    padding: 3%
 }
 
 h1,
