@@ -3,11 +3,22 @@ import { Picture } from "astro:assets";
 import BasicProjectPage from "../../components/BasicProjectPage.astro";
 import BungsUp from "../../media/FTRookie_thumbsup.png";
 import saywhaaat from "../../media/saywhat.png";
+import insanity from "../../media/insanity.png";
 ---
+
+<style>
+    #insanity {
+        width: 30%;
+        height: auto;
+    }
+</style>
 
 <BasicProjectPage title="Website" favicon={BungsUp}>
     <p>Self-hosted website with a CI/CD workflow</p>
     <p>Git deployed with self-hosted runner and deploy action</p>
     <p>Registered and proxied with Cloudflare</p>
     <Picture src={saywhaaat} alt="saywhaaat" />
+    <footer>feeble creature</footer>
+    <h2>brute force</h2>
+    <Picture id="insanity" src={insanity} alt="insanity" />
 </BasicProjectPage>
