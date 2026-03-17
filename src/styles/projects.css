@@ -1,25 +1,43 @@
+:root[data-theme="light"] {
+    --project-bg1: #222;
+    --project-bg2: #333;
+    --project-text: #fff;
+}
+
+:root[data-theme="dark"] {
+    --project-bg1: #f1f1f1;
+    --project-bg2: #ccc;
+    --project-text: #000000;
+}
+
 .project {
-    background-color: white;
+    background-color: var(--project-bg1);
     padding: 1%;
     height: 15vh;
+}
+
+.project:nth-child(even) {
+    background-color: var(--project-bg2)
 }
 
 .project a {
     display: inline;
     font-size: 300%;
-    color: black;
+    color: var(--project-text);
 }
 
 .project p {
     font-size: 150%;
     display: block;
-    color: black;
+    color: var(--project-text);
 }
 
 .project img {
     float: left;
     display: inline;
     height: 100%;
+    aspect-ratio: 1;
     width: auto;
+    object-fit: contain;
     margin-right: 20px;
 }

@@ -1,5 +1,5 @@
 document.addEventListener("astro:page-load", () => {
-    GLightbox({
+    const lightbox = GLightbox({
         selector: '.glightbox',
         touchNavigation: true,
         loop: true,
