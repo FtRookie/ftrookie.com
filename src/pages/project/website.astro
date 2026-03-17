@@ -1,10 +1,13 @@
 ---
+import { Picture } from "astro:assets";
 import BasicProjectPage from "../../components/BasicProjectPage.astro";
 import BungsUp from "../../media/FTRookie_thumbsup.png";
+import saywhaaat from "../media/saywhat.png";
 ---
 
 <BasicProjectPage title="Website" favicon={BungsUp}>
     <p>Self-hosted website with a CI/CD workflow</p>
     <p>Git deployed with self-hosted runner and deploy action</p>
     <p>Registered and proxied with Cloudflare</p>
+    <Picture src={saywhaaat} alt="saywhaaat" />
 </BasicProjectPage>
