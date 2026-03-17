@@ -1,0 +1,17 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - run: |
+          cd /var/www/html
+          git pull
+          npm install
+          npm run build
+          sudo systemctl restart myapp
