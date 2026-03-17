@@ -20,11 +20,11 @@ body {
 }
 
 #viewport {
-    position: fixed;
+    display: block;
     justify-self: center;
-    width: 177.777777778vh;
+    width: clamp(20vh, 100vw, 177.777777777vh);
     height: auto;
-    margin: 3%, 3%;
+    padding: 3%;
 }
 
 h1,
@@ -35,6 +35,7 @@ h5,
 h6,
 a,
 footer,
+li,
 em {
     color: var(--primary-text);
 }
@@ -60,7 +61,6 @@ p {
 .navbar {
     display: block;
     flex-wrap: nowrap;
-    width: 100%;
     white-space: nowrap;
     flex-direction: row;
     margin: 15px;

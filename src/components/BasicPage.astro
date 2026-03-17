@@ -36,7 +36,7 @@ const {
             <!--due for removal when i create my own-->
             <h1 id="header" transition:animate="none">
                 {header}
-                <Picture src={favicon} alt="thinker" />
+                <Picture src={favicon} loading={"eager"} alt={favicon.src} />
             </h1>
             <slot />
             <div class="credits">

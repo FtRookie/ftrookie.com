@@ -17,7 +17,12 @@ import thinker from "../media/FTRookie_think.png";
       <a href="artists">Artists</a>
    </div>
    <div id="clankerprompt" style="display:none">
-      <Picture src={Judgement} alt="JUDGEMENT" layout="full-width" />
+      <Picture
+         src={Judgement}
+         alt="JUDGEMENT"
+         loading={"eager"}
+         layout="full-width"
+      />
       <h1>Are you a clanker?</h1>
       <div>
          <button
@@ -38,7 +43,7 @@ import thinker from "../media/FTRookie_think.png";
    <p>I am the bunger, you will be bungled</p>
    <div id="info">
       <h2>Species:</h2>
-      <p>Domestic Cat / Furred Dragon - Hybrid</p>
+      <p>Domestic Cat / Furred Dragon : Hybrid</p>
       <h2>Birthday:</h2>
       <p>December 29</p>
       <h2>Gender:</h2>
@@ -65,12 +70,17 @@ import thinker from "../media/FTRookie_think.png";
       </p>
    </div>
    <br />
-   <Picture id="yippee" src={Yippee} alt="roweniee" />
+   <Picture id="yippee" src={Yippee} alt="roweniee" loading={"eager"} />
    <p>
       <br />
       poopoo peepee <br />
       mcstinky
-      <Picture src={blehh} alt="freaky" style="display:block" />
+      <Picture
+         src={blehh}
+         alt="freaky"
+         loading={"eager"}
+         style="display:block"
+      />
    </p>
 </Basic>
 <script src="../scripts/home.js"></script>
