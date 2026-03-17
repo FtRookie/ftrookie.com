@@ -1,17 +1,21 @@
 ---
 import { Picture } from "astro:assets";
 import Head from "./Head.astro";
-import Thinker from "../media/FTRookie_think.png";
 import "../styles/global.css";
+import thumbsup from "../media/FTRookie_thumbsup.png";
 export const partial = true;
 
-const { title = "FtRookie", favicon = "/thumbsup.png" } = Astro.props;
+const {
+    title = "FtRookie",
+    favicon = thumbsup,
+    header = `FtRookie's ${title}`,
+} = Astro.props;
 ---
 
 <html lang="en_US" transition:name="root" transition:animate="slide">
     <head>
         <title>{title}</title>
-        <link rel="icon" type="image/png" href={favicon} />
+        <link rel="icon" type="image/png" href={favicon.src} />
         <meta charset="utf-8" />
         <script src="../scripts/theme.js"></script>
         <script is:inline>
@@ -36,8 +40,8 @@ const { title = "FtRookie", favicon = "/thumbsup.png" } = Astro.props;
         >
         <!--due for removal when i create my own-->
         <h1 id="header" transition:animate="none">
-            FtRookie's {title}
-            <Picture src={Thinker} alt="thinker" />
+            {header}
+            <Picture src={favicon} alt="thinker" />
         </h1>
         <slot />
         <a class="credits" href="https://i3ym.ru"

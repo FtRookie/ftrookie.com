@@ -1,14 +1,50 @@
 ---
+import { Picture } from "astro:assets";
 import Basic from "../components/BasicPage.astro";
+import Thinker from "../media/FTRookie_think.png";
+import Judgment from "../media/FTRookie_judge.png";
 ---
 
-<Basic title="Projects" favicon="/judgment.png">
-    <flex class="navbar">
+<style>
+    .project {
+        background-color: white;
+        padding: 1%;
+        height: 15vh;
+    }
+    .project a {
+        float: inline-start;
+        display: inline;
+        font-size: 300%;
+        color: black;
+    }
+    .project p {
+        display: block;
+        color: black;
+    }
+    .project img {
+        float: left;
+        display: inline;
+        height: 100%;
+        width: auto;
+    }
+</style>
+
+<Basic title="Projects" favicon={Judgment}>
+    <div class="navbar">
         <a href="home">Homepage</a>
         <a href="gallery">Gallery</a>
         <a href="likes">Likes</a>
         <a href="socials">Socials</a>
         <a href="artists">Artists</a>
-    </flex>
+    </div>
     <p>durrrrr</p>
+    <div style="display:div;flex-direction:column;">
+        <article class="project">
+            <Picture src={Thinker} alt="thinker" />
+            <div style="display:inline;margin:auto">
+                <a href="/project/test">This Website</a>
+                <p>something about this website</p>
+            </div>
+        </article>
+    </div>
 </Basic>

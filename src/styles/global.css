@@ -43,7 +43,7 @@ em {
 }
 
 #header img {
-    width: 75px;
+    width: auto;
     height: 75px;
 }
 
@@ -58,18 +58,18 @@ p {
     width: 92vw;
     white-space: nowrap;
     flex-direction: row;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 15px;
-    row-gap: 100px;
+    margin: 15px;
     border-radius: 15px;
     overflow-x: auto;
     scrollbar-width: thin;
     background-color: var(--navbar-bg);
 }
 
+.naventry,
 .navbar a {
+    border-radius: 15px;
     margin: 10px;
+    background-color: var(--navbar-bg);
     color: var(--navbar-text);
     font-size: 5vmin;
     text-decoration: none;

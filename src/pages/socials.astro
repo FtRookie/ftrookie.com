@@ -1,14 +1,72 @@
 ---
+import { Picture } from "astro:assets";
 import Basic from "../components/BasicPage.astro";
+import thumbsup from "../media/FTRookie_thumbsup.png";
 ---
 
-<Basic title="Socials" favicon="/thumbsup.png">
-    <flex class="navbar">
+<style>
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    li {
+        font-size: 300%;
+    }
+    i {
+        height: auto;
+        color: var(--primary-text);
+    }
+</style>
+
+<Basic title="Socials" favicon={thumbsup}>
+    <div class="navbar">
         <a href="home">Homepage</a>
         <a href="gallery">Gallery</a>
         <a href="projects">Projects</a>
-        <a href="projects">Likes</a>
+        <a href="likes">Likes</a>
         <a href="artists">Artists</a>
-    </flex>
-    <p>text</p>
+    </div>
+    <ul>
+        <li>
+            <i class="fa-brands fa-discord"></i>
+            <a href="https://www.discord.com/users/484529511468236802">
+                Discord
+            </a>
+        </li>
+        <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:email@ftrookie.com">Email</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-ko-fi"></i>
+            <a href="https://ko-fi.com/ftrookie">Ko-Fi</a>
+        </li>
+        <li>
+            <a href="https://www.furaffinity.net/user/ftrookie">FurAffinity</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/FtRookie">Github</a>
+        </li>
+        <li>
+            <a href="https://www.roblox.com/users/238427763/profile">Roblox</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-reddit-alien"></i>
+            <a href="https://www.reddit.com/user/FtRookie/">Reddit</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-spotify"></i>
+            <a href="https://open.spotify.com/user/rookie5102">Spotify</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-steam"></i>
+            <a href="https://steamcommunity.com/id/FtRookie/">Steam</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-youtube"></i>
+            <a href="https://www.youtube.com/@FtRookie">Youtube</a>
+        </li>
+    </ul>
 </Basic>

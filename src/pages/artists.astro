@@ -6,6 +6,7 @@ import Rowen from "../media/rowen.png";
 import Vulpen from "../media/vulpen.png";
 import b0nette from "../media/b0nette.png";
 import nange0727 from "../media/nange0727.jpg";
+import thumbsup from "../media/FTRookie_thumbsup.png";
 ---
 
 <style>
@@ -31,16 +32,19 @@ import nange0727 from "../media/nange0727.jpg";
         display: block;
         margin: auto;
     }
+    i {
+        color: var(--primary-text);
+    }
 </style>
 
-<Basic title="Artists" , favicon="/thumbsup.png">
-    <flex class="navbar">
+<Basic title="Artists" , favicon={thumbsup}>
+    <div class="navbar">
         <a href="home">Homepage</a>
         <a href="gallery">Gallery</a>
         <a href="projects">Projects</a>
         <a href="likes">Likes</a>
         <a href="socials">Socials</a>
-    </flex>
+    </div>
     <h1>These are artists I have commissioned art from</h1>
     <em
         >Note that none of these artists affiliate with me nor each other, <br
@@ -84,10 +88,7 @@ import nange0727 from "../media/nange0727.jpg";
     </ul>
     <footer class="credits">
         if you are one of these artists and do not want to be listed, <br />
-        contact me via discord about removal <Picture
-            src={Discord}
-            alt="Discord"
-            style="width:1%;height: 1%;"
-        />
+        contact me via discord about removal
+        <i class="fa-brands fa-discord"></i>
     </footer>
 </Basic>

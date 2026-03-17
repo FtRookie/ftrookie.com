@@ -5,16 +5,17 @@ import Judgement from "../media/FTRookie_judge.png";
 import Yippee from "../media/yippee.png";
 import blehh from "../media/blehh.gif";
 import "../styles/home.css";
+import thinker from "../media/FTRookie_think.png";
 ---
 
-<Basic title="Website" favicon="/thinker.png">
-   <flex class="navbar">
+<Basic title="Website" favicon={thinker}>
+   <div class="navbar">
       <a href="gallery">Gallery</a>
       <a href="projects">Projects</a>
       <a href="likes">Likes</a>
       <a href="socials">Socials</a>
       <a href="artists">Artists</a>
-   </flex>
+   </div>
    <div id="clankerprompt" style="display:none">
       <Picture src={Judgement} alt="JUDGEMENT" layout="full-width" />
       <h1>Are you a clanker?</h1>
@@ -56,6 +57,11 @@ import "../styles/home.css";
          &#10004 Bunger <br />
          &#10006 F T (you sound stupid)<br />
          &#10006 FtRookie (sounds awkward) <br />
+      </p>
+      <h2>Also known as:</h2>
+      <p>
+         Rookie5102<br />
+         CrimeToHumanity<br />
       </p>
    </div>
    <br />
