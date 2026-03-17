@@ -8,7 +8,7 @@
 }
 
 .container img {
-    height: 350px;
+    height: clamp(150px, 20vw, 35vmin);
     width: auto;
     display: block;
     object-fit: contain;
