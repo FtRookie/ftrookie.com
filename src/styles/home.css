@@ -5,8 +5,7 @@ p {
 .icon {
     display: inline;
     height: 1rem;
-    width: fit-content;
-    object-fit: contain;
+    width: auto;
 }
 
 #clankerprompt {
@@ -63,5 +62,6 @@ p {
 
 #info p,
 h2 {
+    display: inline;
     margin: 0;
 }
