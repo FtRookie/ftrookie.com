@@ -1,5 +1,4 @@
 const clankerprompt = document.getElementById("clankerprompt");
-clankerprompt.style.display = "flex";
 if (sessionStorage.getItem("clankerprompted") != "true") {
     clankerprompt.style.display = "flex";
     sessionStorage.setItem("clankerprompted", "true")
