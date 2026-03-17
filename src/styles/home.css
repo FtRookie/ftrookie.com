@@ -4,7 +4,7 @@ p {
 
 .icon {
     display: inline;
-    height: 1vw;
+    height: 1rem;
     width: fit-content;
     object-fit: contain;
 }
