@@ -1,5 +1,5 @@
 :root[data-theme="light"] {
-    --primary-bg: #ffffff;
+    --primary-bg: #f1f1f1;
     --primary-text: #000000;
     --navbar-bg: #222222;
     --navbar-text: #ffffff;
@@ -102,9 +102,9 @@ p {
 
 .credits {
     display: block;
+    position: relative;
     width: 100vw;
     text-align: center;
     padding: 0.25%;
-    flex: 1;
     color: var(--credits);
 }
