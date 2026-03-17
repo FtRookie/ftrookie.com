@@ -48,6 +48,12 @@ p {
     font-size: 275%;
 }
 
+#yippee {
+    width: clamp(150px, 40vw, 500px);
+    height: auto;
+}
+
 #info {
     float: right;
+    width: clamp(200px, 40vw, 500px);
 }

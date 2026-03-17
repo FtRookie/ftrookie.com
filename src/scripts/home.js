@@ -5,11 +5,17 @@ if (sessionStorage.getItem("clankerprompted") != "true") {
 }
 
 setInterval(function () {
-    let m = new Date(
-        new Date().toLocaleString("en-US", {
-            timeZone: "PST",
-        }),
-    );
+    let m = new Date().toLocaleString("en-US", {
+        timeZone: "America/Los_Angeles",
+        timeZoneName: "long",
+        weekday: "long",
+        month: "short",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+        second: "2-digit",
+    })
 
     const d = document.getElementById("timenow");
     if (d) {
