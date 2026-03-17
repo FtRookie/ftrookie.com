@@ -23,30 +23,34 @@ const {
         <Head />
     </head>
     <body>
-        <button
-            transition:animate="none"
-            id="theme-toggle"
-            onclick=`const currentTheme = document.documentElement.getAttribute('data-theme');
+        <div id="viewport">
+            <button
+                transition:animate="none"
+                id="theme-toggle"
+                onclick=`const currentTheme = document.documentElement.getAttribute('data-theme');
                     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                     document.documentElement.setAttribute('data-theme', newTheme);
                     localStorage.setItem('theme', newTheme);`
-            >&#127769</button
-        >
-        <!--due for removal when i create my own-->
-        <h1 id="header" transition:animate="none">
-            {header}
-            <Picture src={favicon} alt="thinker" />
-        </h1>
-        <slot />
-        <div class="credits">
-            <a href="https://i3ym.ru">
-                Thanks to i3ym for making this possible
-            </a>
-            <footer>I host this website on my old PC, it might be slow</footer>
-            <footer>
-                Portions of this website were written with the assistance of
-                LLMs
-            </footer>
+                >&#127769</button
+            >
+            <!--due for removal when i create my own-->
+            <h1 id="header" transition:animate="none">
+                {header}
+                <Picture src={favicon} alt="thinker" />
+            </h1>
+            <slot />
+            <div class="credits">
+                <a href="https://i3ym.ru">
+                    Thanks to i3ym for making this possible
+                </a>
+                <footer>
+                    I host this website on my old PC, it might be slow
+                </footer>
+                <footer>
+                    Portions of this website were written with the assistance of
+                    LLMs
+                </footer>
+            </div>
         </div>
     </body>
 </html>
