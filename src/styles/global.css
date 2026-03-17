@@ -22,7 +22,7 @@ body {
 #viewport {
     display: block;
     justify-self: center;
-    width: clamp(20vh, 100vw, 177.777777777vh);
+    width: clamp(20vh, 2560px, 177.777777777vh);
     height: auto;
     padding: 3%;
 }
@@ -76,7 +76,7 @@ p {
     margin: 10px;
     background-color: var(--navbar-bg);
     color: var(--navbar-text);
-    font-size: 5vmin;
+    font-size: 300%;
     text-decoration: none;
 }
 
