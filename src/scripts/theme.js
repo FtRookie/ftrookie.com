@@ -15,6 +15,7 @@ function initializeTheme() {
 }
 
 // Initialize theme on page load
+initializeTheme();
 document.addEventListener("astro:after-swap", initializeTheme);
 
 // Listen for system preference changes
