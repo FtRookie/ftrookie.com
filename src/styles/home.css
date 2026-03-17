@@ -63,5 +63,6 @@ p {
 
 #info p,
 h2 {
+    display: inline;
     margin: 0;
 }
