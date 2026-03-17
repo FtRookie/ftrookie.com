@@ -3,31 +3,8 @@ import { Picture } from "astro:assets";
 import Basic from "../components/BasicPage.astro";
 import Thinker from "../media/FTRookie_think.png";
 import Judgment from "../media/FTRookie_judge.png";
+import "../styles/projects.css";
 ---
-
-<style>
-    .project {
-        background-color: white;
-        padding: 1%;
-        height: 15vh;
-    }
-    .project a {
-        float: inline-start;
-        display: inline;
-        font-size: 300%;
-        color: black;
-    }
-    .project p {
-        display: block;
-        color: black;
-    }
-    .project img {
-        float: left;
-        display: inline;
-        height: 100%;
-        width: auto;
-    }
-</style>
 
 <Basic title="Projects" favicon={Judgment}>
     <div class="navbar">
@@ -43,7 +20,7 @@ import Judgment from "../media/FTRookie_judge.png";
             <Picture src={Thinker} alt="thinker" />
             <div style="display:inline;margin:auto">
                 <a href="/project/website">This Website</a>
-                <p>something about this website</p>
+                <p>the very website that you are looking at right now!</p>
             </div>
         </article>
     </div>

@@ -1,0 +1,25 @@
+.project {
+    background-color: white;
+    padding: 1%;
+    height: 15vh;
+}
+
+.project a {
+    display: inline;
+    font-size: 300%;
+    color: black;
+}
+
+.project p {
+    font-size: 150%;
+    display: block;
+    color: black;
+}
+
+.project img {
+    float: left;
+    display: inline;
+    height: 100%;
+    width: auto;
+    margin-right: 20px;
+}
