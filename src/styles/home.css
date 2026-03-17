@@ -54,6 +54,14 @@ p {
 }
 
 #info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     float: right;
     width: clamp(200px, 40vw, 500px);
+}
+
+#info p,
+h2 {
+    margin: 0;
 }
