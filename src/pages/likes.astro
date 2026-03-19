@@ -1,6 +1,10 @@
 ---
+import { Picture } from "astro:assets";
 import Basic from "../components/BasicPage.astro";
 import thumbsup from "../media/FTRookie_thumbsup.png";
+import judgment from "../media/FTRookie_judge.png";
+import "../styles/projects.css";
+import Nerd from "../media/nerd.png";
 ---
 
 <Basic title="Likes" favicon={thumbsup}>
@@ -11,5 +15,35 @@ import thumbsup from "../media/FTRookie_thumbsup.png";
         <a href="socials">Socials</a>
         <a href="artists">Artists</a>
     </div>
-    <p>i like cat, playing video game, very awesome</p>
+    <h2>some things I like to do</h2>
+    <div style="display:div;flex-direction:column;">
+        <article class="project">
+            <img
+                src="https://media1.tenor.com/m/wBLJDbomYLoAAAAd/rage-video-game.gif"
+                alt="ragedoge"
+            />
+            <div style="display:inline;margin:auto">
+                <a href="/likes/gaming">Gaming</a>
+                <p>I play a lot of video games</p>
+            </div>
+        </article>
+        <article class="project">
+            <img
+                src="https://media1.tenor.com/m/oS5SFKhlWYwAAAAd/angry-cat.gif"
+                alt="angrycatlaptop"
+                style="object-fit: cover;"
+            />
+            <div style="display:inline;margin:auto">
+                <a href="/likes/coding">Coding</a>
+                <p>I don't do it too often but I guess it's okay</p>
+            </div>
+        </article>
+        <article class="project">
+            <Picture src={Nerd} alt="nerd" />
+            <div style="display:inline;margin:auto">
+                <a href="/likes/pcbuilding">PC Building</a>
+                <p>I built my own computer and like to discuss PC hardware</p>
+            </div>
+        </article>
+    </div>
 </Basic>

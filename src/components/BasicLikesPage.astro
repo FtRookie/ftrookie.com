@@ -1,0 +1,14 @@
+---
+import Basic from "../components/BasicPage.astro";
+import thumbsup from "../media/FTRookie_thumbsup.png";
+const {
+    title = "FtRookie",
+    favicon = thumbsup,
+    header = `FtRookie's ${title}`,
+} = Astro.props;
+---
+
+<Basic title={title} header={header} favicon={favicon}>
+    <a class="naventry" href="../likes">Back</a>
+    <slot />
+</Basic>

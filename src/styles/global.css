@@ -21,10 +21,11 @@ body {
 
 #viewport {
     display: block;
-    justify-self: center;
-    width: clamp(400px, 2560px, min(177.777777777vh, 100vw));
+    margin: auto;
+    width: clamp(25rem, 160rem, min(177.777777777vh, 100vw));
     height: auto;
-    padding: 3%
+    padding-left: 3vmax;
+    padding-right: 3vmax;
 }
 
 h1,
@@ -56,6 +57,8 @@ em {
 p {
     color: var(--primary-text);
     font-size: 20px;
+    /* 75 character rule for readability */
+    max-width: 75ch;
 }
 
 .navbar {
