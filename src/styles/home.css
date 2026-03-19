@@ -9,7 +9,7 @@ p {
 }
 
 #yippee {
-    width: clamp(12rem, 45vw, 500px);
+    width: clamp(12rem, 500px, 45%);
     height: auto;
 }
 
@@ -18,7 +18,7 @@ p {
     flex-direction: column;
     gap: 10px;
     float: right;
-    width: clamp(12rem, 40vw, 500px);
+    width: clamp(12rem, 500px, 40%);
 }
 
 #info p,
