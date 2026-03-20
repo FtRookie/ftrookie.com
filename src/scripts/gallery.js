@@ -22,4 +22,3 @@ const create = () => {
     });
 };
 create();
-document.addEventListener("astro:page-load", create);
