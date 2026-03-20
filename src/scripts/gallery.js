@@ -6,7 +6,6 @@ data.forEach((e) => {
 })
 
 const create = () => {
-    console.log("hi")
     GLightbox({
         selector: '.glightbox',
         touchNavigation: true,
