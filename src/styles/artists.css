@@ -1,6 +1,14 @@
-h1,
-em {
+p,
+h2,
+em,
+footer {
     text-align: center;
+    display: block;
+    margin: auto;
+}
+
+h2 {
+    font-size: 200%;
 }
 
 #list {
@@ -25,12 +33,6 @@ em {
 .artist img {
     width: clamp(50px, 200px, 20vw);
     height: auto;
-}
-
-h1,
-em {
-    display: block;
-    margin: auto;
 }
 
 i {
