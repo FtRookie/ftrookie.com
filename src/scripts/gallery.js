@@ -1,4 +1,12 @@
-document.addEventListener("astro:page-load", () => {
+import data from "../media/bunger/metadata.json"
+
+const container = document.getElementsByClassName("container")
+data.forEach((e) => {
+
+})
+
+const create = () => {
+    console.log("hi")
     GLightbox({
         selector: '.glightbox',
         touchNavigation: true,
@@ -13,4 +21,6 @@ document.addEventListener("astro:page-load", () => {
         preload: true,
         keyboardNavigation: true,
     });
-});
+};
+create();
+document.addEventListener("astro:page-load", create);

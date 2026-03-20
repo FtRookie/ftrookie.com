@@ -5,6 +5,7 @@
     max-width: 90%;
     justify-content: center;
     margin: 0 auto;
+    list-style: none;
 }
 
 .container img {

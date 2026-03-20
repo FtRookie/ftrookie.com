@@ -20,14 +20,14 @@
     background-color: var(--project-bg2)
 }
 
-.project a {
-    display: inline;
-    font-size: 300%;
+.project div a {
+    font-size: max(1.8rem, 5vmin);
     color: var(--project-text);
 }
 
 .project p {
-    font-size: 150%;
+    font-size: max(1rem, 3vmin);
+    max-width: 100ch;
     display: block;
     color: var(--project-text);
 }
