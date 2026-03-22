@@ -2,51 +2,61 @@
     {
         "path": "rizz.png",
         "author": "b0nette",
-        "date": "2026-2-20"
+        "date": "2026-2-20",
+        "type": "icon"
     },
     {
         "path": "fullbodykoi.png",
         "author": "Vylpen",
-        "date": "2026-2-10"
+        "date": "2026-2-10",
+        "type": "fullbody"
     },
     {
         "path": "FTRookie_angry-alt.png",
         "author": "roweniee",
-        "date": "2025-12-15"
+        "date": "2025-12-15",
+        "type": "sticker"
     },
     {
         "path": "FTRookie_angry.png",
         "author": "roweniee",
-        "date": "2025-12-15"
+        "date": "2025-12-15",
+        "type": "sticker"
     },
     {
         "path": "FTRookie_think.png",
         "author": "roweniee",
-        "date": "2025-12-15"
+        "date": "2025-12-15",
+        "type": "sticker"
     },
     {
         "path": "FTRookie_judge.png",
         "author": "roweniee",
-        "date": "2025-12-15"
+        "date": "2025-12-15",
+        "type": "sticker"
     },
     {
         "path": "FTRookie_thumbsup.png",
         "author": "roweniee",
-        "date": "2025-12-15"
+        "date": "2025-12-15",
+        "type": "sticker"
     },
     {
         "path": "yippee.png",
         "author": "roweniee",
-        "date": "2025-10-2"
+        "date": "2025-10-2",
+        "type": "icon"
     },
     {
         "path": "yayy.png",
         "author": "badjellbungus",
-        "date": "2025-8-24"
+        "date": "2025-8-24",
+        "type": "icon"
     },
     {
         "path": "fullbody.png",
         "author": "Vylpen",
-        "date": "2023-4-23"
+        "date": "2023-4-23",
+        "type": "fullbody"
     }
 ]
