@@ -1,17 +1,19 @@
 :root[data-theme="light"] {
     --primary-bg: #f1f1f1;
-    --primary-text: #000000;
-    --navbar-bg: #222222;
-    --navbar-text: #ffffff;
-    --credits: #222222;
+    --primary-text: #000;
+    --navbar-bg: #222;
+    --navbar-hover: #444;
+    --navbar-text: #fff;
+    --credits: #222;
 }
 
 :root[data-theme="dark"] {
-    --primary-bg: #222222;
-    --primary-text: #ffffff;
-    --navbar-bg: #dddddd;
-    --navbar-text: #000000;
-    --credits: #bbbbbb;
+    --primary-bg: #222;
+    --primary-text: #fff;
+    --navbar-bg: #dadada;
+    --navbar-hover: #fff;
+    --navbar-text: #000;
+    --credits: #bbb;
 }
 
 body {
@@ -22,10 +24,8 @@ body {
 #viewport {
     display: block;
     margin: auto;
-    width: clamp(25rem, 160rem, min(177.777777777vh, 100vw));
+    width: clamp(25rem, 100rem, min(177.777777777vh, 100vw));
     height: auto;
-    padding-left: 3vmax;
-    padding-right: 3vmax;
 }
 
 h1,
@@ -61,27 +61,37 @@ p {
     max-width: 75ch;
 }
 
-.navbar {
-    display: block;
+/*#region Navbar*/
+#navbar {
+    display: flex;
     flex-wrap: nowrap;
     white-space: nowrap;
     flex-direction: row;
-    margin: 15px;
-    border-radius: 15px;
+    gap: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     overflow-x: auto;
     scrollbar-width: thin;
     background-color: var(--navbar-bg);
 }
 
 .naventry,
-.navbar a {
+#navbar a {
     border-radius: 15px;
-    margin: 10px;
     background-color: var(--navbar-bg);
     color: var(--navbar-text);
     font-size: 300%;
     text-decoration: none;
 }
+
+.naventry:hover,
+#navbar a:hover {
+    background-color: var(--navbar-hover);
+}
+
+/*#endregion*/
 
 #theme-toggle {
     position: fixed;
