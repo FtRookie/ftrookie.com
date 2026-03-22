@@ -18,8 +18,10 @@ const {
         <link rel="icon" type="image/png" href={favicon.src} />
         <meta charset="utf-8" />
         <script src="../scripts/theme.js"></script>
-        <script src="https://kit.fontawesome.com/fba9df0135.js" is:inline data-astro-rerun
-        ></script>
+        <script
+            src="https://kit.fontawesome.com/fba9df0135.js"
+            is:inline
+            data-astro-rerun></script>
         <Head />
     </head>
     <body>
@@ -38,8 +40,16 @@ const {
                 {header}
                 <Picture src={favicon} loading={"eager"} alt={favicon.src} />
             </h1>
+            <div id="navbar" transition:animate="none">
+                <a href="/home">Home</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/projects">Projects</a>
+                <a href="/likes">Likes</a>
+                <a href="/socials">Socials</a>
+                <a href="/artists">Artists</a>
+            </div>
             <slot />
-            <div class="credits">
+            <div class="credits" transition:animate="fade">
                 <a href="https://i3ym.ru">
                     Thanks to i3ym for making this possible
                 </a>

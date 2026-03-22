@@ -10,13 +10,6 @@ import thinker from "../media/bunger/FTRookie_think.png";
 ---
 
 <Basic title="Website" favicon={thinker}>
-   <div class="navbar">
-      <a href="gallery">Gallery</a>
-      <a href="projects">Projects</a>
-      <a href="likes">Likes</a>
-      <a href="socials">Socials</a>
-      <a href="artists">Artists</a>
-   </div>
    <div id="clankerprompt" style="display:none">
       <Picture
          src={Judgement}
@@ -82,7 +75,11 @@ import thinker from "../media/bunger/FTRookie_think.png";
          loading={"eager"}
          style="display:block"
       />
-      <Picture src={didyouknow} alt="didyouknow" style="display:block" />
+      <Picture
+         src={didyouknow}
+         alt="didyouknow"
+         style="display:block;max-width:50%;height:auto"
+      />
    </p>
 </Basic>
 <script src="../scripts/home.js"></script>

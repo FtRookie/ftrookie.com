@@ -7,13 +7,6 @@ import Nerd from "../media/nerd.png";
 ---
 
 <Basic title="Likes" favicon={thumbsup}>
-    <div class="navbar">
-        <a href="home">Homepage</a>
-        <a href="gallery">Gallery</a>
-        <a href="projects">Projects</a>
-        <a href="socials">Socials</a>
-        <a href="artists">Artists</a>
-    </div>
     <h2>some things I like to do</h2>
     <div style="display:div;flex-direction:column;">
         <article class="project">
@@ -38,7 +31,7 @@ import Nerd from "../media/nerd.png";
             </div>
         </article>
         <article class="project">
-            <Picture src={Nerd} alt="nerd" />
+            <Picture src={Nerd} alt="nerd" loading={"eager"} />
             <div style="display:inline;margin:auto">
                 <a href="/likes/pcbuilding">PC Building</a>
                 <p>I built my own computer and like to discuss PC hardware</p>
