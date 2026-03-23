@@ -195,4 +195,5 @@ document.addEventListener("astro:page-load", () => {
     const galleryElement = document.querySelector("#gallery");
     if (!galleryElement) return; // Bootleg fucking patch I hate it but must use I guess
     onload();
+    console.log("init gallery.js")
 })
