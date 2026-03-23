@@ -17,115 +17,168 @@ import Fullbody from "../media/bunger/fullbody.png";
 ---
 
 <Basic title="Gallery" favicon={BungsUp}>
-      <div class="navbar">
-            <a href="home">Homepage</a>
-            <a href="projects">Projects</a>
-            <a href="likes">Likes</a>
-            <a href="socials">Socials</a>
-            <a href="artists">Artists</a>
+      <div id="something">
+            <ul id="options">
+                  <button
+                        class="collapsible"
+                        id="sort-direction-button"
+                        data-type="numerical"
+                        data-order="up"
+                  >
+                        sort direction:
+                        <i
+                              id="sort-direction-icon"
+                              class="fa-solid fa-arrow-down-a-z"
+                        >
+                        </i>
+                        <i
+                              id="sort-direction-icon"
+                              class="fa-solid fa-arrow-up-z-a"
+                        >
+                        </i>
+                        <i class="fa-solid fa-arrow-down-1-9"></i>
+                        <i class="fa-solid fa-arrow-up-9-1"></i>
+                  </button>
+                  <div
+                        class="option"
+                        id="collapsible-sort-by"
+                        data-state="collapsed"
+                  >
+                        <button class="collapsible">
+                              sort by: date
+                              <i class="fa-solid fa-angle-right"></i>
+                              <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="collapser"></div>
+                  </div>
+                  <div
+                        class="option"
+                        id="collapsible-filter-author"
+                        data-state="collapsed"
+                  >
+                        <button class="collapsible">
+                              filter: author
+                              <i class="fa-solid fa-angle-right"></i>
+                              <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="collapser"></div>
+                  </div>
+                  <div
+                        class="option"
+                        id="collapsible-filter-type"
+                        data-state="collapsed"
+                  >
+                        <button class="collapsible">
+                              filter: type <i class="fa-solid fa-angle-right"
+                              ></i>
+                              <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="collapser"></div>
+                  </div>
+            </ul>
+            <ul id="gallery">
+                  <li id="rizz">
+                        <a
+                              href={Rizz.src}
+                              data-title="rizz"
+                              data-description="artist: b0nette, based on fortuneisacat"
+                              class="glightbox"
+                        >
+                              <Picture src={Rizz} alt="rizz" />
+                        </a>
+                  </li>
+                  <li id="fullbodykoi">
+                        <a
+                              href={FullBodyKoi.src}
+                              data-title="Full Body Koi"
+                              data-description="artist: Vulpen, commissioned by KENEMONY"
+                              class="glightbox"
+                        >
+                              <Picture src={FullBodyKoi} alt="fullbodykoi" />
+                        </a>
+                  </li>
+                  <li id="angry-alt">
+                        <a
+                              href={AngryAlt.src}
+                              data-title="Angry Alt"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={AngryAlt} alt="angry alt" />
+                        </a>
+                  </li>
+                  <li id="angry">
+                        <a
+                              href={Angry.src}
+                              data-title="Angry"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={Angry} alt="angry" />
+                        </a>
+                  </li>
+                  <li id="judgment">
+                        <a
+                              href={Judgment.src}
+                              data-title="Judgement"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={Judgment} alt="JUDGEMENT" />
+                        </a>
+                  </li>
+                  <li id="thinker">
+                        <a
+                              href={Thinker.src}
+                              data-title="Thinker"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={Thinker} alt="thinker" />
+                        </a>
+                  </li>
+                  <li id="thumbsup">
+                        <a
+                              href={BungsUp.src}
+                              data-title="Thumbs Up"
+                              data-description="artist: roweniee, part of a sticker pack"
+                              class="glightbox"
+                        >
+                              <Picture src={BungsUp} alt="bungs up" />
+                        </a>
+                  </li>
+                  <li id="yippee">
+                        <a
+                              href={Yippee.src}
+                              data-title="Yippee"
+                              data-description="artist: roweniee, my second commission"
+                              class="glightbox"
+                        >
+                              <Picture src={Yippee} alt="yippee" />
+                        </a>
+                  </li>
+                  <li id="yayy">
+                        <a
+                              href={Yayy.src}
+                              data-title="Yayy"
+                              data-description="artist: badjellbungus, from Rate My Avatar"
+                              class="glightbox"
+                        >
+                              <Picture src={Yayy} alt="yayy" />
+                        </a>
+                  </li>
+                  <li id="fullbody">
+                        <a
+                              href={Fullbody.src}
+                              data-title="Full Body"
+                              data-description="artist: Vulpen, very old first commission"
+                              class="glightbox"
+                        >
+                              <Picture src={Fullbody} alt="fullbody" />
+                        </a>
+                  </li>
+            </ul>
       </div>
-      <ul class="container">
-            <li>
-                  <a
-                        href={Rizz.src}
-                        data-title="rizz"
-                        data-description="artist: b0nette, based on fortuneisacat"
-                        class="glightbox"
-                  >
-                        <Picture src={Rizz} alt="rizz" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={FullBodyKoi.src}
-                        data-title="Full Body Koi"
-                        data-description="artist: Vulpen, commissioned by KENEMONY"
-                        class="glightbox"
-                  >
-                        <Picture src={FullBodyKoi} alt="fullbodykoi" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={AngryAlt.src}
-                        data-title="Angry Alt"
-                        data-description="artist: roweniee, part of a sticker pack"
-                        class="glightbox"
-                  >
-                        <Picture src={AngryAlt} alt="angry alt" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={Angry.src}
-                        data-title="Angry"
-                        data-description="artist: roweniee, part of a sticker pack"
-                        class="glightbox"
-                  >
-                        <Picture src={Angry} alt="angry" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={Judgment.src}
-                        data-title="Judgement"
-                        data-description="artist: roweniee, part of a sticker pack"
-                        class="glightbox"
-                  >
-                        <Picture src={Judgment} alt="JUDGEMENT" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={Thinker.src}
-                        data-title="Thinker"
-                        data-description="artist: roweniee, part of a sticker pack"
-                        class="glightbox"
-                  >
-                        <Picture src={Thinker} alt="thinker" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={BungsUp.src}
-                        data-title="Thumbs Up"
-                        data-description="artist: roweniee, part of a sticker pack"
-                        class="glightbox"
-                  >
-                        <Picture src={BungsUp} alt="bungs up" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={Yippee.src}
-                        data-title="Yippee"
-                        data-description="artist: roweniee, my second commission"
-                        class="glightbox"
-                  >
-                        <Picture src={Yippee} alt="yippee" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={Yayy.src}
-                        data-title="Yayy"
-                        data-description="artist: badjellbungus, from Rate My Avatar"
-                        class="glightbox"
-                  >
-                        <Picture src={Yayy} alt="yayy" />
-                  </a>
-            </li>
-            <li>
-                  <a
-                        href={Fullbody.src}
-                        data-title="Full Body"
-                        data-description="artist: Vulpen, very old first commission"
-                        class="glightbox"
-                  >
-                        <Picture src={Fullbody} alt="fullbody" />
-                  </a>
-            </li>
-      </ul>
 </Basic>
 <script src="../scripts/glightbox.min.js"></script>
 <script src="../scripts/gallery.js"></script>
