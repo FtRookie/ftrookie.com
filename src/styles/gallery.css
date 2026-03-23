@@ -26,10 +26,6 @@
     margin-right: min(1rem, 1vmin);
 }
 
-#gallery img[data-hide="true"] {
-    display: none;
-}
-
 .gslide-title {
     color: var(--primary-text) !important;
     font-size: 250% !important;

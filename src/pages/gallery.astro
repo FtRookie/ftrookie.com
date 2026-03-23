@@ -14,6 +14,26 @@ import BungsUp from "../media/bunger/FTRookie_thumbsup.png";
 import Yippee from "../media/bunger/yippee.png";
 import Yayy from "../media/bunger/yayy.png";
 import Fullbody from "../media/bunger/fullbody.png";
+
+export interface CollapsibleElement extends HTMLDivElement {
+      collapsible: HTMLButtonElement;
+      collapser: HTMLDivElement;
+}
+
+export interface Gallery extends HTMLUListElement {
+      images: HTMLLIElement[];
+}
+
+export interface Options extends HTMLUListElement {
+      "sort-direction-button": HTMLButtonElement;
+      "collapsible-sort-by": CollapsibleElement;
+      "collapsible-filter-author": CollapsibleElement;
+      "collapsible-filter-type": CollapsibleElement;
+}
+
+export interface ImageLI extends HTMLLIElement {
+      Image: HTMLImageElement;
+}
 ---
 
 <Basic title="Gallery" favicon={BungsUp}>
@@ -45,7 +65,7 @@ import Fullbody from "../media/bunger/fullbody.png";
                         data-state="collapsed"
                   >
                         <button class="collapsible">
-                              sort by: date
+                              <span id="label-sort-by">sort by: date</span>
                               <i class="fa-solid fa-angle-right"></i>
                               <i class="fa-solid fa-angle-down"></i>
                         </button>
@@ -181,4 +201,4 @@ import Fullbody from "../media/bunger/fullbody.png";
       </div>
 </Basic>
 <script src="../scripts/glightbox.min.js"></script>
-<script src="../scripts/gallery.js"></script>
+<script src="../scripts/gallery.ts"></script>
