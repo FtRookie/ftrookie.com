@@ -1,62 +1,72 @@
 [
     {
+        "title": "rizz",
         "path": "rizz.png",
         "author": "b0nette",
-        "date": "2026-2-20",
+        "date": "2026-02-20",
         "type": "icon"
     },
     {
+        "title": "fullbodykoi",
         "path": "fullbodykoi.png",
-        "author": "Vylpen",
-        "date": "2026-2-10",
+        "author": "vylpen",
+        "date": "2026-02-10",
         "type": "fullbody"
     },
     {
+        "title": "angry-alt",
         "path": "FTRookie_angry-alt.png",
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker"
     },
     {
+        "title": "angry",
         "path": "FTRookie_angry.png",
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker"
     },
     {
+        "title": "thinker",
         "path": "FTRookie_think.png",
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker"
     },
     {
+        "title": "judgment",
         "path": "FTRookie_judge.png",
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker"
     },
     {
+        "title": "thumbsup",
         "path": "FTRookie_thumbsup.png",
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker"
     },
     {
+        "title": "yippee",
         "path": "yippee.png",
         "author": "roweniee",
         "date": "2025-10-2",
         "type": "icon"
     },
     {
+        "title": "yayy",
         "path": "yayy.png",
         "author": "badjellbungus",
-        "date": "2025-8-24",
+        "date": "2025-08-24",
         "type": "icon"
     },
     {
+        "title": "fullbody",
         "path": "fullbody.png",
-        "author": "Vylpen",
-        "date": "2023-4-23",
+        "author": "vylpen",
+        "date": "2023-04-23",
         "type": "fullbody"
     }
 ]
