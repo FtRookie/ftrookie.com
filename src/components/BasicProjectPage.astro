@@ -1,6 +1,7 @@
 ---
 import Basic from "../components/BasicPage.astro";
 import thumbsup from "../media/bunger/FTRookie_thumbsup.png";
+import "../styles/projectpage.css";
 const {
     title = "FtRookie",
     favicon = thumbsup,
@@ -8,7 +9,10 @@ const {
 } = Astro.props;
 ---
 
+<script is:inline data-astro-rerun>
+    document.querySelector(".navbar").style.display = "none";
+</script>
 <Basic title={title} header={header} favicon={favicon}>
-    <a class="naventry" href="../projects">&#60; Back</a>
+    <a class="naventry" href="/projects"> &#60; Back </a>
     <slot />
 </Basic>

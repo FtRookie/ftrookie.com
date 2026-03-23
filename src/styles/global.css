@@ -66,7 +66,7 @@ p {
 }
 
 /*#region Navbar*/
-#navbar {
+.navbar {
     display: flex;
     flex-wrap: nowrap;
     white-space: nowrap;
@@ -82,16 +82,19 @@ p {
 }
 
 .naventry,
-#navbar a {
+.navbar a {
+    display: block;
     border-radius: 15px;
     background-color: var(--navbar-bg);
     color: var(--navbar-text);
-    font-size: 300%;
+    font-size: 3rem;
     text-decoration: none;
+    width: fit-content;
+    padding: 0.25rem, 1rem;
 }
 
 .naventry:hover,
-#navbar a:hover {
+.navbar a:hover {
     background-color: var(--navbar-hover);
 }
 
@@ -137,4 +140,17 @@ p {
     text-align: center;
     padding: 0.25%;
     color: var(--credits);
+}
+
+#content {
+    display: inline-block;
+    width: clamp(10rem, 100vw, 60%);
+}
+
+#info {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    float: right;
+    width: clamp(10rem, 500px, 40%);
 }

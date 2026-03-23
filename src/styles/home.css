@@ -13,19 +13,6 @@ p {
     height: auto;
 }
 
-#content {
-    display: inline-block;
-    width: clamp(10rem, 100vw, 60%);
-}
-
-#info {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 10px;
-    float: right;
-    width: clamp(10rem, 500px, 40%);
-}
-
 #info p,
 h2 {
     display: inline;
