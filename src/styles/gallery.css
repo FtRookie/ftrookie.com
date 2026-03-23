@@ -1,10 +1,8 @@
 #something {
     display: inline-flex;
-    width: min(calc(clamp(16rem, 90%, 75vw) + min(14rem, 18vw)),
-            calc(100vw - min(14rem, 18vw)));
+    position: sticky;
+    width: clamp(22rem, 95%, 95vw);
     align-self: center;
-    max-width: 100vw;
-    transform: translateX(max(-7rem, -9vw));
 }
 
 #gallery {
@@ -19,7 +17,7 @@
 
 #gallery img {
     display: inline;
-    height: clamp(150px, 32.5vmin, 22rem);
+    height: clamp(130px, 32.5vmin, 22rem);
     width: auto;
     object-fit: contain;
     margin-left: min(1rem, 1vmin);
@@ -47,7 +45,7 @@
     padding: 0;
     display: block;
     flex-direction: column;
-    width: min(14rem, 18vw);
+    width: min(14rem, 20vw);
 }
 
 #sort-direction-button i {
