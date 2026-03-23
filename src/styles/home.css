@@ -13,12 +13,17 @@ p {
     height: auto;
 }
 
+#content {
+    display: inline-block;
+    width: clamp(10rem, 100vw, 60%);
+}
+
 #info {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 10px;
     float: right;
-    width: clamp(12rem, 500px, 40%);
+    width: clamp(10rem, 500px, 40%);
 }
 
 #info p,
