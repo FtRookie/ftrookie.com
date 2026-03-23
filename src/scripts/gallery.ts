@@ -144,7 +144,7 @@ const onload = () => {
             const attr1 = li1.Image.getAttribute(`data-metadata-${sortType}`)!;
             const attr2 = li2.Image.getAttribute(`data-metadata-${sortType}`)!;
             return attr1 === attr2 ? 0 : sortType === "date"
-                ? (attr1 < attr2 ? -1 : 1) * dir
+                ? (attr1 < attr2 ? 1 : -1) * dir
                 : attr1.localeCompare(attr2) * dir
         });
         for (const li of sortedImagesArray) {
