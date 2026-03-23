@@ -22,8 +22,7 @@ body {
 }
 
 #viewport {
-    display: flex;
-    flex-direction: column;
+    display: block;
     margin: auto;
     width: clamp(25rem, 100rem, min(177.777777777vh, 100vw));
     height: auto;
