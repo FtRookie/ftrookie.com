@@ -21,16 +21,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#viewport {
-    display: block;
-    margin: auto;
-    width: clamp(25rem, 100rem, min(177.777777777vh, 100vw));
-    height: auto;
+p {
+    color: var(--primary-text);
+    font-size: 20px;
+    /* 75 character rule for readability */
+    max-width: 75ch;
 }
 
-img {
-    max-width: 100%;
-}
 
 h1,
 h2,
@@ -45,27 +42,57 @@ em {
     color: var(--primary-text);
 }
 
-#header {
-    color: var(--primary-text);
+img {
+    max-width: 100%;
+}
+
+/*#region Basic Page Elements */
+#viewport {
     display: block;
-    text-align: center;
-    font-size: 500%;
-    text-decoration: dashed;
+    margin: auto;
+    width: min(100rem, min(177.777777777vh, 100vw));
+    height: auto;
 }
 
-#header img {
-    width: auto;
-    height: 75px;
+#hero {
+    --hero-fontsize: clamp(64px, 5rem, 10vmin);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    gap: 1rem;
+    justify-content: center;
+    margin: auto;
 }
 
-p {
+#hero h1 {
+    display: inline;
     color: var(--primary-text);
-    font-size: 20px;
-    /* 75 character rule for readability */
-    max-width: 75ch;
+    font-size: var(--hero-fontsize);
+    margin: 0px;
+    text-align: center;
 }
 
-/*#region Navbar*/
+#hero img {
+    display: inline;
+    width: auto;
+    height: var(--hero-fontsize);
+}
+
+#content {
+    display: inline-block;
+    width: clamp(10rem, 100vw, 60%);
+}
+
+#info {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    float: right;
+    width: clamp(8rem, 500px, 40%);
+}
+
+/*#region Navbar */
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -100,6 +127,8 @@ p {
 
 /*#endregion*/
 
+/*#region Theme */
+
 #theme-toggle {
     position: fixed;
     top: 20px;
@@ -125,6 +154,7 @@ p {
     opacity: 0.8;
 }
 
+/*#endregion*/
 .credits {
     display: flex;
     width: 100%;
@@ -142,15 +172,4 @@ p {
     color: var(--credits);
 }
 
-#content {
-    display: inline-block;
-    width: clamp(10rem, 100vw, 60%);
-}
-
-#info {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 10px;
-    float: right;
-    width: clamp(10rem, 500px, 40%);
-}
+/*#endregion*/

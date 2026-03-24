@@ -8,7 +8,7 @@ export const partial = true;
 const {
     title = "FtRookie",
     favicon = thumbsup,
-    header = `FtRookie's ${title}`,
+    hero = `FtRookie's ${title}`,
 } = Astro.props;
 ---
 
@@ -36,10 +36,10 @@ const {
                 >&#127769</button
             >
             <!--due for removal when i create my own-->
-            <h1 id="header" transition:animate="none">
-                {header}
+            <div id="hero" transition:animate="none">
+                <h1>{hero}</h1>
                 <Picture src={favicon} loading={"eager"} alt={favicon.src} />
-            </h1>
+            </div>
             <div class="navbar" transition:animate="none">
                 <a href="/home">Home</a>
                 <a href="/gallery">Gallery</a>

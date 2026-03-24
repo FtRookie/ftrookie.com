@@ -5,14 +5,14 @@ import "../styles/projectpage.css";
 const {
     title = "FtRookie",
     favicon = thumbsup,
-    header = `FtRookie's ${title}`,
+    hero = `FtRookie's ${title}`,
 } = Astro.props;
 ---
 
 <script is:inline data-astro-rerun>
     document.querySelector(".navbar").style.display = "none";
 </script>
-<Basic title={title} header={header} favicon={favicon}>
+<Basic title={title} hero={hero} favicon={favicon}>
     <a class="naventry" href="/projects"> &#60; Back </a>
     <slot />
 </Basic>

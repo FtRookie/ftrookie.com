@@ -4,7 +4,7 @@ import thumbsup from "../media/bunger/FTRookie_thumbsup.png";
 const {
     title = "FtRookie",
     favicon = thumbsup,
-    header = `FtRookie's ${title}`,
+    hero = `FtRookie's ${title}`,
     url = Astro.url.pathname,
 } = Astro.props;
 ---
@@ -12,7 +12,7 @@ const {
 <script is:inline data-astro-rerun>
     document.querySelector(".navbar").style.display = "none";
 </script>
-<Basic title={title} header={header} favicon={favicon}>
+<Basic title={title} hero={hero} favicon={favicon}>
     <a class="naventry" href="../likes">&#60; Back</a>
     <slot />
 </Basic>
