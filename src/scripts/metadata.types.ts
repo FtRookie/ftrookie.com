@@ -3,5 +3,5 @@ export interface ImageData {
     path: string
     author: string
     date: string
-    type: string
+    type: "sticker" | "fullbody" | "icon"
 }

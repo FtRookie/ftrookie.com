@@ -24,12 +24,13 @@ export interface Gallery extends HTMLUListElement {
       images: HTMLLIElement[];
 }
 
-export interface Options extends HTMLUListElement {
+export type Options = {
+      instance: HTMLUListElement;
       "sort-direction-button": HTMLButtonElement;
       "collapsible-sort-by": CollapsibleElement;
       "collapsible-filter-author": CollapsibleElement;
       "collapsible-filter-type": CollapsibleElement;
-}
+};
 
 export interface ImageLI extends HTMLLIElement {
       Image: HTMLImageElement;

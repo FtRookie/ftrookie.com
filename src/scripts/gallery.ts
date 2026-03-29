@@ -3,6 +3,14 @@ import data from "../media/bunger/metadata.json"
 import type { CollapsibleElement, Gallery, ImageLI, Options } from '../pages/gallery.astro';
 import type { ImageData } from './metadata.types';
 
+const sortDirectionIconTypes = {
+    date: "numerical",
+    author: "alphabetical",
+    title: "alphabetical"
+} as const;
+type SortDirectionType = keyof typeof sortDirectionIconTypes;
+type SortIconType = typeof sortDirectionIconTypes[SortDirectionType];
+
 const capitalizeFirstLetter = (val: string): string => { // Random function grabbed off the internet
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
@@ -32,41 +40,31 @@ const createInput = (
     return input // returns input so radio can have a default value
 }
 
-const onload = () => {
-    const optionsContainer = document.getElementById("options") as Options
-    const optionsSelectors = [
-        "sort-direction-button",
-        "collapsible-sort-by",
-        "collapsible-filter-author",
-        "collapsible-filter-type",
-    ] as const;
-    for (const s of optionsSelectors) {
-        // Makes you wonder why theres an iteration in the first place
-        const element = optionsContainer.querySelector(`#${s}`)
-        if (!element) throw new Error(`Element with id '${s}' could not be found`)
-        if (s === "sort-direction-button") {
-            optionsContainer[s] = element as HTMLButtonElement
-        } else {
-            optionsContainer[s] = element as CollapsibleElement
-        }
-    }
+const images: Map<ImageData, HTMLImageElement> = new Map()
+const authors: Set<string> = new Set()
+const types: Set<string> = new Set()
 
-    const collapsibles = Array.from(optionsContainer.getElementsByClassName("option")) as CollapsibleElement[]
+
+const onload = () => {
+    const optionsContainer = {} as Options
+    optionsContainer.instance = document.getElementById("options") as HTMLUListElement
+    optionsContainer["sort-direction-button"] = optionsContainer.instance.querySelector("#sort-direction-button")!
+    optionsContainer["collapsible-sort-by"] = optionsContainer.instance.querySelector("#collapsible-sort-by")!
+    optionsContainer["collapsible-filter-author"] = optionsContainer.instance.querySelector("#collapsible-filter-author")!
+    optionsContainer["collapsible-filter-type"] = optionsContainer.instance.querySelector("#collapsible-filter-type")!
+    const collapsibles = Array.from(optionsContainer.instance.querySelectorAll(".option")) as CollapsibleElement[]
 
     const galleryContainer = document.getElementById("gallery") as Gallery
     galleryContainer.images = [];
 
-    const images: Map<ImageData, HTMLImageElement> = new Map()
-    const authors: Set<string> = new Set()
-    const types: Set<string> = new Set()
-
-    for (const imageData of data) {
+    for (const i of data) {
+        const imageData = i as ImageData
         authors.add(imageData.author)
         types.add(imageData.type)
 
         const listItem = document.getElementById(imageData.title) as ImageLI
         galleryContainer.images.push(listItem)
-        const image = listItem.getElementsByClassName("glightbox")[0].getElementsByTagName("img")[0]
+        const image = listItem.querySelector(".glightbox")!.querySelector("img")!
         listItem.Image = image
         images.set(imageData, image)
 
@@ -75,19 +73,11 @@ const onload = () => {
         }
     }
 
-    let sortedImagesArray = Array.from(galleryContainer.getElementsByTagName("li")) as ImageLI[]
-
-    const sortDirectionIconTypes = {
-        date: "numerical",
-        author: "alphabetical",
-        title: "alphabetical"
-    } as const;
-    type SortDirectionType = keyof typeof sortDirectionIconTypes;
-    type SortIconType = typeof sortDirectionIconTypes[SortDirectionType];
+    let sortedImagesArray = Array.from(galleryContainer.querySelectorAll("li")) as ImageLI[]
 
     for (const option of collapsibles) {
-        option.collapsible = option.querySelector(":scope > button")! as HTMLButtonElement
-        option.collapser = option.querySelector(":scope > div")! as HTMLDivElement
+        option.collapsible = option.querySelector("button")!
+        option.collapser = option.querySelector("div")!
     }
 
     const SORT_BY_COLLAPSER = optionsContainer["collapsible-sort-by"].collapser
@@ -179,7 +169,7 @@ const onload = () => {
         }
     }
 
-    optionsContainer.addEventListener("change", (e) => {
+    optionsContainer.instance.addEventListener("change", (e) => {
         if (!(e.target instanceof HTMLInputElement)) return;
         update();
     });
