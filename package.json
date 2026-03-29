@@ -12,7 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@astrojs/check": "^0.9.2",
     "@astrojs/node": "^10.0.1",
     "astro": "^6.0.4",
     "glightbox": "^3.3.1",
