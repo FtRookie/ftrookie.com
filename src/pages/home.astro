@@ -3,13 +3,14 @@ import Basic from "../components/BasicPage.astro";
 import { Picture } from "astro:assets";
 import Judgment from "../media/bunger/FTRookie_judge.png";
 import Yippee from "../media/bunger/yippee.png";
+import newwip from "../media/bunger/rizzwip.png";
+import reference from "../media/fortuneisacat.jpg";
 import blehh from "../media/blehh.gif";
-import didyouknow from "../media/didyouknow.gif";
 import "../styles/home.css";
 import thinker from "../media/bunger/FTRookie_think.png";
 ---
 
-<Basic title="Website" favicon={thinker}>
+<Basic title="FtRookie's Website" hero="FtRookie's Website" favicon={thinker}>
    <div id="clankerprompt" style="display:none">
       <Picture
          src={Judgment}
@@ -38,20 +39,29 @@ import thinker from "../media/bunger/FTRookie_think.png";
       <p>I am the bunger, you will be bungled</p>
       <br />
       <Picture id="yippee" src={Yippee} alt="roweniee" loading={"eager"} />
+      <br />
       <p>
          <br />
-         poopoo peepee <br />
-         mcstinky
+         New art currently in progress by rowen!
+         <div>
+            <Picture
+               src={newwip}
+               alt="new WIP"
+               loading={"eager"}
+               style="width:40%;height:auto"
+            />
+            <Picture
+               src={reference}
+               alt="fortuneisacat"
+               loading={"eager"}
+               style="width:40%;aspect-ratio:1;height:auto;object-fit:contain;"
+            />
+         </div>
          <Picture
             src={blehh}
             alt="freaky"
             loading={"eager"}
             style="display:block"
-         />
-         <Picture
-            src={didyouknow}
-            alt="didyouknow"
-            style="display:block;max-width:100%;height:auto"
          />
       </p>
    </div>

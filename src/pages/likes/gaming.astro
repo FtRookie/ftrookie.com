@@ -1,17 +1,55 @@
 ---
 import { Picture } from "astro:assets";
 import BasicLikesPage from "../../components/BasicLikesPage.astro";
-import Judgment from "../../media/bunger/FTRookie_judge.png";
+import Thumbsup from "../../media/bunger/FTRookie_thumbsup.png";
 import saywhaaat from "../../media/saywhat.png";
 ---
 
-<BasicLikesPage title="PC Building" favicon={Judgment}>
+<BasicLikesPage title="Gaming" favicon={Thumbsup}>
     <br />
-    <h2>Yet to write an entry</h2>
+    <h2>I like video games</h2>
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse
-        saepe deserunt, culpa quos nemo a fugit corporis natus dolor expedita
-        maxime qui accusamus impedit nulla repudiandae vel, iusto fugiat?
+        I tend toward to play First-Person Shooters and military vehicle combat,
+        although these aren't the only type of games I play
     </p>
+    <h3>some recent games i've been playing include:</h3>
+    <ul>
+        <li>
+            <a href="https://store.steampowered.com/app/1422450/Deadlock/">
+                Deadlock
+            </a>
+        </li>
+        <li>
+            <a href="https://store.steampowered.com/app/1144200/Ready_or_Not/">
+                Ready or Not
+            </a>
+        </li>
+        <li>
+            <a
+                href="https://www.roblox.com/games/9503261072/ENGINEER-Tower-Defense-X-BETA"
+            >
+                Tower Defense X (Roblox)
+            </a>
+        </li>
+        <li>
+            <a
+                href="https://store.steampowered.com/app/3643170/Roadside_Research/"
+            >
+                Roadside Research
+            </a>
+        </li>
+        <li>
+            <a
+                href="https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/"
+            >
+                Rainbow Six Siege
+            </a>
+        </li>
+        <li>
+            <a href="https://store.steampowered.com/app/236390/War_Thunder/">
+                War Thunder
+            </a>
+        </li>
+    </ul>
     <Picture src={saywhaaat} alt="saywhaaat" />
 </BasicLikesPage>
