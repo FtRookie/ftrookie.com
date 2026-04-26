@@ -14,42 +14,52 @@ import { Image } from "astro:assets";
     <h2>some things I like to do</h2>
     <div style="display:div;flex-direction:column;">
         <article class="project">
-            <Image src={RageDoge} alt="ragedoge" loading={"eager"} />
-            <div style="display:inline;margin:auto">
-                <a href="/likes/gaming">Gaming</a>
-                <p>I play a lot of video games</p>
-            </div>
+            <a href="/likes/gaming">
+                <Image src={RageDoge} alt="ragedoge" loading={"eager"} />
+                <div style="display:inline;margin:auto">
+                    <h2>Gaming</h2>
+                    <p>I play a lot of video games</p>
+                </div>
+            </a>
         </article>
         <article class="project">
-            <Picture
-                src={CatJam}
-                alt="music"
-                loading={"eager"}
-                style="object-fit: cover;"
-            />
-            <div style="display:inline;margin:auto">
-                <a href="/likes/musictastes">Music Tastes</a>
-                <p>I listen to lots of different types of music</p>
-            </div>
+            <a href="/likes/musictastes">
+                <Picture
+                    src={CatJam}
+                    alt="music"
+                    loading={"eager"}
+                    style="object-fit: cover;"
+                />
+                <div style="display:inline;margin:auto">
+                    <h2>Music Tastes</h2>
+                    <p>I listen to lots of different types of music</p>
+                </div>
+            </a>
         </article>
         <article class="project">
-            <Image
-                src={AngryCat}
-                alt="angrycatlaptop"
-                loading={"eager"}
-                style="object-fit: cover;"
-            />
-            <div style="display:inline;margin:auto">
-                <a href="/likes/coding">Coding</a>
-                <p>I don't do it too often but I guess it's okay</p>
-            </div>
+            <a href="/likes/coding">
+                <Image
+                    src={AngryCat}
+                    alt="angrycatlaptop"
+                    loading={"eager"}
+                    style="object-fit: cover;"
+                />
+                <div style="display:inline;margin:auto">
+                    <h2>Coding</h2>
+                    <p>I don't do it too often but I guess it's okay</p>
+                </div>
+            </a>
         </article>
         <article class="project">
-            <Picture src={Nerd} alt="nerd" loading={"eager"} />
-            <div style="display:inline;margin:auto">
-                <a href="/likes/pcbuilding">PC Building</a>
-                <p>I built my own computer and like to discuss PC hardware</p>
-            </div>
+            <a href="/likes/pcbuilding">
+                <Picture src={Nerd} alt="nerd" loading={"eager"} />
+                <div style="display:inline;margin:auto">
+                    <h2>PC Building</h2>
+                    <p>
+                        I built my own computer and like to discuss PC hardware
+                    </p>
+                </div>
+            </a>
         </article>
     </div>
 </Basic>

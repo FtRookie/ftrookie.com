@@ -5,7 +5,7 @@
 }
 
 :root[data-theme="dark"] {
-    --project-bg1: #f1f1f1;
+    --project-bg1: #ddd;
     --project-bg2: #ccc;
     --project-text: #000000;
 }
@@ -20,8 +20,14 @@
     background-color: var(--project-bg2)
 }
 
-.project div a {
+a {
+    text-decoration: none;
+}
+
+.project div h2 {
     font-size: max(1.8rem, 5vmin);
+    font-weight: normal;
+    text-decoration: underline;
     color: var(--project-text);
 }
 

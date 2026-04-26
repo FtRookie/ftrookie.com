@@ -1,18 +1,24 @@
 :root[data-theme="light"] {
-    --primary-bg: #f1f1f1;
-    --primary-text: #000;
+    --primary-bg: #ddd;
+    --primary-text: #111;
+    --secondary-text: #222;
+
     --navbar-bg: #222;
     --navbar-hover: #444;
     --navbar-text: #fff;
+
     --credits: #222;
 }
 
 :root[data-theme="dark"] {
     --primary-bg: #222;
     --primary-text: #fff;
+    --secondary-text: #eee;
+
     --navbar-bg: #dadada;
     --navbar-hover: #fff;
     --navbar-text: #000;
+
     --credits: #bbb;
 }
 
@@ -39,17 +45,6 @@ footer,
 li,
 em {
     color: var(--primary-text);
-}
-
-#info p,
-h2 {
-    display: inline;
-    margin: 0;
-}
-
-#info h2 {
-    font-size: 150%;
-    text-decoration: underline;
 }
 
 img {
@@ -100,6 +95,21 @@ img {
     gap: 10px;
     float: right;
     width: clamp(8rem, 500px, 40%);
+}
+
+#info p,
+h2 {
+    display: inline;
+    margin: 0;
+}
+
+#info h2 {
+    font-size: 150%;
+    text-decoration: underline;
+}
+
+#info p {
+    color: var(--secondary-text)
 }
 
 /*#region Navbar */
