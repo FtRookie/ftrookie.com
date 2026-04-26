@@ -9,15 +9,8 @@ p {
 }
 
 #yippee {
-
     width: clamp(12rem, 500px, 45%);
     height: auto;
-}
-
-#info p,
-h2 {
-    display: inline;
-    margin: 0;
 }
 
 /*#region Clankerprompt*/

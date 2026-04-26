@@ -23,11 +23,10 @@ body {
 
 p {
     color: var(--primary-text);
-    font-size: 20px;
+    font-size: 1.25rem;
     /* 75 character rule for readability */
     max-width: 75ch;
 }
-
 
 h1,
 h2,
@@ -40,6 +39,17 @@ footer,
 li,
 em {
     color: var(--primary-text);
+}
+
+#info p,
+h2 {
+    display: inline;
+    margin: 0;
+}
+
+#info h2 {
+    font-size: 150%;
+    text-decoration: underline;
 }
 
 img {
