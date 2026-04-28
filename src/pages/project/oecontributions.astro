@@ -2,32 +2,181 @@
 import { Picture } from "astro:assets";
 import BasicProjectPage from "../../components/BasicProjectPage.astro";
 import Judgment from "../../media/bunger/FTRookie_judge.png";
-import saywhaaat from "../../media/saywhat.png";
+import PlaneCrazy from "../../media/PlaneCrazyThumbnail.png";
+import PlaneEngineersThumbnail from "../../media/PlaneEngineersThumbnail.png";
+import PlaneEngineersBanner from "../../media/PlaneEngineersBanner.png";
+import Blocksworld from "../../media/Blocksworld.png";
+import DMCA1 from "../../media/DMCA1.png";
+import DMCA4 from "../../media/DMCA4.png";
+import "../../styles/oecontributions.css";
+import "../../styles/glightbox.min.css";
 ---
 
 <BasicProjectPage title="OE Contributions" favicon={Judgment}>
+    <br />
     <div id="content">
-        <p>hi3ym</p>
-        <Picture src={saywhaaat} alt="saywhaaat" />
-        <a
-            style="display:block"
-            href="https://github.com/FtRookie/overengineered">Dead repo xd</a
+        <h2 class="chapterheader">Origins</h2>
+        <p>
+            As an engineering-aligned creative, I started out playing games like
+            Blocksworld, a sandbox building game, at a young age. Similarly on
+            the Roblox platform, I found Plane Crazy, and played it for a very
+            long time. I have 2400 hours on it as of today. Disillusioned with
+            the state of the game and the lack of updates, I decided to move on
+            from Plane Crazy.
+        </p>
+
+        <div class="imagebar" style="height: 250px;">
+            <Picture src={Blocksworld} alt="Blocksworld" loading={"eager"} />
+            <Picture src={PlaneCrazy} alt="Plane Crazy" loading={"eager"} />
+        </div>
+
+        <h2 class="chapterheader">Finding Plane Engineers</h2>
+        <p>
+            I got bored one day and decided to look on the Roblox discover page.
+            I found a game called Plane Engineers, decided to try it and I found
+            the flight and impact destruction physics to be very fun.
+            Furthermore, I discovered that the game had a logic system that
+            allowed for control systems, and that is when I fell in love with
+            the game.
+        </p>
+        <div class="imagebar" style="height:300px">
+            <a
+                href={PlaneEngineersThumbnail.src}
+                data-title="Original Plane Engineers Thumbnail"
+                class="glightbox"
+            >
+                <Picture
+                    src={PlaneEngineersThumbnail}
+                    alt="PE Thumbnail"
+                    loading={"eager"}
+                />
+            </a>
+            <a
+                href={PlaneEngineersBanner.src}
+                data-title="Plane Engineers Banner"
+                class="glightbox"
+            >
+                <Picture
+                    src={PlaneEngineersBanner}
+                    alt="PE Banner"
+                    loading={"eager"}
+                />
+            </a>
+        </div>
+        <h2 class="chapterheader">Initial Involvement</h2>
+        <p>
+            As a committed player with a lot of sandbox experience and a lot of
+            feedback, I was very vocal in the community and garnered a
+            reputation, soon becoming a tester. I quickly befriended the
+            developers, <b>Maks_gaming</b>, <b>i3ym</b>, and
+            <b>samlovebutter</b>. By request, created a plane tutorial which was
+            then adopted into the game.
+        </p>
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/t3BecB7mwgc"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            style="margin-top:1.5rem;"
         >
-        <footer>feeble creature</footer>
+        </iframe>
+        <footer>maks changed aero and the plane is kil</footer>
+        <h2 class="chapterheader">DMCA Takedowns</h2>
+        <p>
+            <b>Maks</b>, originally the developer of <i
+                >Build A Plane To Crash (BAPTC)</i
+            >, used public Toolbox assets from Roblox Studio in order to create
+            BAPTC, including using Rickje's assets which were accidentally
+            published to Toolbox.
+            <b>Rickje139</b>, the developer of <i>Plane Crazy</i>, got <i
+                >Plane Engineers</i
+            >
+            taken down through a DMCA claim. He claimed that Plane Engineers infringed
+            on his copyright because of 'stolen assets' from Plane Crazy. Plane Engineers
+            was the successor to <i>BAPTC</i>, but shares
+            <b><u>no framework</u></b> with <i>BAPTC</i>, the games were not
+            even written in the same language, with <i>BAPTC</i> being in
+            <u>Lua</u>, and <i>Plane Engineers</i> being in <u>Typescript</u> respectively.
+        </p>
+        <br />
+        <p>
+            Players complained about the down time, which was a full 14 days to
+            dispute each claim. At first, the developers opened
+            <i>Test Engineers</i> to the public, but shortly after,
+            <i>Test Engineers</i> was taken down with a DMCA claim. After several
+            takedowns, the developers started reuploading the game from different
+            accounts since their original accounts were banned because of the claims.
+        </p>
+        <div class="imagebar" style="height:auto">
+            <a
+                href={DMCA1.src}
+                data-title="First DMCA"
+                data-description="The first fraudulent DMCA claim used to take down Plane Engineers"
+                class="glightbox"
+            >
+                <Picture src={DMCA1} alt="1st DMCA Claim" loading={"eager"} />
+            </a>
+            <a
+                href={DMCA4.src}
+                data-title="Fourth DMCA"
+                data-description="Test Engineers was taken down after it opened to the public"
+                class="glightbox"
+            >
+                <Picture src={DMCA4} alt="2nd DMCA Claim" loading={"eager"} />
+            </a>
+        </div>
+        <h2 class="chapterheader">Learning How 2 Open-Source</h2>
+        <p>
+            The developers made the decision to make the game Open Sourced,
+            allowing players to contribute.
+            <br />
+            <br />
+            Previously, I never worked on anything other than my own personal projects
+            in Roblox Studio written in Lua. In contrast, Overengineered was written
+            in Typescript and managed via Github. Working on Overengineered was what
+            taught me how to use Github and create pull requests. <b>i3ym</b> specifically,
+            provided me with a lot of guidance through many of the issues with my
+            <a href="https://github.com/anywaymachines/overengineered/pull/8">
+                first PR
+            </a>.
+        </p>
+        <h2 class="chapterheader">Now What?</h2>
+        <p>
+            As the <u>decision was made to give up on the Roblox platform</u>,
+            the game repository was archived and no longer uploaded to the
+            platform. I have stopped my contributions, and the developers are
+            currently working on an off-platform sequel, free from
+            <b>Rickje139</b>'s abuse of the Roblox DMCA system'. As of now, the
+            details of the new game are unknown and the basic framework of the
+            game is being laid out, but it is not even guaranteed that they will
+            finish the sequel.
+        </p>
     </div>
     <div id="info">
+        <a href="https://github.com/anywaymachines">Original Developers</a>
+        <a href="https://github.com/anywaymachines/overengineered">
+            Original Repository (Archive)
+        </a>
+        <a
+            style="display:block"
+            href="https://github.com/FtRookie/overengineered">My Fork</a
+        >
         <h2>Things I contributed</h2>
         <ul>
             <li>Propellant Blocks</li>
             <li>Tracer Block</li>
             <li>Proximity Scanner/Emitter</li>
-            <li>Extension of Laser Block range</li>
-            <li>Scale Block</li>
+            <li>Laser Block Range Extension</li>
+            <li>Scale Block &#127820</li>
             <li>Different seat blocks</li>
             <li>Lamp Shapes</li>
             <li>
                 <a
-                    href="https://github.com/anywaymachines/overengineered/pulls?q=is%3Apr+author%3AFtRookie+"
+                    href="https://github.com/anywaymachines/overengineered/pulls?q=author%3AFtRookie"
                 >
                     various other things
                 </a>
@@ -35,3 +184,5 @@ import saywhaaat from "../../media/saywhat.png";
         </ul>
     </div>
 </BasicProjectPage>
+<script src="../../scripts/glightbox.min.js"></script>
+<script src="../../scripts/oecontributions.ts"></script>

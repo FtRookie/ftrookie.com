@@ -2,6 +2,7 @@
     --primary-bg: #ddd;
     --primary-text: #111;
     --secondary-text: #222;
+    --tertiary-text: #444;
 
     --navbar-bg: #222;
     --navbar-hover: #444;
@@ -14,6 +15,7 @@
     --primary-bg: #222;
     --primary-text: #fff;
     --secondary-text: #eee;
+    --tertiary-text: #ccc;
 
     --navbar-bg: #dadada;
     --navbar-hover: #fff;
@@ -41,10 +43,17 @@ h4,
 h5,
 h6,
 a,
-footer,
 li,
 em {
     color: var(--primary-text);
+}
+
+a:hover {
+    color: var(--tertiary-text);
+}
+
+footer {
+    color: var(--tertiary-text);
 }
 
 img {
