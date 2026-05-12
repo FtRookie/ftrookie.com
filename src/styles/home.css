@@ -8,6 +8,10 @@ p {
     width: auto;
 }
 
+img {
+    margin-bottom: 1rem;
+}
+
 #yippee {
     width: clamp(12rem, 500px, 45%);
     height: auto;
