@@ -4,76 +4,87 @@
         "path": "wafflerizz.png",
         "author": "waffles",
         "date": "2026-05-11",
-        "type": "halfbody"
+        "type": "halfbody",
+        "price": 20
     },
     {
         "title": "rizz",
         "path": "rizz.png",
         "author": "b0nette",
         "date": "2026-02-20",
-        "type": "icon"
+        "type": "icon",
+        "price": 25
     },
     {
         "title": "fullbodykoi",
         "path": "fullbodykoi.png",
         "author": "vylpen",
         "date": "2026-02-10",
-        "type": "fullbody"
+        "type": "fullbody",
+        "price": 0
     },
     {
         "title": "angry-alt",
         "path": "FTRookie_angry-alt.png",
         "author": "roweniee",
         "date": "2025-12-15",
-        "type": "sticker"
+        "type": "sticker",
+        "price": 0
     },
     {
         "title": "angry",
         "path": "FTRookie_angry.png",
         "author": "roweniee",
         "date": "2025-12-15",
-        "type": "sticker"
+        "type": "sticker",
+        "price": 30
     },
     {
         "title": "thinker",
         "path": "FTRookie_think.png",
         "author": "roweniee",
         "date": "2025-12-15",
-        "type": "sticker"
+        "type": "sticker",
+        "price": 30
     },
     {
         "title": "judgment",
         "path": "FTRookie_judge.png",
         "author": "roweniee",
         "date": "2025-12-15",
-        "type": "sticker"
+        "type": "sticker",
+        "price": 30
     },
     {
         "title": "thumbsup",
         "path": "FTRookie_thumbsup.png",
         "author": "roweniee",
         "date": "2025-12-15",
-        "type": "sticker"
+        "type": "sticker",
+        "price": 0
     },
     {
         "title": "yippee",
         "path": "yippee.png",
         "author": "roweniee",
         "date": "2025-10-02",
-        "type": "icon"
+        "type": "icon",
+        "price": 35
     },
     {
         "title": "yayy",
         "path": "yayy.png",
         "author": "badjellbungus",
         "date": "2025-08-24",
-        "type": "icon"
+        "type": "icon",
+        "price": 0
     },
     {
         "title": "fullbody",
         "path": "fullbody.png",
         "author": "vylpen",
         "date": "2023-04-23",
-        "type": "fullbody"
+        "type": "fullbody",
+        "price": 40
     }
 ]
