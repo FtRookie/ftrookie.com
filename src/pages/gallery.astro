@@ -14,6 +14,7 @@ import BungsUp from "../media/bunger/FTRookie_thumbsup.png";
 import Yippee from "../media/bunger/yippee.png";
 import Yayy from "../media/bunger/yayy.png";
 import Fullbody from "../media/bunger/fullbody.png";
+import Wafflerizz from "../media/bunger/wafflerizz.png";
 
 export interface CollapsibleElement extends HTMLDivElement {
       collapsible: HTMLButtonElement;
@@ -98,6 +99,16 @@ export interface ImageLI extends HTMLLIElement {
                   </div>
             </ul>
             <ul id="gallery">
+                  <li id="wafflerizz">
+                        <a
+                              href={Wafflerizz.src}
+                              data-title="rizznetre"
+                              data-description="artist: Waffles, rizzly bear"
+                              class="glightbox"
+                        >
+                              <Picture src={Wafflerizz} alt="wafflerizz" />
+                        </a>
+                  </li>
                   <li id="rizz">
                         <a
                               href={Rizz.src}
