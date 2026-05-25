@@ -1,15 +1,30 @@
 ---
 import { Image } from "astro:assets";
+
+interface Props {
+    author: string;
+    song: string;
+    image: string;
+}
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/media/albumcovers/*.{json,jpg,png,gif}",
+    "/src/media/albumcovers/*.{jpg,png,gif}",
 );
-const { author = "", song = "", image = "" } = Astro.props;
+const { author, song, image } = Astro.props;
 const imageModule = await images[`/src/media/albumcovers/${image}`]?.();
 ---
 
 <li class="album">
     <div>
-        {imageModule && <Image src={imageModule.default} alt={`${author} - ${song}`} loading="lazy" />}
+        {
+            imageModule && (
+                <Image
+                    src={imageModule.default}
+                    alt={`${author} - ${song}`}
+                    loading="lazy"
+                />
+            )
+        }
         <h2>{author} - {song}</h2>
     </div>
 </li>

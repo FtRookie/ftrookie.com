@@ -1,72 +1,36 @@
 ---
 import Basic from "../components/BasicPage.astro";
 import thumbsup from "../media/bunger/FTRookie_thumbsup.png";
+import "../styles/socials.css";
+
+interface Social {
+    name: string;
+    icon: string;
+    url: string;
+}
+
+const socials: Social[] = [
+    { name: "Discord",     icon: "fa-brands fa-discord",      url: "https://www.discord.com/users/484529511468236802" },
+    { name: "Youtube",     icon: "fa-brands fa-youtube",      url: "https://www.youtube.com/@FtRookie" },
+    { name: "Roblox",      icon: "fa-solid fa-user",          url: "https://www.roblox.com/users/238427763/profile" },
+    { name: "Steam",       icon: "fa-brands fa-steam",        url: "https://steamcommunity.com/id/FtRookie/" },
+    { name: "Github",      icon: "fa-brands fa-github",       url: "https://github.com/FtRookie" },
+    { name: "Spotify",     icon: "fa-brands fa-spotify",      url: "https://open.spotify.com/user/rookie5102" },
+    { name: "Email",       icon: "fa-solid fa-envelope",      url: "mailto:email@ftrookie.com" },
+    { name: "Ko-Fi",       icon: "fa-brands fa-ko-fi",        url: "https://ko-fi.com/ftrookie" },
+    { name: "Twitter",     icon: "fa-brands fa-twitter",      url: "https://x.com/ft_rookie" },
+    { name: "FurAffinity", icon: "fa-solid fa-paw",           url: "https://www.furaffinity.net/user/ftrookie" },
+    { name: "Reddit",      icon: "fa-brands fa-reddit-alien", url: "https://www.reddit.com/user/FtRookie/" },
+];
 ---
 
-<style>
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    li {
-        font-size: 300%;
-    }
-    i {
-        color: var(--primary-text);
-    }
-    a {
-        margin: 15px;
-    }
-</style>
-
 <Basic title="Socials" favicon={thumbsup}>
-    <ul>
-        <li>
-            <i class="fa-brands fa-discord"></i>
-            <a href="https://www.discord.com/users/484529511468236802"
-                >Discord
-            </a>
-        </li>
-        <li>
-            <i class="fa-brands fa-youtube"></i>
-            <a href="https://www.youtube.com/@FtRookie">Youtube</a>
-        </li>
-        <li>
-            <i class="fa-solid fa-user"></i>
-            <a href="https://www.roblox.com/users/238427763/profile">Roblox</a>
-        </li>
-        <li>
-            <i class="fa-brands fa-steam"></i>
-            <a href="https://steamcommunity.com/id/FtRookie/">Steam</a>
-        </li>
-        <li>
-            <i class="fa-brands fa-github"></i>
-            <a href="https://github.com/FtRookie">Github</a>
-        </li>
-        <li>
-            <i class="fa-brands fa-spotify"></i>
-            <a href="https://open.spotify.com/user/rookie5102">Spotify</a>
-        </li>
-        <li>
-            <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:email@ftrookie.com">Email</a>
-        </li>
-        <li>
-            <i class="fa-brands fa-ko-fi"></i>
-            <a href="https://ko-fi.com/ftrookie">Ko-Fi</a>
-        </li>
-        <li>
-            <i class="fa-brands fa-twitter"></i>
-            <a href="https://x.com/ft_rookie">Twitter</a>
-        </li>
-        <li>
-            <i class="fa-solid fa-paw"></i>
-            <a href="https://www.furaffinity.net/user/ftrookie">FurAffinity</a>
-        </li>
-        <li>
-            <i class="fa-brands fa-reddit-alien"></i>
-            <a href="https://www.reddit.com/user/FtRookie/">Reddit</a>
-        </li>
+    <ul id="socials-list">
+        {socials.map((social) => (
+            <li>
+                <i class={social.icon}></i>
+                <a href={social.url}>{social.name}</a>
+            </li>
+        ))}
     </ul>
 </Basic>

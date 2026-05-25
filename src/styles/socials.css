@@ -1,0 +1,25 @@
+#socials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    gap: var(--space-3);
+}
+
+#socials-list li {
+    display: flex;
+    align-items: center;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 0;
+}
+
+#socials-list i {
+    width: 1.5em;
+    text-align: center;
+    color: var(--primary-text);
+}
+
+#socials-list a {
+    margin-left: var(--space-2);
+}

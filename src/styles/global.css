@@ -1,8 +1,14 @@
-:root[data-theme="light"] {
+:root {
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+
     --primary-bg: #ddd;
     --primary-text: #111;
     --secondary-text: #222;
     --tertiary-text: #444;
+    --accent: #5b7fa6;
 
     --navbar-bg: #222;
     --navbar-hover: #444;
@@ -16,6 +22,7 @@
     --primary-text: #fff;
     --secondary-text: #eee;
     --tertiary-text: #ccc;
+    --accent: #7eaad4;
 
     --navbar-bg: #dadada;
     --navbar-hover: #fff;
@@ -27,6 +34,7 @@
 body {
     background-color: var(--primary-bg);
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
 p {
@@ -41,15 +49,51 @@ h2,
 h3,
 h4,
 h5,
-h6,
-a,
+h6 {
+    color: var(--primary-text);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+}
+
+h1 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+
+a:hover {
+    opacity: 0.75;
+}
+
 li,
 em {
     color: var(--primary-text);
 }
 
-a:hover {
-    color: var(--tertiary-text);
+ul,
+ol {
+    padding-left: var(--space-3);
+    margin: var(--space-2) 0;
+}
+
+li {
+    margin-bottom: var(--space-1);
+    line-height: 1.5;
 }
 
 footer {
@@ -107,7 +151,7 @@ img {
 }
 
 #info p,
-h2 {
+#info h2 {
     display: inline;
     margin: 0;
 }
@@ -144,14 +188,21 @@ h2 {
     background-color: var(--navbar-bg);
     color: var(--navbar-text);
     font-size: 3rem;
+    line-height: 1;
     text-decoration: none;
     width: fit-content;
     padding: 0.25rem 1rem;
 }
 
+.naventry,
+.navbar a {
+    transition: background-color 0.15s;
+}
+
 .naventry:hover,
 .navbar a:hover {
     background-color: var(--navbar-hover);
+    opacity: 1;
 }
 
 /*#endregion*/
@@ -202,3 +253,9 @@ h2 {
 }
 
 /*#endregion*/
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
