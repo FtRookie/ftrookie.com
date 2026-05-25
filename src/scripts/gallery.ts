@@ -1,6 +1,7 @@
 import GLightbox from "glightbox";
 import data from "../media/bunger/metadata.json"
-import type { CollapsibleElement, Gallery, ImageLI, Options } from '../pages/gallery.astro';
+import { queryById } from "./dom";
+import type { CollapsibleElement, Gallery, ImageLI, Options, OptionsElements } from './gallery.types';
 import type { ImageData } from './metadata.types';
 
 const sortDirectionIconTypes = {
@@ -11,7 +12,7 @@ const sortDirectionIconTypes = {
 type SortDirectionType = keyof typeof sortDirectionIconTypes;
 type SortIconType = typeof sortDirectionIconTypes[SortDirectionType];
 
-const capitalizeFirstLetter = (val: string): string => { // Random function grabbed off the internet
+const capitalizeFirstLetter = (val: string): string => {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
 const parseData = (data: string): string => {
@@ -37,7 +38,7 @@ const createInput = (
     label.textContent = content;
     div.append(input, label);
     container.appendChild(div);
-    return input // returns input so radio can have a default value
+    return input
 }
 
 const images: Map<ImageData, HTMLImageElement> = new Map()
@@ -46,12 +47,16 @@ const types: Set<string> = new Set()
 
 
 const onload = () => {
-    const optionsContainer = {} as Options
-    optionsContainer.instance = document.getElementById("options") as HTMLUListElement
-    optionsContainer["sort-direction-button"] = optionsContainer.instance.querySelector("#sort-direction-button")!
-    optionsContainer["collapsible-sort-by"] = optionsContainer.instance.querySelector("#collapsible-sort-by")!
-    optionsContainer["collapsible-filter-author"] = optionsContainer.instance.querySelector("#collapsible-filter-author")!
-    optionsContainer["collapsible-filter-type"] = optionsContainer.instance.querySelector("#collapsible-filter-type")!
+    const instance = document.getElementById("options") as HTMLUListElement;
+    const optionsContainer: Options = {
+        instance,
+        ...queryById<OptionsElements>(instance, [
+            "sort-direction-button",
+            "collapsible-sort-by",
+            "collapsible-filter-author",
+            "collapsible-filter-type",
+        ]),
+    };
     const collapsibles = Array.from(optionsContainer.instance.querySelectorAll(".option")) as CollapsibleElement[]
 
     const galleryContainer = document.getElementById("gallery") as Gallery
@@ -83,7 +88,7 @@ const onload = () => {
     const SORT_BY_COLLAPSER = optionsContainer["collapsible-sort-by"].collapser
     for (const sortType of Object.keys(sortDirectionIconTypes)) {
         const i = createInput(SORT_BY_COLLAPSER, "radio", "sort-type", sortType, sortType)
-        if (sortType === "date") i.checked = true; // here, maybe bootleg
+        if (sortType === "date") i.checked = true;
     }
 
     const FILTER_AUTHOR_COLLAPSER = optionsContainer["collapsible-filter-author"].collapser
@@ -102,14 +107,14 @@ const onload = () => {
         const checkedAuthors: string[] = []
         const authorInputs = document.querySelectorAll("input[name='filter-author']:checked")
         for (const authorInput of authorInputs) {
-            const author = parseData(authorInput.id) as ImageData["author"] // filter-author-${author}
+            const author = parseData(authorInput.id) as ImageData["author"]
             checkedAuthors.push(author)
         }
 
         const checkedTypes: string[] = []
         const typeInputs = document.querySelectorAll("input[name='filter-type']:checked")
         for (const typeInput of typeInputs) {
-            const type = parseData(typeInput.id) as ImageData["type"]  // filter-type-${type}
+            const type = parseData(typeInput.id) as ImageData["type"]
             checkedTypes.push(type)
         }
 
@@ -158,7 +163,6 @@ const onload = () => {
         update();
     }
 
-    // Collapsible Sort/Filter options
     for (const collapsible of collapsibles) {
         const collapseButton = collapsible.collapsible
         collapseButton.onclick = () => {
@@ -191,8 +195,6 @@ const onload = () => {
 };
 
 document.addEventListener("astro:page-load", () => {
-    const galleryElement = document.querySelector("#gallery");
-    if (!galleryElement) return; // Bootleg fucking patch I hate it but must use I guess
+    if (!document.querySelector("#gallery")) return;
     onload();
-    console.log("init gallery.ts")
 })

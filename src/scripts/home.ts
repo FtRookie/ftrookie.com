@@ -4,7 +4,7 @@ if (sessionStorage.getItem("clankerprompted") != "true") {
     sessionStorage.setItem("clankerprompted", "true")
 }
 
-setInterval(function () {
+const clockInterval = setInterval(function () {
     let m = new Date().toLocaleString("en-US", {
         timeZone: "America/Los_Angeles",
         timeZoneName: "long",
@@ -22,3 +22,5 @@ setInterval(function () {
         d.textContent = `${m}`;
     }
 });
+
+document.addEventListener("astro:before-swap", () => clearInterval(clockInterval), { once: true });

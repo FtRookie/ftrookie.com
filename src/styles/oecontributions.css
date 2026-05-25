@@ -1,5 +1,5 @@
 #info>a {
-    font-size: x-large;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: bold;
 }
 
@@ -18,5 +18,5 @@
 .chapterheader {
     margin-top: 2rem;
     display: block;
-    font-size: xx-large;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
 }

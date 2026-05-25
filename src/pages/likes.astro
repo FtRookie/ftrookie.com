@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro:assets";
+import { Picture, Image } from "astro:assets";
 import Basic from "../components/BasicPage.astro";
 import thumbsup from "../media/bunger/FTRookie_thumbsup.png";
 import "../styles/projects.css";
@@ -7,12 +7,11 @@ import RageDoge from "../media/ragedoge.gif";
 import CatJam from "../media/catjam.gif";
 import AngryCat from "../media/angrycatlaptop.gif";
 import Nerd from "../media/nerd.png";
-import { Image } from "astro:assets";
 ---
 
 <Basic title="Likes" favicon={thumbsup}>
     <h2>some things I like to do</h2>
-    <div style="display:div;flex-direction:column;">
+    <div style="display:flex;flex-direction:column;">
         <article class="project">
             <a href="/likes/gaming">
                 <Image src={RageDoge} alt="ragedoge" loading={"eager"} />

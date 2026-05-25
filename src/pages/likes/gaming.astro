@@ -3,6 +3,20 @@ import { Picture } from "astro:assets";
 import BasicLikesPage from "../../components/BasicLikesPage.astro";
 import Thumbsup from "../../media/bunger/FTRookie_thumbsup.png";
 import saywhaaat from "../../media/saywhat.png";
+
+interface Game {
+    name: string;
+    url: string;
+}
+
+const recentGames: Game[] = [
+    { name: "Deadlock", url: "https://store.steampowered.com/app/1422450/Deadlock/" },
+    { name: "Ready or Not", url: "https://store.steampowered.com/app/1144200/Ready_or_Not/" },
+    { name: "Tower Defense X (Roblox)", url: "https://www.roblox.com/games/9503261072/ENGINEER-Tower-Defense-X-BETA" },
+    { name: "Roadside Research", url: "https://store.steampowered.com/app/3643170/Roadside_Research/" },
+    { name: "Rainbow Six Siege", url: "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/" },
+    { name: "War Thunder", url: "https://store.steampowered.com/app/236390/War_Thunder/" },
+];
 ---
 
 <BasicLikesPage title="Gaming" favicon={Thumbsup}>
@@ -17,46 +31,11 @@ import saywhaaat from "../../media/saywhat.png";
         <a href="pcbuilding">Info about my rig</a>
         <h2>some recent games i'm playing include:</h2>
         <ul>
-            <li>
-                <a href="https://store.steampowered.com/app/1422450/Deadlock/">
-                    Deadlock
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://store.steampowered.com/app/1144200/Ready_or_Not/"
-                >
-                    Ready or Not
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://www.roblox.com/games/9503261072/ENGINEER-Tower-Defense-X-BETA"
-                >
-                    Tower Defense X (Roblox)
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://store.steampowered.com/app/3643170/Roadside_Research/"
-                >
-                    Roadside Research
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/"
-                >
-                    Rainbow Six Siege
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://store.steampowered.com/app/236390/War_Thunder/"
-                >
-                    War Thunder
-                </a>
-            </li>
+            {recentGames.map((game) => (
+                <li>
+                    <a href={game.url}>{game.name}</a>
+                </li>
+            ))}
         </ul>
     </div>
     <Picture src={saywhaaat} alt="saywhaaat" />

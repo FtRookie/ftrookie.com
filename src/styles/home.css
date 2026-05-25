@@ -12,7 +12,7 @@ img {
     margin-bottom: 1rem;
 }
 
-#yippee {
+.yippee {
     width: clamp(12rem, 500px, 45%);
     height: auto;
 }

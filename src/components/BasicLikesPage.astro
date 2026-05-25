@@ -1,6 +1,14 @@
 ---
 import Basic from "../components/BasicPage.astro";
 import thumbsup from "../media/bunger/FTRookie_thumbsup.png";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+    title?: string;
+    favicon?: ImageMetadata;
+    hero?: string;
+}
+
 const {
     title = "FtRookie",
     favicon = thumbsup,
@@ -8,11 +16,8 @@ const {
 } = Astro.props;
 ---
 
-<Basic title={title} hero={hero} favicon={favicon}>
-    <a class="naventry" href="../likes">&#60; Back</a>
+<Basic title={title} hero={hero} favicon={favicon} showNavbar={false}>
+    <a class="naventry" href="/likes">&#60; Back</a>
     <br />
     <slot />
 </Basic>
-<script is:inline data-astro-rerun>
-    document.querySelector(".navbar").style.display = "none";
-</script>

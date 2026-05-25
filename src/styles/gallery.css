@@ -43,7 +43,7 @@
 /*#region Sorting/Filtering*/
 #options {
     padding: 0;
-    display: block;
+    display: flex;
     flex-direction: column;
     width: min(14rem, 20vw);
 }

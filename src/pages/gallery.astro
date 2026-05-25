@@ -2,40 +2,20 @@
 import Basic from "../components/BasicPage.astro";
 import { Picture } from "astro:assets";
 import "../styles/glightbox.min.css";
-import "../styles/global.css";
 import "../styles/gallery.css";
-import FullBodyKoi from "../media/bunger/fullbodykoi.png";
-import AngryAlt from "../media/bunger/FTRookie_angry-alt.png";
-import Rizz from "../media/bunger/rizz.png";
-import Angry from "../media/bunger/FTRookie_angry.png";
-import Thinker from "../media/bunger/FTRookie_think.png";
-import Judgment from "../media/bunger/FTRookie_judge.png";
 import BungsUp from "../media/bunger/FTRookie_thumbsup.png";
-import Yippee from "../media/bunger/yippee.png";
-import Yayy from "../media/bunger/yayy.png";
-import Fullbody from "../media/bunger/fullbody.png";
-import Wafflerizz from "../media/bunger/wafflerizz.png";
+import data from "../media/bunger/metadata.json";
 
-export interface CollapsibleElement extends HTMLDivElement {
-      collapsible: HTMLButtonElement;
-      collapser: HTMLDivElement;
-}
+const bungerImages = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/media/bunger/*.{png,gif}",
+);
 
-export interface Gallery extends HTMLUListElement {
-      images: HTMLLIElement[];
-}
-
-export type Options = {
-      instance: HTMLUListElement;
-      "sort-direction-button": HTMLButtonElement;
-      "collapsible-sort-by": CollapsibleElement;
-      "collapsible-filter-author": CollapsibleElement;
-      "collapsible-filter-type": CollapsibleElement;
-};
-
-export interface ImageLI extends HTMLLIElement {
-      Image: HTMLImageElement;
-}
+const galleryItems = await Promise.all(
+    data.map(async (item) => {
+        const mod = await bungerImages[`/src/media/bunger/${item.path}`]?.();
+        return { ...item, image: mod?.default };
+    })
+);
 ---
 
 <Basic title="Gallery" favicon={BungsUp}>
@@ -48,24 +28,12 @@ export interface ImageLI extends HTMLLIElement {
                         data-order="up"
                   >
                         sort direction:
-                        <i
-                              id="sort-direction-icon"
-                              class="fa-solid fa-arrow-down-a-z"
-                        >
-                        </i>
-                        <i
-                              id="sort-direction-icon"
-                              class="fa-solid fa-arrow-up-z-a"
-                        >
-                        </i>
+                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                        <i class="fa-solid fa-arrow-up-z-a"></i>
                         <i class="fa-solid fa-arrow-down-1-9"></i>
                         <i class="fa-solid fa-arrow-up-9-1"></i>
                   </button>
-                  <div
-                        class="option"
-                        id="collapsible-sort-by"
-                        data-state="collapsed"
-                  >
+                  <div class="option" id="collapsible-sort-by" data-state="collapsed">
                         <button class="collapsible">
                               <span id="label-sort-by">sort by: date</span>
                               <i class="fa-solid fa-angle-right"></i>
@@ -73,11 +41,7 @@ export interface ImageLI extends HTMLLIElement {
                         </button>
                         <div class="collapser"></div>
                   </div>
-                  <div
-                        class="option"
-                        id="collapsible-filter-author"
-                        data-state="collapsed"
-                  >
+                  <div class="option" id="collapsible-filter-author" data-state="collapsed">
                         <button class="collapsible">
                               filter: author
                               <i class="fa-solid fa-angle-right"></i>
@@ -85,130 +49,28 @@ export interface ImageLI extends HTMLLIElement {
                         </button>
                         <div class="collapser"></div>
                   </div>
-                  <div
-                        class="option"
-                        id="collapsible-filter-type"
-                        data-state="collapsed"
-                  >
+                  <div class="option" id="collapsible-filter-type" data-state="collapsed">
                         <button class="collapsible">
-                              filter: type <i class="fa-solid fa-angle-right"
-                              ></i>
+                              filter: type
+                              <i class="fa-solid fa-angle-right"></i>
                               <i class="fa-solid fa-angle-down"></i>
                         </button>
                         <div class="collapser"></div>
                   </div>
             </ul>
             <ul id="gallery">
-                  <li id="wafflerizz">
-                        <a
-                              href={Wafflerizz.src}
-                              data-title="rizznetre"
-                              data-description="artist: Waffles; what is he staring at?"
-                              class="glightbox"
-                        >
-                              <Picture src={Wafflerizz} alt="wafflerizz" />
-                        </a>
-                  </li>
-                  <li id="rizz">
-                        <a
-                              href={Rizz.src}
-                              data-title="rizz"
-                              data-description="artist: b0nette, based on fortuneisacat"
-                              class="glightbox"
-                        >
-                              <Picture src={Rizz} alt="rizz" />
-                        </a>
-                  </li>
-                  <li id="fullbodykoi">
-                        <a
-                              href={FullBodyKoi.src}
-                              data-title="Full Body Koi"
-                              data-description="artist: Vulpen, commissioned by KENEMONY"
-                              class="glightbox"
-                        >
-                              <Picture src={FullBodyKoi} alt="fullbodykoi" />
-                        </a>
-                  </li>
-                  <li id="angry-alt">
-                        <a
-                              href={AngryAlt.src}
-                              data-title="Angry Alt"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={AngryAlt} alt="angry alt" />
-                        </a>
-                  </li>
-                  <li id="angry">
-                        <a
-                              href={Angry.src}
-                              data-title="Angry"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={Angry} alt="angry" />
-                        </a>
-                  </li>
-                  <li id="judgment">
-                        <a
-                              href={Judgment.src}
-                              data-title="Judgment"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={Judgment} alt="Judgment" />
-                        </a>
-                  </li>
-                  <li id="thinker">
-                        <a
-                              href={Thinker.src}
-                              data-title="Thinker"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={Thinker} alt="thinker" />
-                        </a>
-                  </li>
-                  <li id="thumbsup">
-                        <a
-                              href={BungsUp.src}
-                              data-title="Thumbs Up"
-                              data-description="artist: roweniee, part of a sticker pack"
-                              class="glightbox"
-                        >
-                              <Picture src={BungsUp} alt="bungs up" />
-                        </a>
-                  </li>
-                  <li id="yippee">
-                        <a
-                              href={Yippee.src}
-                              data-title="Yippee"
-                              data-description="artist: roweniee, my second commission"
-                              class="glightbox"
-                        >
-                              <Picture src={Yippee} alt="yippee" />
-                        </a>
-                  </li>
-                  <li id="yayy">
-                        <a
-                              href={Yayy.src}
-                              data-title="Yayy"
-                              data-description="artist: badjellbungus, from Rate My Avatar"
-                              class="glightbox"
-                        >
-                              <Picture src={Yayy} alt="yayy" />
-                        </a>
-                  </li>
-                  <li id="fullbody">
-                        <a
-                              href={Fullbody.src}
-                              data-title="Full Body"
-                              data-description="artist: Vulpen, very old first commission"
-                              class="glightbox"
-                        >
-                              <Picture src={Fullbody} alt="fullbody" />
-                        </a>
-                  </li>
+                  {galleryItems.map((item) => item.image && (
+                        <li id={item.title}>
+                              <a
+                                    href={item.image.src}
+                                    data-title={item.lightboxTitle}
+                                    data-description={item.lightboxDescription}
+                                    class="glightbox"
+                              >
+                                    <Picture src={item.image} alt={item.lightboxTitle} />
+                              </a>
+                        </li>
+                  ))}
             </ul>
       </div>
 </Basic>

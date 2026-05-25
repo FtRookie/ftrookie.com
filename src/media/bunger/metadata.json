@@ -5,7 +5,9 @@
         "author": "waffles",
         "date": "2026-05-11",
         "type": "halfbody",
-        "price": 20
+        "price": 20,
+        "lightboxTitle": "rizznetre",
+        "lightboxDescription": "artist: Waffles; what is he staring at?"
     },
     {
         "title": "rizz",
@@ -13,7 +15,9 @@
         "author": "b0nette",
         "date": "2026-02-20",
         "type": "icon",
-        "price": 25
+        "price": 25,
+        "lightboxTitle": "rizz",
+        "lightboxDescription": "artist: b0nette, based on fortuneisacat"
     },
     {
         "title": "fullbodykoi",
@@ -21,7 +25,9 @@
         "author": "vylpen",
         "date": "2026-02-10",
         "type": "fullbody",
-        "price": 0
+        "price": 0,
+        "lightboxTitle": "Full Body Koi",
+        "lightboxDescription": "artist: Vulpen, commissioned by KENEMONY"
     },
     {
         "title": "angry-alt",
@@ -29,7 +35,9 @@
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker",
-        "price": 0
+        "price": 0,
+        "lightboxTitle": "Angry Alt",
+        "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
         "title": "angry",
@@ -37,7 +45,9 @@
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker",
-        "price": 30
+        "price": 30,
+        "lightboxTitle": "Angry",
+        "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
         "title": "thinker",
@@ -45,7 +55,9 @@
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker",
-        "price": 30
+        "price": 30,
+        "lightboxTitle": "Thinker",
+        "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
         "title": "judgment",
@@ -53,7 +65,9 @@
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker",
-        "price": 30
+        "price": 30,
+        "lightboxTitle": "Judgment",
+        "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
         "title": "thumbsup",
@@ -61,7 +75,9 @@
         "author": "roweniee",
         "date": "2025-12-15",
         "type": "sticker",
-        "price": 0
+        "price": 0,
+        "lightboxTitle": "Thumbs Up",
+        "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
         "title": "yippee",
@@ -69,7 +85,9 @@
         "author": "roweniee",
         "date": "2025-10-02",
         "type": "icon",
-        "price": 35
+        "price": 35,
+        "lightboxTitle": "Yippee",
+        "lightboxDescription": "artist: roweniee, my second commission"
     },
     {
         "title": "yayy",
@@ -77,7 +95,9 @@
         "author": "badjellbungus",
         "date": "2025-08-24",
         "type": "icon",
-        "price": 0
+        "price": 0,
+        "lightboxTitle": "Yayy",
+        "lightboxDescription": "artist: badjellbungus, from Rate My Avatar"
     },
     {
         "title": "fullbody",
@@ -85,6 +105,8 @@
         "author": "vylpen",
         "date": "2023-04-23",
         "type": "fullbody",
-        "price": 40
+        "price": 40,
+        "lightboxTitle": "Full Body",
+        "lightboxDescription": "artist: Vulpen, very old first commission"
     }
 ]

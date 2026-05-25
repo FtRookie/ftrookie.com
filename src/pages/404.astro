@@ -5,39 +5,39 @@ import Thinker from "../media/bunger/FTRookie_think.png";
 import "../styles/global.css";
 ---
 
-<style>
-    div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 5%;
-    }
-    h1 {
-        text-align: center;
-        font-size: min(5rem, 50vh);
-    }
-    p {
-        text-align: center;
-        font-size: 300%;
-        margin: auto;
-    }
-    a {
-        text-align: center;
-        margin: auto;
-        font-size: 200%;
-        margin-top: 1rem;
-    }
-    img {
-        width: 40vmin;
-        height: auto;
-        margin: auto;
-    }
-</style>
-<html lang="en_US">
+<html lang="en">
     <head>
         <Head />
         <script src="../scripts/theme.ts"></script>
+        <style>
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 5%;
+            }
+            h1 {
+                text-align: center;
+                font-size: min(5rem, 50vh);
+            }
+            p {
+                text-align: center;
+                font-size: clamp(1rem, 300%, 3rem);
+                margin: auto;
+            }
+            a {
+                text-align: center;
+                margin: auto;
+                font-size: clamp(1rem, 200%, 2.5rem);
+                margin-top: 1rem;
+            }
+            img {
+                width: 40vmin;
+                height: auto;
+                margin: auto;
+            }
+        </style>
     </head>
     <body>
         <div>

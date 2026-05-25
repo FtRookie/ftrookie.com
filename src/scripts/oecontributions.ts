@@ -17,5 +17,5 @@ document.addEventListener("astro:page-load", () => {
         preload: true,
         keyboardNavigation: true,
     });
-    console.log("init oecontributions.ts")
+
 })
