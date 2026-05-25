@@ -1,0 +1,15 @@
+#albums {
+    list-style: none;
+}
+
+.album img {
+    aspect-ratio: 1;
+    height: min(150px, 10vw);
+    width: auto;
+}
+
+.album h2 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: clamp(0.75rem, 3vmin, 1.25rem);
+}

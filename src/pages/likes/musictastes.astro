@@ -3,6 +3,22 @@ import { Picture } from "astro:assets";
 import BasicLikesPage from "../../components/BasicLikesPage.astro";
 import Judgment from "../../media/bunger/FTRookie_judge.png";
 import saywhaaat from "../../media/saywhat.png";
+import "../../styles/musictastes.css";
+import Album from "../../components/Album.astro";
+
+interface AlbumEntry {
+    author: string;
+    song: string;
+    image: string;
+}
+
+const albums: AlbumEntry[] = [
+    { author: "KaNa", song: "Mimage", image: "MimageEP.jpg" },
+    { author: "Nhato", song: "Tokyo Blue Pipe (KIWAMU Remix)", image: "TokyoBluePipeRemixes.jpg" },
+    { author: "Shingo Nakamura", song: "1247", image: "ShingoNakamuraDays.jpg" },
+    { author: "Shingo Nakamura", song: "Travelog", image: "ShingoNakamuraDays.jpg" },
+    { author: "Nhato & Glascat", song: "One Step Forward", image: "OneStepForward.jpg" },
+];
 ---
 
 <BasicLikesPage title="Music Taste" favicon={Judgment}>
@@ -12,6 +28,10 @@ import saywhaaat from "../../media/saywhat.png";
             I like to listen to activity-appropriate music, but also like just
             general listening, typically Pop music
         </p>
+        <Picture src={saywhaaat} alt="saywhaaat" />
+        <ul id="albums">
+            {albums.map((a) => <Album author={a.author} song={a.song} image={a.image} />)}
+        </ul>
     </div>
     <div id="info">
         <h2>Some notable genres</h2>
@@ -35,5 +55,4 @@ import saywhaaat from "../../media/saywhat.png";
             <li>Otographic Music</li>
         </ul>
     </div>
-    <Picture src={saywhaaat} alt="saywhaaat" />
 </BasicLikesPage>
