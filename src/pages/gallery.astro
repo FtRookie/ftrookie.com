@@ -1,20 +1,13 @@
 ---
 import Basic from "../components/BasicPage.astro";
 import { Picture } from "astro:assets";
+import { getCollection } from "astro:content";
 import "../styles/glightbox.min.css";
 import "../styles/gallery.css";
 import BungsUp from "../media/bunger/FTRookie_thumbsup.png";
-import data from "../media/bunger/metadata.json";
 
-const bungerImages = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/media/bunger/*.{png,gif}",
-);
-
-const galleryItems = await Promise.all(
-    data.map(async (item) => {
-        const mod = await bungerImages[`/src/media/bunger/${item.path}`]?.();
-        return { ...item, image: mod?.default };
-    })
+const galleryItems = (await getCollection("bunger")).sort((a, b) =>
+      b.data.date.localeCompare(a.data.date),
 );
 ---
 
@@ -33,7 +26,11 @@ const galleryItems = await Promise.all(
                         <i class="fa-solid fa-arrow-down-1-9"></i>
                         <i class="fa-solid fa-arrow-up-9-1"></i>
                   </button>
-                  <div class="option" id="collapsible-sort-by" data-state="collapsed">
+                  <div
+                        class="option"
+                        id="collapsible-sort-by"
+                        data-state="collapsed"
+                  >
                         <button class="collapsible">
                               <span id="label-sort-by">sort by: date</span>
                               <i class="fa-solid fa-angle-right"></i>
@@ -41,7 +38,11 @@ const galleryItems = await Promise.all(
                         </button>
                         <div class="collapser"></div>
                   </div>
-                  <div class="option" id="collapsible-filter-author" data-state="collapsed">
+                  <div
+                        class="option"
+                        id="collapsible-filter-author"
+                        data-state="collapsed"
+                  >
                         <button class="collapsible">
                               filter: author
                               <i class="fa-solid fa-angle-right"></i>
@@ -49,7 +50,11 @@ const galleryItems = await Promise.all(
                         </button>
                         <div class="collapser"></div>
                   </div>
-                  <div class="option" id="collapsible-filter-type" data-state="collapsed">
+                  <div
+                        class="option"
+                        id="collapsible-filter-type"
+                        data-state="collapsed"
+                  >
                         <button class="collapsible">
                               filter: type
                               <i class="fa-solid fa-angle-right"></i>
@@ -59,18 +64,31 @@ const galleryItems = await Promise.all(
                   </div>
             </ul>
             <ul id="gallery">
-                  {galleryItems.map((item) => item.image && (
-                        <li id={item.title}>
-                              <a
-                                    href={item.image.src}
-                                    data-title={item.lightboxTitle}
-                                    data-description={item.lightboxDescription}
-                                    class="glightbox"
-                              >
-                                    <Picture src={item.image} alt={item.lightboxTitle} />
-                              </a>
-                        </li>
-                  ))}
+                  {
+                        galleryItems.map(({ id, data }) => (
+                              <li id={id}>
+                                    <a
+                                          href={data.path.src}
+                                          data-title={data.lightboxTitle}
+                                          data-description={
+                                                data.lightboxDescription
+                                          }
+                                          class="glightbox"
+                                    >
+                                          <Picture
+                                                src={data.path}
+                                                alt={data.lightboxTitle}
+                                                data-metadata-title={id}
+                                                data-metadata-author={
+                                                      data.author
+                                                }
+                                                data-metadata-date={data.date}
+                                                data-metadata-type={data.type}
+                                          />
+                                    </a>
+                              </li>
+                        ))
+                  }
             </ul>
       </div>
 </Basic>

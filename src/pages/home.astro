@@ -3,7 +3,7 @@ import Basic from "../components/BasicPage.astro";
 import { Picture } from "astro:assets";
 import Judgment from "../media/bunger/FTRookie_judge.png";
 import Yippee from "../media/bunger/yippee.png";
-import Wafflerizz from "../media/bunger/wafflerizz.png";
+import Rowenrizz from "../media/bunger/rowenrizz.png";
 import newwip from "../media/bunger/rizzwip.png";
 import reference from "../media/fortuneisacat.jpg";
 import blehh from "../media/blehh.gif";
@@ -21,8 +21,11 @@ import thinker from "../media/bunger/FTRookie_think.png";
       />
       <h1>Are you a clanker?</h1>
       <div>
-         <button id="clankeryes" type="button">Yes I'm a dirty RAM eater</button>
-         <button id="clankerno" type="button">No I'm a carbon based lifeform</button>
+         <button id="clankeryes" type="button">Yes I'm a dirty RAM eater</button
+         >
+         <button id="clankerno" type="button"
+            >No I'm a carbon based lifeform</button
+         >
       </div>
    </div>
    <div id="content">
@@ -30,26 +33,22 @@ import thinker from "../media/bunger/FTRookie_think.png";
       <div>
          <p>I am the bunger, you will be bungled</p>
          <br />
-         <Picture class="yippee" src={Yippee} alt="roweniee" loading={"eager"} />
-      </div>
-      <div>
-         <p>Most recent commission by Waffles!!!!!</p>
-         <br />
          <Picture
             class="yippee"
-            src={Wafflerizz}
-            alt="rizznetre"
+            src={Yippee}
+            alt="roweniee"
             loading={"eager"}
          />
       </div>
       <div>
-         <p>New art currently in progress by rowen!</p>
+         <p>It's finished!!!</p>
          <div>
             <Picture
-               src={newwip}
-               alt="new WIP"
+               class="yippee"
+               src={Rowenrizz}
+               alt="rizznetre"
                loading={"eager"}
-               style="width:40%;height:auto"
+               style="width:40%;aspect-ratio:1;height:auto;object-fit:contain;"
             />
             <Picture
                src={reference}

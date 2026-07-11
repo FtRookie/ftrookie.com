@@ -1,6 +1,36 @@
 [
     {
-        "title": "wafflerizz",
+        "id": "rowenrizzalt",
+        "path": "rowenrizzalt.png",
+        "author": "roweniee",
+        "date": "2026-07-09",
+        "type": "icon",
+        "price": 40,
+        "lightboxTitle": "rizz alt",
+        "lightboxDescription": "artist: roweniee, based off fortuneisacat, but with the sparklies"
+    },
+    {
+        "id": "rowenrizz",
+        "path": "rowenrizz.png",
+        "author": "roweniee",
+        "date": "2026-07-09",
+        "type": "icon",
+        "price": 40,
+        "lightboxTitle": "rizz",
+        "lightboxDescription": "artist: roweniee, based off fortuneisacat"
+    },
+    {
+        "id": "expansion",
+        "path": "expansion.png",
+        "author": "roweniee",
+        "date": "2026-06-29",
+        "type": "icon",
+        "price": 15,
+        "lightboxTitle": "expansion",
+        "lightboxDescription": "artist: roweniee, expansion of my second commission for circular profile pictures"
+    },
+    {
+        "id": "wafflerizz",
         "path": "wafflerizz.png",
         "author": "waffles",
         "date": "2026-05-11",
@@ -10,8 +40,8 @@
         "lightboxDescription": "artist: Waffles; what is he staring at?"
     },
     {
-        "title": "rizz",
-        "path": "rizz.png",
+        "id": "rizz",
+        "path": "b0netterizz.png",
         "author": "b0nette",
         "date": "2026-02-20",
         "type": "icon",
@@ -20,7 +50,7 @@
         "lightboxDescription": "artist: b0nette, based on fortuneisacat"
     },
     {
-        "title": "fullbodykoi",
+        "id": "fullbodykoi",
         "path": "fullbodykoi.png",
         "author": "vylpen",
         "date": "2026-02-10",
@@ -30,7 +60,7 @@
         "lightboxDescription": "artist: Vulpen, commissioned by KENEMONY"
     },
     {
-        "title": "angry-alt",
+        "id": "angry-alt",
         "path": "FTRookie_angry-alt.png",
         "author": "roweniee",
         "date": "2025-12-15",
@@ -40,7 +70,7 @@
         "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
-        "title": "angry",
+        "id": "angry",
         "path": "FTRookie_angry.png",
         "author": "roweniee",
         "date": "2025-12-15",
@@ -50,7 +80,7 @@
         "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
-        "title": "thinker",
+        "id": "thinker",
         "path": "FTRookie_think.png",
         "author": "roweniee",
         "date": "2025-12-15",
@@ -60,7 +90,7 @@
         "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
-        "title": "judgment",
+        "id": "judgment",
         "path": "FTRookie_judge.png",
         "author": "roweniee",
         "date": "2025-12-15",
@@ -70,7 +100,7 @@
         "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
-        "title": "thumbsup",
+        "id": "thumbsup",
         "path": "FTRookie_thumbsup.png",
         "author": "roweniee",
         "date": "2025-12-15",
@@ -80,7 +110,7 @@
         "lightboxDescription": "artist: roweniee, part of a sticker pack"
     },
     {
-        "title": "yippee",
+        "id": "yippee",
         "path": "yippee.png",
         "author": "roweniee",
         "date": "2025-10-02",
@@ -90,7 +120,7 @@
         "lightboxDescription": "artist: roweniee, my second commission"
     },
     {
-        "title": "yayy",
+        "id": "yayy",
         "path": "yayy.png",
         "author": "badjellbungus",
         "date": "2025-08-24",
@@ -100,7 +130,7 @@
         "lightboxDescription": "artist: badjellbungus, from Rate My Avatar"
     },
     {
-        "title": "fullbody",
+        "id": "fullbody",
         "path": "fullbody.png",
         "author": "vylpen",
         "date": "2023-04-23",

@@ -1,8 +1,6 @@
 import GLightbox from "glightbox";
-import data from "../media/bunger/metadata.json"
 import { queryById } from "./dom";
 import type { CollapsibleElement, Gallery, ImageLI, Options, OptionsElements } from './gallery.types';
-import type { ImageData } from './metadata.types';
 
 const sortDirectionIconTypes = {
     date: "numerical",
@@ -41,11 +39,6 @@ const createInput = (
     return input
 }
 
-const images: Map<ImageData, HTMLImageElement> = new Map()
-const authors: Set<string> = new Set()
-const types: Set<string> = new Set()
-
-
 const onload = () => {
     const instance = document.getElementById("options") as HTMLUListElement;
     const optionsContainer: Options = {
@@ -60,25 +53,18 @@ const onload = () => {
     const collapsibles = Array.from(optionsContainer.instance.querySelectorAll(".option")) as CollapsibleElement[]
 
     const galleryContainer = document.getElementById("gallery") as Gallery
-    galleryContainer.images = [];
-
-    for (const i of data) {
-        const imageData = i as ImageData
-        authors.add(imageData.author)
-        types.add(imageData.type)
-
-        const listItem = document.getElementById(imageData.title) as ImageLI
-        galleryContainer.images.push(listItem)
-        const image = listItem.querySelector(".glightbox")!.querySelector("img")!
-        listItem.Image = image
-        images.set(imageData, image)
-
-        for (const [attr, val] of Object.entries(imageData)) {
-            image.setAttribute(`data-metadata-${attr}`, val)
-        }
-    }
+    const authors: Set<string> = new Set()
+    const types: Set<string> = new Set()
 
     let sortedImagesArray = Array.from(galleryContainer.querySelectorAll("li")) as ImageLI[]
+    galleryContainer.images = sortedImagesArray;
+
+    for (const listItem of sortedImagesArray) {
+        const image = listItem.querySelector(".glightbox")!.querySelector("img")!
+        listItem.Image = image
+        authors.add(image.dataset.metadataAuthor!)
+        types.add(image.dataset.metadataType!)
+    }
 
     for (const option of collapsibles) {
         option.collapsible = option.querySelector("button")!
@@ -107,22 +93,19 @@ const onload = () => {
         const checkedAuthors: string[] = []
         const authorInputs = document.querySelectorAll("input[name='filter-author']:checked")
         for (const authorInput of authorInputs) {
-            const author = parseData(authorInput.id) as ImageData["author"]
-            checkedAuthors.push(author)
+            checkedAuthors.push(parseData(authorInput.id))
         }
 
         const checkedTypes: string[] = []
         const typeInputs = document.querySelectorAll("input[name='filter-type']:checked")
         for (const typeInput of typeInputs) {
-            const type = parseData(typeInput.id) as ImageData["type"]
-            checkedTypes.push(type)
+            checkedTypes.push(parseData(typeInput.id))
         }
 
-        for (const [imageData, image] of images.entries()) {
-            const li = image.closest('li') as HTMLLIElement;
+        for (const li of sortedImagesArray) {
             const shouldShow =
-                (checkedAuthors.length == 0 || checkedAuthors.includes(imageData.author)) &&
-                (checkedTypes.length == 0 || checkedTypes.includes(imageData.type))
+                (checkedAuthors.length == 0 || checkedAuthors.includes(li.Image.dataset.metadataAuthor!)) &&
+                (checkedTypes.length == 0 || checkedTypes.includes(li.Image.dataset.metadataType!))
 
             li.style.display = shouldShow ? "inline" : "none";
         }

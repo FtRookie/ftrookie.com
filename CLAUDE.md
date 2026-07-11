@@ -158,7 +158,7 @@ export interface CollapsibleElement extends HTMLDivElement { ... }
 Use `import type` for anything that only exists at compile time:
 
 ```typescript
-import type { ImageData } from "./metadata.types";
+import type { CollapsibleElement, Gallery } from "./gallery.types";
 ```
 
 ### Discriminated unions
@@ -169,7 +169,7 @@ When a field describes the category of an object, use a string literal union:
 type: "sticker" | "fullbody" | "halfbody" | "icon"
 ```
 
-Add new variants here before adding them to data files — TypeScript will catch mismatches at build time.
+Add new variants here before adding them to data files — TypeScript will catch mismatches at build time. For the gallery collection this union lives as a `z.enum` in `src/content.config.ts`.
 
 ### Run type checking
 
@@ -349,6 +349,15 @@ Do not copy-paste markup blocks for similar items. If you find yourself repeatin
 
 Astro will convert it to WebP automatically on next build.
 
+### Adding gallery images
+
+The gallery is a content collection (`bunger`) defined in `src/content.config.ts` with a `file()` loader over `src/media/bunger/metadata.json`. To add an image:
+
+1. Drop the image file into `src/media/bunger/`
+2. Add an entry to `metadata.json` — `id` must be unique, `path` is the filename relative to the JSON file, `type` must be one of the `z.enum` variants in the schema
+
+The build validates every entry against the zod schema and fails if the image file is missing or a field is malformed — a typo cannot silently drop an image. `gallery.astro` renders via `getCollection("bunger")` and stamps `data-metadata-*` attributes server-side; `gallery.ts` reads those off the DOM for sorting/filtering (it does not import the JSON).
+
 ### Adding artists
 
 Add an entry to the `artists` array in `src/pages/artists.astro`. The `imageUrl` field accepts external URLs (Twitter/Ko-Fi avatars are fine here since Astro cannot process remote images at build time).
@@ -363,6 +372,7 @@ Add an entry to the `recentGames` array in `src/pages/likes/gaming.astro`.
 
 ```
 src/
+  content.config.ts        — content collections: bunger gallery (file loader + zod schema, image() helper)
   components/
     Album.astro            — album cover card (used in musictastes)
     BasicPage.astro        — root layout: navbar (showNavbar prop), hero, theme toggle, footer
@@ -376,15 +386,14 @@ src/
   scripts/
     home.ts                — clanker prompt + live clock (clears interval on astro:before-swap)
     theme.ts               — dark/light mode; wires theme toggle button on astro:after-swap
-    gallery.ts             — GLightbox + sort/filter logic; initializes on astro:page-load
+    gallery.ts             — GLightbox + sort/filter logic (reads data-metadata-* off the DOM); initializes on astro:page-load
     gallery.types.ts       — TypeScript interfaces for gallery.ts (CollapsibleElement, Gallery, etc.)
     oecontributions.ts     — GLightbox init for .imagebar elements on astro:page-load
-    metadata.types.ts      — ImageData interface for gallery metadata.json
   styles/
     global.css             — theme vars, typography, navbar, layout — edit here for site-wide changes
     home.css, gallery.css, artists.css, etc. — page-specific styles
   media/
-    bunger/                — character PNG assets
+    bunger/                — character PNG assets + metadata.json (gallery collection data)
     albumcovers/           — album cover images (processed by Astro into WebP)
     *.gif, *.png           — misc media (GIFs passed through; PNGs converted to WebP)
 public/
