@@ -5,6 +5,7 @@
     --space-4: 2rem;
 
     --primary-bg: #dddfe3;
+    --secondary-bg: #ccccd3;
     --primary-text: #111;
     --secondary-text: #222;
     --tertiary-text: #444;
@@ -19,6 +20,7 @@
 
 :root[data-theme="dark"] {
     --primary-bg: #222;
+    --secondary-bg: #2a2a2a;
     --primary-text: #fff;
     --secondary-text: #eee;
     --tertiary-text: #ccc;
@@ -35,6 +37,7 @@ body {
     background-color: var(--primary-bg);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
+    overflow-x: clip;
 }
 
 p {
@@ -108,7 +111,7 @@ img {
 #viewport {
     display: block;
     margin: auto;
-    width: min(100rem, min(177.777777777vh, 100vw));
+    width: min(100rem, min(177.777777777vh, 100%));
     height: auto;
 }
 
@@ -147,26 +150,42 @@ img {
 }
 
 #content {
-    display: inline-block;
-    margin: auto;
-    width: clamp(10rem, 100vw, 55%);
+    float: left;
+    width: calc(100% - clamp(16rem, 40%, 30rem) - 1rem);
     outline: 0.2rem groove var(--primary-text);
     padding: 0.5rem;
     box-sizing: border-box;
     border-radius: 0.5rem;
+    background-color: var(--secondary-bg);
 }
 
 #info {
-    margin: auto;
     float: right;
-    width: clamp(8rem, 500px, 40%);
-    display: inline-flex;
+    width: clamp(16rem, 40%, 30rem);
+    display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 0.5rem;
     outline: 0.2rem groove var(--primary-text);
     box-sizing: border-box;
     border-radius: 0.5rem;
+    background-color: var(--secondary-bg);
+}
+
+#content ~ :not(#info) {
+    clear: both;
+}
+
+@media (orientation: portrait) {
+    #content,
+    #info {
+        float: none;
+        width: 100%;
+    }
+
+    #info {
+        margin-top: 1rem;
+    }
 }
 
 #info p,
@@ -191,7 +210,7 @@ img {
     white-space: nowrap;
     flex-direction: row;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
     justify-content: space-evenly;
