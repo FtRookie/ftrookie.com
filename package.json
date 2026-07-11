@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
-    "@astrojs/node": "^10.1.1",
-    "astro": "^6.3.7",
+    "@astrojs/node": "^11.0.2",
+    "astro": "^7.0.7",
     "glightbox": "^3.3.1",
-"typescript": "^5.9.3"
+    "typescript": "^5.9.3"
   },
   "description": "��#\u0000 \u0000f\u0000t\u0000r\u0000o\u0000o\u0000k\u0000i\u0000e\u0000.\u0000c\u0000o\u0000m\u0000\r\u0000 \u0000",
   "main": "index.js",
@@ -30,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/FtRookie/ftrookie.com/issues"
   },
-  "homepage": "https://github.com/FtRookie/ftrookie.com#readme"
+  "homepage": "https://github.com/FtRookie/ftrookie.com#readme",
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
 }
