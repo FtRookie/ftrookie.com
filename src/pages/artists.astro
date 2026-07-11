@@ -12,27 +12,32 @@ interface Artist {
 const artists: Artist[] = [
     {
         name: "roweniee",
-        imageUrl: "https://storage.ko-fi.com/cdn/useruploads/6c22947c-6048-40db-b39d-9d18b1794bbe_5ef21c15-f1aa-42a3-8597-8d2af8943b10.png",
+        imageUrl:
+            "https://storage.ko-fi.com/cdn/useruploads/6c22947c-6048-40db-b39d-9d18b1794bbe_5ef21c15-f1aa-42a3-8597-8d2af8943b10.png",
         link: "https://roweniee.carrd.co/",
     },
     {
         name: "Vylpen",
-        imageUrl: "https://pbs.twimg.com/profile_images/1903838398290317312/AC8xmJI9_400x400.jpg",
+        imageUrl:
+            "https://pbs.twimg.com/profile_images/1903838398290317312/AC8xmJI9_400x400.jpg",
         link: "https://x.com/Vulpen8",
     },
     {
         name: "b0nette",
-        imageUrl: "https://storage.ko-fi.com/cdn/useruploads/960c121e-4fca-4b0f-9425-e6ef3451762c_e50db322-8a13-404c-9215-91bcbfd832.png",
+        imageUrl:
+            "https://storage.ko-fi.com/cdn/useruploads/960c121e-4fca-4b0f-9425-e6ef3451762c_e50db322-8a13-404c-9215-91bcbfd832.png",
         link: "https://b0nette.carrd.co/",
     },
     {
         name: "Waffles",
-        imageUrl: "https://pbs.twimg.com/profile_images/2026342212120809472/dKUoP-Wy_400x400.jpg",
+        imageUrl:
+            "https://pbs.twimg.com/profile_images/2026342212120809472/dKUoP-Wy_400x400.jpg",
         link: "https://x.com/Waffled_Vixen",
     },
     {
         name: "nange0727 🔞",
-        imageUrl: "https://pbs.twimg.com/profile_images/1989343864042442752/pQE_PThJ_400x400.jpg",
+        imageUrl:
+            "https://pbs.twimg.com/profile_images/1989343864042442752/pQE_PThJ_400x400.jpg",
         link: "https://x.com/nange0727",
     },
 ];
@@ -56,15 +61,17 @@ const artists: Artist[] = [
     </em>
     <br />
     <ul id="list">
-        {artists.map((artist) => (
-            <div class="artist">
-                <img src={artist.imageUrl} alt={artist.name} />
-                <a href={artist.link}>{artist.name}</a>
-            </div>
-        ))}
+        {
+            artists.map((artist) => (
+                <li class="artist">
+                    <img src={artist.imageUrl} alt={artist.name} />
+                    <a href={artist.link}>{artist.name}</a>
+                </li>
+            ))
+        }
     </ul>
 </Basic>
 <footer class="credits">
     if you are one of these artists and do not want to be listed, <br />
-    contact me via discord about removal<i class="fa-brands fa-discord"></i>
+    contact me via Discord about removal<i class="fa-brands fa-discord"></i>
 </footer>
