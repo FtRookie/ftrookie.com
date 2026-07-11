@@ -9,7 +9,7 @@ Personal portfolio site built with **Astro 6**, deployed as a static build via n
 - **Astro 6**, `output: "static"`, `@astrojs/node` adapter in standalone mode
 - **TypeScript** strict mode (`tsconfig.json` extends Astro's `strict` preset)
 - **GLightbox** for image lightboxes (gallery, oecontributions pages)
-- **FontAwesome** CDN kit — loaded globally via `BasicPage.astro`, icons only appear on `artists.astro` and `socials.astro`
+- **FontAwesome** CDN kit — loaded globally via `BasicPage.astro`, icons only appear on `gallery.astro`, `artists.astro`, and `socials.astro`
 - **View Transitions** enabled via `<ClientRouter />` in `Head.astro`
 - Build: `npm run build` — compiles the site. Run `npx astro check` separately for full TypeScript diagnostics on `.astro` files.
 
@@ -112,7 +112,7 @@ Using an inline script to imperatively modify layout (e.g., hiding the navbar by
 <Basic showNavbar={false}>
 ```
 
-`BasicPage.astro` accepts a `showNavbar` prop (default `true`) that conditionally renders the navbar element. Use it in `BasicLikesPage.astro` and `BasicProjectPage.astro`.
+`BasicPage.astro` accepts a `showNavbar` prop (default `true`) that conditionally renders the navbar, and a `backHref` prop that hides the navbar and renders a "< Back" link instead. Subpages (`/likes/*`, `/project/*`) use `<Basic backHref="/likes">` directly — there are no wrapper components.
 
 ---
 
@@ -158,7 +158,7 @@ export interface CollapsibleElement extends HTMLDivElement { ... }
 Use `import type` for anything that only exists at compile time:
 
 ```typescript
-import type { CollapsibleElement, Gallery } from "./gallery.types";
+import type { CollapsibleElement, ImageLI } from "./gallery.types";
 ```
 
 ### Discriminated unions
@@ -375,9 +375,8 @@ src/
   content.config.ts        — content collections: bunger gallery (file loader + zod schema, image() helper)
   components/
     Album.astro            — album cover card (used in musictastes)
-    BasicPage.astro        — root layout: navbar (showNavbar prop), hero, theme toggle, footer
-    BasicLikesPage.astro   — wraps BasicPage for /likes/* with showNavbar=false
-    BasicProjectPage.astro — wraps BasicPage for /project/* with showNavbar=false
+    BasicPage.astro        — root layout: navbar (showNavbar prop) or back link (backHref prop), hero, theme toggle, footer
+    PlaceholderImage.astro — saywhaaat placeholder Picture for pages with sparse content
     Head.astro             — <head> meta: OG tags, ClientRouter (no export const partial)
   pages/
     home.astro, gallery.astro, projects.astro, artists.astro, socials.astro
@@ -387,7 +386,8 @@ src/
     home.ts                — clanker prompt + live clock (clears interval on astro:before-swap)
     theme.ts               — dark/light mode; wires theme toggle button on astro:after-swap
     gallery.ts             — GLightbox + sort/filter logic (reads data-metadata-* off the DOM); initializes on astro:page-load
-    gallery.types.ts       — TypeScript interfaces for gallery.ts (CollapsibleElement, Gallery, etc.)
+    gallery.types.ts       — TypeScript interfaces for gallery.ts (CollapsibleElement, ImageLI, etc.)
+    lightbox.ts            — shared GLightbox config (initLightbox), used by gallery.ts + oecontributions.ts
     oecontributions.ts     — GLightbox init for .imagebar elements on astro:page-load
   styles/
     global.css             — theme vars, typography, navbar, layout — edit here for site-wide changes

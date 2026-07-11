@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e 'let d=\"\";process.stdin.on(\"data\",c=>d+=c).on(\"end\",()=>{const f=(JSON.parse(d).tool_input||{}).file_path||\"\";if(/src\\/.*\\.(css|astro)$/.test(f))console.log(JSON.stringify({hookSpecificOutput:{hookEventName:\"PostToolUse\",additionalContext:\"A visual source file (.css/.astro) changed. After finishing this change set, run the verify-build skill to visually verify before reporting done.\"}}))})'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

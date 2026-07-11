@@ -1,0 +1,33 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface LightboxImage {
+    image: ImageMetadata;
+    alt: string;
+    title: string;
+    description?: string;
+}
+
+interface Props {
+    images: LightboxImage[];
+    height?: string;
+}
+
+const { images, height = "auto" } = Astro.props;
+---
+
+<div class="imagebar" style={`height:${height}`}>
+    {
+        images.map(({ image, alt, title, description }) => (
+            <a
+                href={image.src}
+                data-title={title}
+                data-description={description}
+                class="glightbox"
+            >
+                <Picture src={image} alt={alt} />
+            </a>
+        ))
+    }
+</div>

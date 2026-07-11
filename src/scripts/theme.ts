@@ -1,9 +1,3 @@
-function applyTheme() {
-    const saved = localStorage.getItem('theme');
-    const theme = saved ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-}
-
 function toggleTheme() {
     const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
@@ -11,7 +5,6 @@ function toggleTheme() {
 }
 
 function setup() {
-    applyTheme();
     document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
 }
 

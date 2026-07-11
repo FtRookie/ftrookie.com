@@ -2,7 +2,7 @@
 import Basic from "../components/BasicPage.astro";
 import { getImage, Picture } from "astro:assets";
 import { getCollection } from "astro:content";
-import "../styles/glightbox.min.css";
+import "glightbox/dist/css/glightbox.min.css";
 import "../styles/gallery.css";
 import BungsUp from "../media/bunger/FTRookie_thumbsup.png";
 
@@ -100,5 +100,4 @@ const galleryItems = await Promise.all(
             </ul>
       </div>
 </Basic>
-<script src="../scripts/glightbox.min.js"></script>
 <script src="../scripts/gallery.ts"></script>

@@ -2,18 +2,19 @@ p {
     display: inline;
 }
 
-.icon {
-    display: inline;
-    height: 1rem;
-    width: auto;
-}
-
 img {
     margin-bottom: 1rem;
 }
 
+.icon {
+    display: inline;
+    margin: auto;
+    height: 1rem;
+    width: auto;
+}
+
 .yippee {
-    width: clamp(12rem, 500px, 45%);
+    width: clamp(12rem, 45%, 500px);
     height: auto;
 }
 
@@ -34,13 +35,13 @@ img {
 #clankerprompt img {
     display: block;
     margin: auto;
-    width: min(75vmin, 50vh);
+    width: clamp(12rem, min(75vmin, 50vh), 40rem);
     height: auto;
 }
 
 #clankerprompt h1 {
     display: block;
-    font-size: 350%;
+    font-size: clamp(1.75rem, 6vmin, 3.5rem);
     text-align: center;
     margin: 0;
     color: var(--primary-text);
@@ -50,8 +51,8 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70vmin;
-    height: 14vmin;
+    width: clamp(16rem, 70vmin, 45rem);
+    height: clamp(3rem, 14vmin, 9rem);
     align-items: center;
 }
 
@@ -59,8 +60,8 @@ img {
 #clankeryes {
     width: 48%;
     height: 100%;
-    font-size: 3vmin;
-    padding: 1vmin;
+    font-size: clamp(1rem, 3vmin, 2rem);
+    padding: clamp(0.25rem, 1vmin, 0.75rem);
     border-radius: 48%;
     color: var(--primary-text);
     border: 0.5vmin ridge white;

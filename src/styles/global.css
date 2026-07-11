@@ -113,7 +113,7 @@ img {
 }
 
 #hero {
-    --hero-fontsize: clamp(2.5rem, 5rem, 10vmin);
+    --hero-fontsize: clamp(2.5rem, 10vmin, 5rem);
     display: flex;
     flex-direction: row;
     width: 100%;

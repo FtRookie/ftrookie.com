@@ -13,7 +13,7 @@
 .project {
     background-color: var(--project-bg1);
     padding: 1%;
-    height: 15vh;
+    height: clamp(6rem, 15vh, 12rem);
 }
 
 .project:nth-child(even) {
@@ -25,14 +25,14 @@ a {
 }
 
 .project div h2 {
-    font-size: max(1.8rem, 5vmin);
+    font-size: clamp(1.8rem, 5vmin, 3.6rem);
     font-weight: normal;
     text-decoration: underline;
     color: var(--project-text);
 }
 
 .project p {
-    font-size: max(1rem, 3vmin);
+    font-size: clamp(1rem, 3vmin, 2rem);
     max-width: 100ch;
     display: block;
     color: var(--project-text);

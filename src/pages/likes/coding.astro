@@ -1,11 +1,10 @@
 ---
-import { Picture } from "astro:assets";
-import BasicLikesPage from "../../components/BasicLikesPage.astro";
+import Basic from "../../components/BasicPage.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import Judgment from "../../media/bunger/FTRookie_judge.png";
-import saywhaaat from "../../media/saywhat.png";
 ---
 
-<BasicLikesPage title="Coding" favicon={Judgment}>
+<Basic title="Coding" favicon={Judgment} backHref="/likes">
     <div id="content">
         <h2>Coding isn't my favorite thing in the world, but I tolerate it</h2>
         <p>
@@ -29,5 +28,5 @@ import saywhaaat from "../../media/saywhat.png";
             <li>Java</li>
         </ul>
     </div>
-    <Picture src={saywhaaat} alt="saywhaaat" />
-</BasicLikesPage>
+    <PlaceholderImage />
+</Basic>

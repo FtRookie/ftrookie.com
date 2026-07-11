@@ -10,13 +10,15 @@ interface Props {
     favicon?: ImageMetadata;
     hero?: string;
     showNavbar?: boolean;
+    backHref?: string;
 }
 
 const {
     title = "FtRookie",
     favicon = thumbsup,
     hero = `FtRookie's ${title}`,
-    showNavbar = true,
+    backHref,
+    showNavbar = !backHref,
 } = Astro.props;
 ---
 
@@ -51,6 +53,16 @@ const {
                         <a href="/socials">Socials</a>
                         <a href="/artists">Artists</a>
                     </div>
+                )
+            }
+            {
+                backHref && (
+                    <>
+                        <a class="naventry" href={backHref}>
+                            &#60; Back
+                        </a>
+                        <br />
+                    </>
                 )
             }
             <slot />

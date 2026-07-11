@@ -1,8 +1,7 @@
 ---
-import { Picture } from "astro:assets";
-import BasicLikesPage from "../../components/BasicLikesPage.astro";
+import Basic from "../../components/BasicPage.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import Thumbsup from "../../media/bunger/FTRookie_thumbsup.png";
-import saywhaaat from "../../media/saywhat.png";
 
 interface Game {
     name: string;
@@ -19,7 +18,7 @@ const recentGames: Game[] = [
 ];
 ---
 
-<BasicLikesPage title="Gaming" favicon={Thumbsup}>
+<Basic title="Gaming" favicon={Thumbsup} backHref="/likes">
     <div id="content">
         <h2>I like video games</h2>
         <p>
@@ -38,5 +37,5 @@ const recentGames: Game[] = [
             ))}
         </ul>
     </div>
-    <Picture src={saywhaaat} alt="saywhaaat" />
-</BasicLikesPage>
+    <PlaceholderImage />
+</Basic>

@@ -1,9 +1,10 @@
 ---
 import { Picture } from "astro:assets";
-import BasicProjectPage from "../../components/BasicProjectPage.astro";
+import Basic from "../../components/BasicPage.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import BungsUp from "../../media/bunger/FTRookie_thumbsup.png";
-import saywhaaat from "../../media/saywhat.png";
 import insanity from "../../media/insanity.png";
+import "../../styles/projectpage.css";
 ---
 
 <style>
@@ -13,7 +14,7 @@ import insanity from "../../media/insanity.png";
     }
 </style>
 
-<BasicProjectPage title="Website" favicon={BungsUp}>
+<Basic title="Website" favicon={BungsUp} backHref="/projects">
     <div id="content"></div>
     <div id="info">
         <p>Self-hosted website with a CI/CD workflow</p>
@@ -43,8 +44,8 @@ import insanity from "../../media/insanity.png";
     </div>
     <br />
     <p>The server is ran on my old PC running debian</p>
-    <Picture src={saywhaaat} alt="saywhaaat" />
+    <PlaceholderImage />
     <footer>feeble creature</footer>
     <h2>brute force</h2>
     <Picture id="insanity" src={insanity} alt="insanity" />
-</BasicProjectPage>
+</Basic>

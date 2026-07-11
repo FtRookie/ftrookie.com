@@ -36,7 +36,7 @@ h2 {
 }
 
 .artist img {
-    width: clamp(50px, 200px, 20vw);
+    width: clamp(3rem, 20vw, 12.5rem);
     height: auto;
 }
 

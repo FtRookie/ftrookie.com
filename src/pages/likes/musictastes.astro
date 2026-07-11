@@ -1,8 +1,7 @@
 ---
-import { Picture } from "astro:assets";
-import BasicLikesPage from "../../components/BasicLikesPage.astro";
+import Basic from "../../components/BasicPage.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import Judgment from "../../media/bunger/FTRookie_judge.png";
-import saywhaaat from "../../media/saywhat.png";
 import "../../styles/musictastes.css";
 import Album from "../../components/Album.astro";
 
@@ -21,14 +20,14 @@ const albums: AlbumEntry[] = [
 ];
 ---
 
-<BasicLikesPage title="Music Taste" favicon={Judgment}>
+<Basic title="Music Taste" favicon={Judgment} backHref="/likes">
     <div id="content">
         <h2>I listen to many different genres</h2>
         <p>
             I like to listen to activity-appropriate music, but also like just
             general listening, typically Pop music
         </p>
-        <Picture src={saywhaaat} alt="saywhaaat" />
+        <PlaceholderImage />
         <ul id="albums">
             {albums.map((a) => <Album author={a.author} song={a.song} image={a.image} />)}
         </ul>
@@ -55,4 +54,4 @@ const albums: AlbumEntry[] = [
             <li>Otographic Music</li>
         </ul>
     </div>
-</BasicLikesPage>
+</Basic>

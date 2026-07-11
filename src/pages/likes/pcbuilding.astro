@@ -1,11 +1,10 @@
 ---
-import { Picture } from "astro:assets";
-import BasicLikesPage from "../../components/BasicLikesPage.astro";
+import Basic from "../../components/BasicPage.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import Judgment from "../../media/bunger/FTRookie_judge.png";
-import saywhaaat from "../../media/saywhat.png";
 ---
 
-<BasicLikesPage title="PC Building" favicon={Judgment}>
+<Basic title="PC Building" favicon={Judgment} backHref="/likes">
     <div id="content">
         <h2>NERD!!!!!!!!!!!!</h2>
     </div>
@@ -18,5 +17,5 @@ import saywhaaat from "../../media/saywhat.png";
             <li>GPU: ASRock Challenger Radeon RX 9070XT</li>
         </ul>
     </div>
-    <Picture src={saywhaaat} alt="saywhaaat" />
-</BasicLikesPage>
+    <PlaceholderImage />
+</Basic>

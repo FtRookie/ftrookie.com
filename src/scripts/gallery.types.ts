@@ -3,10 +3,6 @@ export interface CollapsibleElement extends HTMLDivElement {
     collapser: HTMLDivElement;
 }
 
-export interface Gallery extends HTMLUListElement {
-    images: HTMLLIElement[];
-}
-
 export type OptionsElements = {
     "sort-direction-button": HTMLButtonElement;
     "collapsible-sort-by": CollapsibleElement;

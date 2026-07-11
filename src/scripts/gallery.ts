@@ -1,6 +1,6 @@
-import GLightbox from "glightbox";
+import { initLightbox } from "./lightbox";
 import { queryById } from "./dom";
-import type { CollapsibleElement, Gallery, ImageLI, Options, OptionsElements } from './gallery.types';
+import type { CollapsibleElement, ImageLI, Options, OptionsElements } from './gallery.types';
 
 const sortDirectionIconTypes = {
     date: "numerical",
@@ -10,9 +10,14 @@ const sortDirectionIconTypes = {
 type SortDirectionType = keyof typeof sortDirectionIconTypes;
 type SortIconType = typeof sortDirectionIconTypes[SortDirectionType];
 
-const capitalizeFirstLetter = (val: string): string => {
-    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
-}
+const capitalizeFirstLetter = (val: string): string =>
+    val.charAt(0).toUpperCase() + val.slice(1);
+
+const getChecked = (name: string): string[] =>
+    Array.from(
+        document.querySelectorAll<HTMLInputElement>(`input[name='${name}']:checked`),
+        (input) => input.dataset.value!,
+    );
 const createInput = (
     container: HTMLElement,
     inputType: string,
@@ -47,12 +52,11 @@ const onload = () => {
     };
     const collapsibles = Array.from(optionsContainer.instance.querySelectorAll(".option")) as CollapsibleElement[]
 
-    const galleryContainer = document.getElementById("gallery") as Gallery
+    const galleryContainer = document.getElementById("gallery") as HTMLUListElement
     const authors: Set<string> = new Set()
     const types: Set<string> = new Set()
 
     let sortedImagesArray = Array.from(galleryContainer.querySelectorAll("li")) as ImageLI[]
-    galleryContainer.images = sortedImagesArray;
 
     for (const listItem of sortedImagesArray) {
         const image = listItem.querySelector(".glightbox")!.querySelector("img")!
@@ -85,17 +89,8 @@ const onload = () => {
     let currentSortDirection = "up"
 
     const filters = () => {
-        const checkedAuthors: string[] = []
-        const authorInputs = document.querySelectorAll<HTMLInputElement>("input[name='filter-author']:checked")
-        for (const authorInput of authorInputs) {
-            checkedAuthors.push(authorInput.dataset.value!)
-        }
-
-        const checkedTypes: string[] = []
-        const typeInputs = document.querySelectorAll<HTMLInputElement>("input[name='filter-type']:checked")
-        for (const typeInput of typeInputs) {
-            checkedTypes.push(typeInput.dataset.value!)
-        }
+        const checkedAuthors = getChecked("filter-author")
+        const checkedTypes = getChecked("filter-type")
 
         for (const li of sortedImagesArray) {
             const shouldShow =
@@ -156,20 +151,7 @@ const onload = () => {
         update();
     });
 
-    GLightbox({
-        selector: '.glightbox',
-        touchNavigation: true,
-        loop: true,
-        zoomable: true,
-        draggable: true,
-        closeButton: true,
-        closeOnOutsideClick: true,
-        openEffect: "none",
-        closeEffect: "none",
-        slideEffect: "none",
-        preload: true,
-        keyboardNavigation: true,
-    });
+    initLightbox();
 };
 
 document.addEventListener("astro:page-load", () => {
