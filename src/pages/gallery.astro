@@ -1,13 +1,19 @@
 ---
 import Basic from "../components/BasicPage.astro";
-import { Picture } from "astro:assets";
+import { getImage, Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import "../styles/glightbox.min.css";
 import "../styles/gallery.css";
 import BungsUp from "../media/bunger/FTRookie_thumbsup.png";
 
-const galleryItems = (await getCollection("bunger")).sort((a, b) =>
+const entries = (await getCollection("bunger")).sort((a, b) =>
       b.data.date.localeCompare(a.data.date),
+);
+const galleryItems = await Promise.all(
+      entries.map(async (entry) => ({
+            ...entry,
+            full: await getImage({ src: entry.data.path, format: "webp" }),
+      })),
 );
 ---
 
@@ -65,10 +71,10 @@ const galleryItems = (await getCollection("bunger")).sort((a, b) =>
             </ul>
             <ul id="gallery">
                   {
-                        galleryItems.map(({ id, data }) => (
+                        galleryItems.map(({ id, data, full }) => (
                               <li id={id}>
                                     <a
-                                          href={data.path.src}
+                                          href={full.src}
                                           data-title={data.lightboxTitle}
                                           data-description={
                                                 data.lightboxDescription
@@ -78,7 +84,9 @@ const galleryItems = (await getCollection("bunger")).sort((a, b) =>
                                           <Picture
                                                 src={data.path}
                                                 alt={data.lightboxTitle}
-                                                data-metadata-title={id}
+                                                data-metadata-title={
+                                                      data.lightboxTitle
+                                                }
                                                 data-metadata-author={
                                                       data.author
                                                 }
