@@ -38,33 +38,34 @@ const {
         <div id="viewport">
             <button transition:animate="none" id="theme-toggle"
                 >&#127769;</button
-            >
-            <div id="hero" transition:animate="fade">
-                <h1>{hero}</h1>
-                <Picture src={favicon} loading="eager" alt={title} />
+            ><div id="headbox">
+                <div id="hero" transition:animate="fade">
+                    <h1>{hero}</h1>
+                    <Picture src={favicon} loading="eager" alt={title} />
+                </div>
+                {
+                    showNavbar && (
+                        <div class="navbar" transition:animate="none">
+                            <a href="/home">Home</a>
+                            <a href="/gallery">Gallery</a>
+                            <a href="/projects">Projects</a>
+                            <a href="/likes">Likes</a>
+                            <a href="/socials">Socials</a>
+                            <a href="/artists">Artists</a>
+                        </div>
+                    )
+                }
+                {
+                    backHref && (
+                        <>
+                            <a class="naventry" href={backHref}>
+                                &#60; Back
+                            </a>
+                            <br />
+                        </>
+                    )
+                }
             </div>
-            {
-                showNavbar && (
-                    <div class="navbar" transition:animate="none">
-                        <a href="/home">Home</a>
-                        <a href="/gallery">Gallery</a>
-                        <a href="/projects">Projects</a>
-                        <a href="/likes">Likes</a>
-                        <a href="/socials">Socials</a>
-                        <a href="/artists">Artists</a>
-                    </div>
-                )
-            }
-            {
-                backHref && (
-                    <>
-                        <a class="naventry" href={backHref}>
-                            &#60; Back
-                        </a>
-                        <br />
-                    </>
-                )
-            }
             <slot />
             <div class="credits" transition:animate="fade">
                 <a href="https://i3ym.ru">

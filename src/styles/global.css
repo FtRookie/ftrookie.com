@@ -4,14 +4,14 @@
     --space-3: 1.5rem;
     --space-4: 2rem;
 
-    --primary-bg: #ddd;
+    --primary-bg: #dddfe3;
     --primary-text: #111;
     --secondary-text: #222;
     --tertiary-text: #444;
-    --accent: #5b7fa6;
+    --accent: #297cd5;
 
     --navbar-bg: #222;
-    --navbar-hover: #444;
+    --navbar-hover: #333;
     --navbar-text: #fff;
 
     --credits: #222;
@@ -24,7 +24,7 @@
     --tertiary-text: #ccc;
     --accent: #7eaad4;
 
-    --navbar-bg: #dadada;
+    --navbar-bg: #ddd;
     --navbar-hover: #fff;
     --navbar-text: #000;
 
@@ -112,6 +112,15 @@ img {
     height: auto;
 }
 
+#headbox {
+    padding-top: 1rem;
+    display: block;
+    background-color: rgb(70, 144, 213);
+    width: 105%;
+    justify-self: center;
+    height: fit-content;
+}
+
 #hero {
     --hero-fontsize: clamp(2.5rem, 10vmin, 5rem);
     display: flex;
@@ -139,15 +148,25 @@ img {
 
 #content {
     display: inline-block;
-    width: clamp(10rem, 100vw, 60%);
+    margin: auto;
+    width: clamp(10rem, 100vw, 55%);
+    outline: 0.2rem groove var(--primary-text);
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
 }
 
 #info {
+    margin: auto;
+    float: right;
+    width: clamp(8rem, 500px, 40%);
     display: inline-flex;
     flex-direction: column;
     gap: 10px;
-    float: right;
-    width: clamp(8rem, 500px, 40%);
+    padding: 0.5rem;
+    outline: 0.2rem groove var(--primary-text);
+    box-sizing: border-box;
+    border-radius: 0.5rem;
 }
 
 #info p,
@@ -172,10 +191,10 @@ img {
     white-space: nowrap;
     flex-direction: row;
     gap: 1rem;
-    margin: 1rem;
-    border-radius: 1rem;
+    margin-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    justify-content: space-evenly;
     overflow-x: auto;
     scrollbar-width: thin;
     background-color: var(--navbar-bg);
@@ -184,7 +203,7 @@ img {
 .naventry,
 .navbar a {
     display: block;
-    border-radius: 15px;
+    border-radius: 0.5rem;
     background-color: var(--navbar-bg);
     color: var(--navbar-text);
     font-size: 3rem;
@@ -225,8 +244,7 @@ img {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    transition:
-        background-color 0.3s,
+    transition: background-color 0.3s,
         color 0.3s;
 }
 

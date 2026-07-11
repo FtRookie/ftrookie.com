@@ -16,6 +16,7 @@ import thinker from "../media/bunger/FTRookie_think.png";
          src={Judgment}
          alt="Judgment"
          layout="full-width"
+         loading={"eager"}
       />
       <h1>Are you a clanker?</h1>
       <div>
@@ -35,29 +36,29 @@ import thinker from "../media/bunger/FTRookie_think.png";
             class="yippee"
             src={Yippee}
             alt="roweniee"
+            loading={"eager"}
          />
       </div>
       <div>
          <p>It's finished!!!</p>
-         <div>
+         <div
+            style="display:flexbox;width:fit-content;justify-content:flex-start;flex-direction: row;"
+         >
             <Picture
-               class="yippee"
                src={Rowenrizz}
                alt="rizznetre"
                style="width:40%;aspect-ratio:1;height:auto;object-fit:contain;"
+               loading={"eager"}
             />
             <Picture
                src={reference}
                alt="fortuneisacat"
                style="width:40%;aspect-ratio:1;height:auto;object-fit:contain;"
+               loading={"eager"}
             />
          </div>
       </div>
-      <Picture
-         src={blehh}
-         alt="freaky"
-         style="display:block"
-      />
+      <Picture src={blehh} alt="freaky" style="display:block" />
    </div>
    <div id="info">
       <h2>Species:</h2>
@@ -66,7 +67,7 @@ import thinker from "../media/bunger/FTRookie_think.png";
       <p>December 29</p>
       <h2>Gender:</h2>
       <p>Cisgender Male (he/him)</p>
-      <h2>Country and current time:</h2>
+      <h2>Country & Current Time:</h2>
       <p>
          United States
          <img class="icon" src="/USFlag.svg" alt="🇺🇸" />

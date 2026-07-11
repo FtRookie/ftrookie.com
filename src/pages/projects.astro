@@ -42,7 +42,7 @@ const projects: Project[] = [
                         {typeof image === "string" ? (
                             <img src={image} alt={alt} />
                         ) : (
-                            <Picture src={image} alt={alt} />
+                            <Picture src={image} alt={alt} loading={"eager"} />
                         )}
                         <div style="display:inline;margin:auto">
                             <h2>{title}</h2>
