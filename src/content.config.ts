@@ -8,7 +8,13 @@ const bunger = defineCollection({
         z.object({
             path: image(),
             author: z.string(),
-            date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "date must be YYYY-MM-DD"),
+            date: z
+                .string()
+                .regex(/^\d{4}-\d{1,2}-\d{1,2}$/, "date must be YYYY-MM-DD")
+                .transform((d) => {
+                    const [y, m, day] = d.split("-");
+                    return `${y}-${m.padStart(2, "0")}-${day.padStart(2, "0")}`;
+                }),
             type: z.enum(["sticker", "fullbody", "halfbody", "icon"]),
             price: z.number().nonnegative(),
             lightboxTitle: z.string(),
