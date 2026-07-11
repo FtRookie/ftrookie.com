@@ -53,9 +53,9 @@
 }
 
 #sort-direction-button[data-order="up"][data-type="alphabetical"] .fa-arrow-down-a-z,
+#sort-direction-button[data-order="up"][data-type="numerical"] .fa-arrow-up-9-1,
 #sort-direction-button[data-order="down"][data-type="alphabetical"] .fa-arrow-up-z-a,
-#sort-direction-button[data-order="up"][data-type="numerical"] .fa-arrow-down-1-9,
-#sort-direction-button[data-order="down"][data-type="numerical"] .fa-arrow-up-9-1 {
+#sort-direction-button[data-order="down"][data-type="numerical"] .fa-arrow-down-1-9 {
     display: inline;
 }
 
