@@ -63,7 +63,7 @@ img {
     padding: 1vmin;
     border-radius: 48%;
     color: var(--primary-text);
-    border: 0.5vmin, ridge, white;
+    border: 0.5vmin ridge white;
     background-color: #a00;
 }
 
