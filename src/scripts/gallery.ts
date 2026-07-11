@@ -13,12 +13,6 @@ type SortIconType = typeof sortDirectionIconTypes[SortDirectionType];
 const capitalizeFirstLetter = (val: string): string => {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
-const parseData = (data: string): string => {
-    const split = data.split("-")[2];
-    if (split == "") throw new Error(`Unable to parse data string '${data}'`)
-    return split
-}
-
 const createInput = (
     container: HTMLElement,
     inputType: string,
@@ -32,6 +26,7 @@ const createInput = (
     input.type = inputType;
     input.id = `${inputFor}-${id}`;
     input.name = inputFor;
+    input.dataset.value = id;
     label.htmlFor = input.id;
     label.textContent = content;
     div.append(input, label);
@@ -91,15 +86,15 @@ const onload = () => {
 
     const filters = () => {
         const checkedAuthors: string[] = []
-        const authorInputs = document.querySelectorAll("input[name='filter-author']:checked")
+        const authorInputs = document.querySelectorAll<HTMLInputElement>("input[name='filter-author']:checked")
         for (const authorInput of authorInputs) {
-            checkedAuthors.push(parseData(authorInput.id))
+            checkedAuthors.push(authorInput.dataset.value!)
         }
 
         const checkedTypes: string[] = []
-        const typeInputs = document.querySelectorAll("input[name='filter-type']:checked")
+        const typeInputs = document.querySelectorAll<HTMLInputElement>("input[name='filter-type']:checked")
         for (const typeInput of typeInputs) {
-            checkedTypes.push(parseData(typeInput.id))
+            checkedTypes.push(typeInput.dataset.value!)
         }
 
         for (const li of sortedImagesArray) {
@@ -112,8 +107,8 @@ const onload = () => {
     }
 
     const update = () => {
-        const sortBySelected = document.querySelector("input[name='sort-type']:checked")!
-        const sortType = parseData(sortBySelected.id)
+        const sortBySelected = document.querySelector<HTMLInputElement>("input[name='sort-type']:checked")!
+        const sortType = sortBySelected.dataset.value!
         const corresponding = sortDirectionIconTypes[sortType as SortDirectionType] as SortIconType
         sortDirection.setAttribute("data-type", corresponding)
 
