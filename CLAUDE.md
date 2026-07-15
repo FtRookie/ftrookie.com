@@ -341,7 +341,7 @@ Do not copy-paste markup blocks for similar items. If you find yourself repeatin
 ### Adding album covers
 
 1. Drop the image file into `src/media/albumcovers/`
-2. Add an entry to the `albums` array in `src/pages/likes/musictastes.astro`:
+2. Add an entry to the `albums` array in `src/pages/likes/music.astro`:
 
 ```typescript
 { author: "Artist Name", song: "Song Title", image: "filename.jpg" }
@@ -374,13 +374,13 @@ Add an entry to the `recentGames` array in `src/pages/likes/gaming.astro`.
 src/
   content.config.ts        — content collections: bunger gallery (file loader + zod schema, image() helper)
   components/
-    Album.astro            — album cover card (used in musictastes)
+    Album.astro            — album cover card (used in music)
     BasicPage.astro        — root layout: navbar (showNavbar prop) or back link (backHref prop), hero, theme toggle, footer
     PlaceholderImage.astro — saywhaaat placeholder Picture for pages with sparse content
     Head.astro             — <head> meta: OG tags, ClientRouter (no export const partial)
   pages/
     home.astro, gallery.astro, projects.astro, artists.astro, socials.astro
-    likes/                 — gaming, musictastes, coding, pcbuilding
+    likes/                 — gaming, music, coding, pcbuilding
     project/               — website, oecontributions
   scripts/
     home.ts                — clanker prompt + live clock (clears interval on astro:before-swap)

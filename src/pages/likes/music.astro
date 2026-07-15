@@ -2,7 +2,7 @@
 import Basic from "../../components/BasicPage.astro";
 import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import Judgment from "../../media/bunger/FTRookie_judge.png";
-import "../../styles/musictastes.css";
+import "../../styles/music.css";
 import Album from "../../components/Album.astro";
 
 interface AlbumEntry {
@@ -13,10 +13,26 @@ interface AlbumEntry {
 
 const albums: AlbumEntry[] = [
     { author: "KaNa", song: "Mimage", image: "MimageEP.jpg" },
-    { author: "Nhato", song: "Tokyo Blue Pipe (KIWAMU Remix)", image: "TokyoBluePipeRemixes.jpg" },
-    { author: "Shingo Nakamura", song: "1247", image: "ShingoNakamuraDays.jpg" },
-    { author: "Shingo Nakamura", song: "Travelog", image: "ShingoNakamuraDays.jpg" },
-    { author: "Nhato & Glascat", song: "One Step Forward", image: "OneStepForward.jpg" },
+    {
+        author: "Nhato",
+        song: "Tokyo Blue Pipe (KIWAMU Remix)",
+        image: "TokyoBluePipeRemixes.jpg",
+    },
+    {
+        author: "Shingo Nakamura",
+        song: "1247",
+        image: "ShingoNakamuraDays.jpg",
+    },
+    {
+        author: "Shingo Nakamura",
+        song: "Travelog",
+        image: "ShingoNakamuraDays.jpg",
+    },
+    {
+        author: "Nhato & Glascat",
+        song: "One Step Forward",
+        image: "OneStepForward.jpg",
+    },
 ];
 ---
 
@@ -29,7 +45,11 @@ const albums: AlbumEntry[] = [
         </p>
         <PlaceholderImage />
         <ul id="albums">
-            {albums.map((a) => <Album author={a.author} song={a.song} image={a.image} />)}
+            {
+                albums.map((a) => (
+                    <Album author={a.author} song={a.song} image={a.image} />
+                ))
+            }
         </ul>
     </div>
     <div id="info">
