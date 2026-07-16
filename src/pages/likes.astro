@@ -1,5 +1,6 @@
 ---
-import { Picture, Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { Picture } from "astro:assets";
 import Basic from "../components/BasicPage.astro";
 import thumbsup from "../media/bunger/FTRookie_thumbsup.png";
 import "../styles/projects.css";
@@ -7,58 +8,72 @@ import RageDoge from "../media/ragedoge.gif";
 import CatJam from "../media/catjam.gif";
 import AngryCat from "../media/angrycatlaptop.gif";
 import Nerd from "../media/nerd.png";
+
+interface Like {
+    href: string;
+    image: ImageMetadata;
+    alt: string;
+    title: string;
+    description: string;
+    cover?: boolean;
+}
+
+const likes: Like[] = [
+    {
+        href: "/likes/gaming",
+        image: RageDoge,
+        alt: "ragedoge",
+        title: "Gaming",
+        description: "I play a lot of video games",
+    },
+    {
+        href: "/likes/music",
+        image: CatJam,
+        alt: "music",
+        title: "Music",
+        description: "I listen to lots of different types of music",
+        cover: true,
+    },
+    {
+        href: "/likes/coding",
+        image: AngryCat,
+        alt: "angrycatlaptop",
+        title: "Coding",
+        description: "I don't do it too often but I guess it's okay",
+        cover: true,
+    },
+    {
+        href: "/likes/pcbuilding",
+        image: Nerd,
+        alt: "nerd",
+        title: "PC Building",
+        description: "I built my own computer and like to discuss PC hardware",
+    },
+];
 ---
 
 <Basic title="Likes" favicon={thumbsup}>
     <h2>some things I like to do</h2>
     <div style="display:flex;flex-direction:column;">
-        <article class="project">
-            <a href="/likes/gaming">
-                <Image src={RageDoge} alt="ragedoge" loading={"eager"} />
-                <div style="display:inline;margin:auto">
-                    <h2>Gaming</h2>
-                    <p>I play a lot of video games</p>
-                </div>
-            </a>
-        </article>
-        <article class="project">
-            <a href="/likes/music">
-                <Picture
-                    src={CatJam}
-                    alt="music"
-                    style="object-fit: cover;"
-                    loading={"eager"}
-                />
-                <div style="display:inline;margin:auto">
-                    <h2>Music</h2>
-                    <p>I listen to lots of different types of music</p>
-                </div>
-            </a>
-        </article>
-        <article class="project">
-            <a href="/likes/coding">
-                <Image
-                    src={AngryCat}
-                    alt="angrycatlaptop"
-                    style="object-fit: cover;"
-                    loading={"eager"}
-                />
-                <div style="display:inline;margin:auto">
-                    <h2>Coding</h2>
-                    <p>I don't do it too often but I guess it's okay</p>
-                </div>
-            </a>
-        </article>
-        <article class="project">
-            <a href="/likes/pcbuilding">
-                <Picture src={Nerd} alt="nerd" loading={"eager"} />
-                <div style="display:inline;margin:auto">
-                    <h2>PC Building</h2>
-                    <p>
-                        I built my own computer and like to discuss PC hardware
-                    </p>
-                </div>
-            </a>
-        </article>
+        {
+            likes.map((like) => (
+                <article class="project">
+                    <a href={like.href}>
+                        <Picture
+                            src={like.image}
+                            alt={like.alt}
+                            style={
+                                like.cover ? "object-fit: cover;" : undefined
+                            }
+                            loading="eager"
+                        />
+                        <div style="display:inline;margin:auto">
+                            <h2>{like.title}</h2>
+                            <p>{like.description}</p>
+                        </div>
+                    </a>
+                </article>
+            ))
+        }
     </div>
 </Basic>

@@ -122,6 +122,7 @@ img {
     width: 105%;
     justify-self: center;
     height: fit-content;
+    margin-bottom: 2rem;
 }
 
 #hero {
@@ -172,11 +173,12 @@ img {
     background-color: var(--secondary-bg);
 }
 
-#content ~ :not(#info) {
+#content~ :not(#info) {
     clear: both;
 }
 
 @media (orientation: portrait) {
+
     #content,
     #info {
         float: none;
@@ -210,7 +212,6 @@ img {
     white-space: nowrap;
     flex-direction: row;
     gap: 1rem;
-    margin-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
     justify-content: space-evenly;

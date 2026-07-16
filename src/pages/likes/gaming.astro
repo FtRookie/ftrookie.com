@@ -9,12 +9,30 @@ interface Game {
 }
 
 const recentGames: Game[] = [
-    { name: "Deadlock", url: "https://store.steampowered.com/app/1422450/Deadlock/" },
-    { name: "Ready or Not", url: "https://store.steampowered.com/app/1144200/Ready_or_Not/" },
-    { name: "Tower Defense X (Roblox)", url: "https://www.roblox.com/games/9503261072/ENGINEER-Tower-Defense-X-BETA" },
-    { name: "Roadside Research", url: "https://store.steampowered.com/app/3643170/Roadside_Research/" },
-    { name: "Rainbow Six Siege", url: "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/" },
-    { name: "War Thunder", url: "https://store.steampowered.com/app/236390/War_Thunder/" },
+    {
+        name: "Deadlock",
+        url: "https://store.steampowered.com/app/1422450/Deadlock/",
+    },
+    {
+        name: "Ready or Not",
+        url: "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+    },
+    {
+        name: "Tower Defense X (Roblox)",
+        url: "https://www.roblox.com/games/9503261072/ENGINEER-Tower-Defense-X-BETA",
+    },
+    {
+        name: "Roadside Research",
+        url: "https://store.steampowered.com/app/3643170/Roadside_Research/",
+    },
+    {
+        name: "Rainbow Six Siege",
+        url: "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/",
+    },
+    {
+        name: "War Thunder",
+        url: "https://store.steampowered.com/app/236390/War_Thunder/",
+    },
 ];
 ---
 
@@ -25,17 +43,19 @@ const recentGames: Game[] = [
             I tend toward to play First-Person Shooters and military vehicle
             combat, although these aren't the only type of games I play
         </p>
+        <PlaceholderImage />
     </div>
     <div id="info">
         <a href="pcbuilding">Info about my rig</a>
         <h2>some recent games i'm playing include:</h2>
         <ul>
-            {recentGames.map((game) => (
-                <li>
-                    <a href={game.url}>{game.name}</a>
-                </li>
-            ))}
+            {
+                recentGames.map((game) => (
+                    <li>
+                        <a href={game.url}>{game.name}</a>
+                    </li>
+                ))
+            }
         </ul>
     </div>
-    <PlaceholderImage />
 </Basic>

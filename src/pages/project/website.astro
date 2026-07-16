@@ -15,7 +15,13 @@ import "../../styles/projectpage.css";
 </style>
 
 <Basic title="Website" favicon={BungsUp} backHref="/projects">
-    <div id="content"></div>
+    <div id="content">
+        <p>The server is ran on my old PC running debian</p>
+        <PlaceholderImage />
+        <footer>feeble creature</footer>
+        <h2>brute force</h2>
+        <Picture id="insanity" src={insanity} alt="insanity" />
+    </div>
     <div id="info">
         <p>Self-hosted website with a CI/CD workflow</p>
         <p>Git deployed with self-hosted runner and deploy action</p>
@@ -42,10 +48,4 @@ import "../../styles/projectpage.css";
             256Gb SSD
         </p>
     </div>
-    <br />
-    <p>The server is ran on my old PC running debian</p>
-    <PlaceholderImage />
-    <footer>feeble creature</footer>
-    <h2>brute force</h2>
-    <Picture id="insanity" src={insanity} alt="insanity" />
 </Basic>
