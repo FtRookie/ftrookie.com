@@ -25,6 +25,7 @@ a {
 }
 
 .project div h2 {
+    margin: auto;
     font-size: clamp(1.8rem, 5vmin, 3.6rem);
     font-weight: normal;
     text-decoration: underline;
