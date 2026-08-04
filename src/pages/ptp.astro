@@ -1,6 +1,6 @@
 ---
 const ptpurl = new URL("/ptp", Astro.site);
-const ptpimage = new URL("/ptp.png", Astro.site);
+const ptpimage = new URL("/ptp.gif", Astro.site);
 const ptpdesc = "encuentra a un pendejo y mandaselo";
 const ptpfull = "pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly";
 ---
@@ -8,7 +8,7 @@ const ptpfull = "pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly";
 <html lang="en">
     <head>
         <title>{ptpfull}</title>
-        <link rel="icon" type="image/png" href="/144ptp.png" />
+        <link rel="icon" type="image/gif" href="/144ptp.gif" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={ptpdesc} />
         <meta property="og:url" content={ptpurl} />
@@ -30,6 +30,6 @@ const ptpfull = "pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly";
         </style>
     </head>
     <body>
-        <img src="/ptp.png" alt={ptpfull} />
+        <img src="/ptp.gif" alt={ptpfull} />
     </body>
 </html>
