@@ -1,31 +1,23 @@
 ---
-const ptp = new URL("/ptp.png", Astro.site);
+const ptpurl = new URL("/ptp", Astro.site);
+const ptpimage = new URL("/ptp.png", Astro.site);
+const ptpdesc = "encuentra a un pendejo y mandaselo";
+const ptpfull = "pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly";
 ---
 
 <html lang="en">
     <head>
-        <title>pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly</title>
+        <title>{ptpfull}</title>
         <link rel="icon" type="image/png" href="/144ptp.png" />
-        <meta name="description" content="encuentra a un pendejo y mandaselo" />
-        <meta property="og:url" content={ptp} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly" />
-        <meta
-            property="og:description"
-            content="encuentra a un pendejo y mandaselo"
-        />
-        <meta property="og:image" content={ptp} />
-        <meta property="og:image:width" content="1000" />
-        <meta property="og:image:height" content="1000" />
-        <meta property="twitter:domain" content="ftrookie.com" />
-        <meta property="twitter:url" content={ptp} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={ptpdesc} />
+        <meta property="og:url" content={ptpurl} />
+        <meta property="og:title" content={ptpfull} />
+        <meta property="og:description" content={ptpdesc} />
+        <meta property="og:image" content={ptpimage} />
+        <meta property="og:image:width" content="1125" />
+        <meta property="og:image:height" content="724" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly" />
-        <meta
-            name="twitter:description"
-            content="encuentra a un pendejo y mandaselo"
-        />
-        <meta name="twitter:image" content={ptp} />
         <style>
             img {
                 position: fixed;
@@ -38,6 +30,6 @@ const ptp = new URL("/ptp.png", Astro.site);
         </style>
     </head>
     <body>
-        <img src="/ptp.png" alt="pTP5TeZ64uZuWHQUW08fXzLqbgx_s8ly" />
+        <img src="/ptp.png" alt={ptpfull} />
     </body>
 </html>
