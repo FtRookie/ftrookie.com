@@ -1,5 +1,55 @@
 [
     {
+        "id": "newangry-alt",
+        "path": "newFTRookie_angry-alt.png",
+        "author": "roweniee",
+        "date": "2026-08-21",
+        "type": "sticker",
+        "price": 10,
+        "lightboxTitle": "New Angry Alt",
+        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+    },
+    {
+        "id": "newangry",
+        "path": "newFTRookie_angry.png",
+        "author": "roweniee",
+        "date": "2026-08-21",
+        "type": "sticker",
+        "price": 10,
+        "lightboxTitle": "New Angry",
+        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+    },
+    {
+        "id": "newthinker",
+        "path": "newFTRookie_thinker.png",
+        "author": "roweniee",
+        "date": "2026-08-21",
+        "type": "sticker",
+        "price": 10,
+        "lightboxTitle": "New Thinker",
+        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+    },
+    {
+        "id": "newjudgment",
+        "path": "newFTRookie_judge.png",
+        "author": "roweniee",
+        "date": "2026-08-21",
+        "type": "sticker",
+        "price": 10,
+        "lightboxTitle": "New Judgment",
+        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+    },
+    {
+        "id": "newthumbsup",
+        "path": "newFTRookie_thumbsup.png",
+        "author": "roweniee",
+        "date": "2026-08-21",
+        "type": "sticker",
+        "price": 10,
+        "lightboxTitle": "New Thumbs Up",
+        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+    },
+    {
         "id": "rowenrizzalt",
         "path": "rowenrizzalt.png",
         "author": "roweniee",

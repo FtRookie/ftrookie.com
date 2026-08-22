@@ -2,7 +2,6 @@
 import { Picture } from "astro:assets";
 import Basic from "../../components/BasicPage.astro";
 import PlaceholderImage from "../../components/PlaceholderImage.astro";
-import BungsUp from "../../media/bunger/FTRookie_thumbsup.png";
 import insanity from "../../media/insanity.png";
 import "../../styles/projectpage.css";
 ---
@@ -14,7 +13,7 @@ import "../../styles/projectpage.css";
     }
 </style>
 
-<Basic title="Website" favicon={BungsUp} backHref="/projects">
+<Basic title="Website" favicon="thumbsup" backHref="/projects">
     <div id="content">
         <p>The server is ran on my old PC running debian</p>
         <PlaceholderImage />

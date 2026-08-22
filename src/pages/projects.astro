@@ -1,8 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import Basic from "../components/BasicPage.astro";
-import Thumbsup from "../media/bunger/FTRookie_thumbsup.png";
-import Judgment from "../media/bunger/FTRookie_judge.png";
+import { bungers } from "../scripts/bunger";
 import "../styles/projects.css";
 import type { ImageMetadata } from "astro";
 
@@ -19,7 +18,7 @@ const projects: Project[] = [
         title: "This Website",
         blurb: "the very website that you are visiting right now!",
         href: "/project/website",
-        image: Thumbsup,
+        image: bungers.thumbsup,
         alt: "thumbsup",
     },
     {
@@ -32,7 +31,7 @@ const projects: Project[] = [
 ];
 ---
 
-<Basic title="Projects" favicon={Judgment}>
+<Basic title="Projects" favicon="judgment">
     <p>durrrrr</p>
     <div style="display:flex;flex-direction:column;">
         {

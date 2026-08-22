@@ -4,7 +4,6 @@ import { getImage, Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import "glightbox/dist/css/glightbox.min.css";
 import "../styles/gallery.css";
-import BungsUp from "../media/bunger/FTRookie_thumbsup.png";
 
 const entries = (await getCollection("bunger")).sort((a, b) =>
       b.data.date.localeCompare(a.data.date),
@@ -17,7 +16,7 @@ const galleryItems = await Promise.all(
 );
 ---
 
-<Basic title="Gallery" favicon={BungsUp}>
+<Basic title="Gallery" favicon="thumbsup">
       <div id="something">
             <ul id="options">
                   <button

@@ -2,12 +2,11 @@
 import { Picture } from "astro:assets";
 import Head from "./Head.astro";
 import "../styles/global.css";
-import thumbsup from "../media/bunger/FTRookie_thumbsup.png";
-import type { ImageMetadata } from "astro";
+import { bungers, type Bunger } from "../scripts/bunger";
 
 interface Props {
     title?: string;
-    favicon?: ImageMetadata;
+    favicon?: Bunger;
     hero?: string;
     showNavbar?: boolean;
     backHref?: string;
@@ -15,17 +14,18 @@ interface Props {
 
 const {
     title = "FtRookie",
-    favicon = thumbsup,
+    favicon = "thumbsup",
     hero = `FtRookie's ${title}`,
     backHref,
     showNavbar = !backHref,
 } = Astro.props;
+const faviconImage = bungers[favicon];
 ---
 
 <html lang="en">
     <head>
         <title>{title}</title>
-        <link rel="icon" type="image/png" href={favicon.src} />
+        <link rel="icon" type="image/png" href={faviconImage.src} />
         <meta charset="utf-8" />
         <script src="../scripts/theme.ts"></script>
         <script
@@ -41,7 +41,7 @@ const {
             ><div id="headbox">
                 <div id="hero" transition:animate="fade">
                     <h1>{hero}</h1>
-                    <Picture src={favicon} loading="eager" alt={title} />
+                    <Picture src={faviconImage} loading="eager" alt={title} />
                 </div>
                 {
                     showNavbar && (

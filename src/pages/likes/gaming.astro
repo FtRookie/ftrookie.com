@@ -1,7 +1,6 @@
 ---
 import Basic from "../../components/BasicPage.astro";
 import PlaceholderImage from "../../components/PlaceholderImage.astro";
-import Thumbsup from "../../media/bunger/FTRookie_thumbsup.png";
 
 interface Game {
     name: string;
@@ -36,7 +35,7 @@ const recentGames: Game[] = [
 ];
 ---
 
-<Basic title="Gaming" favicon={Thumbsup} backHref="/likes">
+<Basic title="Gaming" favicon="thumbsup" backHref="/likes">
     <div id="content">
         <h2>I like video games</h2>
         <p>

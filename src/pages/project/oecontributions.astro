@@ -1,7 +1,6 @@
 ---
 import Basic from "../../components/BasicPage.astro";
 import LightboxBar from "../../components/LightboxBar.astro";
-import Judgment from "../../media/bunger/FTRookie_judge.png";
 import PlaneCrazy from "../../media/PlaneCrazyThumbnail.png";
 import PlaneEngineersThumbnail from "../../media/PlaneEngineersThumbnail.png";
 import PlaneEngineersBanner from "../../media/PlaneEngineersBanner.png";
@@ -108,7 +107,7 @@ const dmcaImages = [
 ];
 ---
 
-<Basic title="OE Contributions" favicon={Judgment} backHref="/projects">
+<Basic title="OE Contributions" favicon="judgment" backHref="/projects">
     <div id="content">
         <h2 class="chapterheader">Origins</h2>
         <Fragment set:html={prose.origins} />
