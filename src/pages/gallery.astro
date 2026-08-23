@@ -2,7 +2,6 @@
 import Basic from "../components/BasicPage.astro";
 import { getImage, Picture } from "astro:assets";
 import { getCollection } from "astro:content";
-import "glightbox/dist/css/glightbox.min.css";
 import "../styles/gallery.css";
 
 const entries = (await getCollection("bunger")).sort((a, b) =>
@@ -73,13 +72,11 @@ const galleryItems = await Promise.all(
                         galleryItems.map(({ id, data, full }) => (
                               <li id={id}>
                                     <a
-                                          href={full.src}
-                                          data-title={data.lightboxTitle}
-                                          data-description={
-                                                data.lightboxDescription
-                                          }
-                                          class="glightbox"
-                                    >
+href={full.src}
+data-pswp-width={full.attributes.width}
+data-pswp-height={full.attributes.height}
+class="lightbox"
+>
                                           <Picture
                                                 src={data.path}
                                                 alt={data.lightboxTitle}
@@ -92,6 +89,11 @@ const galleryItems = await Promise.all(
                                                 data-metadata-date={data.date}
                                                 data-metadata-type={data.type}
                                           />
+<span class="lightbox-caption" hidden>
+<strong>{data.lightboxTitle}</strong>
+<br />
+{data.lightboxDescription}
+</span>
                                     </a>
                               </li>
                         ))

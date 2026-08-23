@@ -59,7 +59,7 @@ const onload = () => {
     let sortedImagesArray = Array.from(galleryContainer.querySelectorAll("li")) as ImageLI[]
 
     for (const listItem of sortedImagesArray) {
-        const image = listItem.querySelector(".glightbox")!.querySelector("img")!
+        const image = listItem.querySelector(".lightbox")!.querySelector("img")!
         listItem.Image = image
         authors.add(image.dataset.metadataAuthor!)
         types.add(image.dataset.metadataType!)
@@ -151,7 +151,9 @@ const onload = () => {
         update();
     });
 
-    initLightbox();
+    const lightbox = initLightbox("#gallery");
+
+    document.addEventListener("astro:before-swap", () => lightbox.destroy(), { once: true });
 };
 
 document.addEventListener("astro:page-load", () => {

@@ -5,7 +5,7 @@ it contains some information about me, artists I have commissioned, and a small 
 Live website [here](https://ftrookie.com/home)
 ---
 ```
-- Framework : AstroJS, glightbox
+- Framework : AstroJS, PhotoSwipe
 - Design : Proprietary, device responsive 
 - Web Server : Self-hosted with nginx
 - DNS Provider : Cloudflare

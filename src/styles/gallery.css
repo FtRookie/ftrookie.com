@@ -24,21 +24,6 @@
     margin-right: min(1rem, 1vmin);
 }
 
-.gslide-title {
-    color: var(--primary-text) !important;
-    font-size: 250% !important;
-    margin: auto;
-}
-
-.gdesc-inner {
-    background-color: var(--primary-bg) !important;
-}
-
-.gslide-desc {
-    color: var(--primary-text) !important;
-    font-size: 150% !important;
-    max-width: 75ch;
-}
 
 /*#region Sorting/Filtering*/
 #options {

@@ -15,8 +15,9 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/node": "^11.1.4",
     "astro": "^7.2.4",
-    "glightbox": "^3.3.1",
     "marked": "^18.0.6",
+    "photoswipe": "^5.4.4",
+    "photoswipe-dynamic-caption-plugin": "^1.2.7",
     "typescript": "^5.9.3"
   },
   "description": "Personal portfolio site",

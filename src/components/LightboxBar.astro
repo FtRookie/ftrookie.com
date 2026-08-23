@@ -22,11 +22,20 @@ const { images, height = "auto" } = Astro.props;
         images.map(({ image, alt, title, description }) => (
             <a
                 href={image.src}
-                data-title={title}
-                data-description={description}
-                class="glightbox"
+                data-pswp-width={image.width}
+                data-pswp-height={image.height}
+                class="lightbox"
             >
                 <Picture src={image} alt={alt} />
+                <span class="lightbox-caption" hidden>
+                    <strong>{title}</strong>
+                    {description && (
+                        <>
+                            <br />
+                            {description}
+                        </>
+                    )}
+                </span>
             </a>
         ))
     }

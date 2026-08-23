@@ -1,0 +1,86 @@
+.pswp--site {
+    --pswp-bg: var(--lightbox-bg);
+    --pswp-icon-color: var(--lightbox-text);
+    --pswp-icon-color-secondary: var(--lightbox-text);
+}
+
+.pswp--site .pswp__button {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: 0.75rem;
+    background: var(--lightbox-control-bg);
+    border: 1px solid var(--lightbox-control-border);
+    border-radius: 0.25rem;
+    opacity: 1;
+}
+
+.pswp--site .pswp__button:hover,
+.pswp--site .pswp__button:focus-visible {
+    background: var(--lightbox-control-hover-bg);
+    border: 1px solid var(--lightbox-control-border);
+}
+
+.pswp--site .pswp__button .pswp__icn {
+    top: 50%;
+    left: 50%;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: -0.875rem 0 0 -0.875rem;
+}
+
+.pswp--site .pswp__button--arrow .pswp__icn,
+.pswp--site .pswp__button--close .pswp__icn {
+    fill: none;
+    stroke: var(--lightbox-text);
+}
+
+.pswp--site .pswp__button--arrow {
+    top: 50%;
+    margin-top: -1.375rem;
+    visibility: visible;
+}
+
+.pswp--site .pswp__button--arrow--next .pswp__icn {
+    left: 50%;
+    right: auto;
+    transform: none;
+}
+
+.pswp--site .pswp__counter {
+    height: 2.75rem;
+    margin: 0.75rem auto 0 1rem;
+    font-size: 0.875rem;
+    line-height: 2.75rem;
+    opacity: 1;
+    text-shadow: none;
+}
+
+.pswp--site .pswp__preloader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 4rem;
+    height: 4rem;
+    margin: -2rem 0 0 -2rem;
+}
+
+.pswp--site .pswp__preloader .pswp__icn {
+    top: 0;
+    left: 0;
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+}
+
+.pswp--site .pswp__dynamic-caption--below {
+    max-width: none;
+    padding: 0.75rem 0 0;
+    font-size: clamp(1rem, 2vmin, 1.25rem);
+    line-height: 1.4;
+}
+
+.pswp--site .pswp__dynamic-caption strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: clamp(1.125rem, 2.6vmin, 1.5rem);
+}

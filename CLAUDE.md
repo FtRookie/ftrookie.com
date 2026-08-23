@@ -8,7 +8,7 @@ Personal portfolio site built with **Astro 6**, deployed as a static build via n
 
 - **Astro 6**, `output: "static"`, `@astrojs/node` adapter in standalone mode
 - **TypeScript** strict mode (`tsconfig.json` extends Astro's `strict` preset)
-- **GLightbox** for image lightboxes (gallery, oecontributions pages)
+- **PhotoSwipe 5** + `photoswipe-dynamic-caption-plugin` for image lightboxes (gallery, oecontributions pages) — see "Lightbox" under Content Patterns
 - **FontAwesome** CDN kit — loaded globally via `BasicPage.astro`, icons only appear on `gallery.astro`, `artists.astro`, and `socials.astro`
 - **View Transitions** enabled via `<ClientRouter />` in `Head.astro`
 - Build: `npm run build` — compiles the site. Run `npx astro check` separately for full TypeScript diagnostics on `.astro` files.
@@ -61,7 +61,7 @@ This site uses `<ClientRouter />` (Astro's View Transitions). Scripts in `.astro
 
 | Event | When it fires | Use it for |
 |---|---|---|
-| `astro:page-load` | After navigation completes, page visible | Re-initializing libraries (GLightbox, etc.) |
+| `astro:page-load` | After navigation completes, page visible | Re-initializing libraries (PhotoSwipe, etc.) |
 | `astro:after-swap` | After DOM swap, before scripts run | Restoring theme, scroll position, any state |
 | `astro:before-swap` | Before DOM is replaced | Cleaning up intervals, removing event listeners |
 
@@ -358,6 +358,27 @@ The gallery is a content collection (`bunger`) defined in `src/content.config.ts
 
 The build validates every entry against the zod schema and fails if the image file is missing or a field is malformed — a typo cannot silently drop an image. `gallery.astro` renders via `getCollection("bunger")` and stamps `data-metadata-*` attributes server-side; `gallery.ts` reads those off the DOM for sorting/filtering (it does not import the JSON).
 
+### Lightbox
+
+Every lightbox trigger follows one markup contract, rendered in `gallery.astro` and `LightboxBar.astro`:
+
+```astro
+<a href={full.src} data-pswp-width={width} data-pswp-height={height} class="lightbox">
+    <Picture src={thumb} alt={title} />
+    <span class="lightbox-caption" hidden>
+        <strong>{title}</strong>
+        <br />
+        {description}
+    </span>
+</a>
+```
+
+- `data-pswp-width` / `data-pswp-height` are mandatory and must match the `href` image — PhotoSwipe sizes the slide from them *before* the file loads, which is what prevents the caption-first flash and relayout that GLightbox had. Take them from `ImageMetadata` (`image.width`) or `getImage()` (`full.attributes.width`).
+- The `<Picture>` thumbnail doubles as the placeholder while the full image loads.
+- The hidden `.lightbox-caption` span is read as HTML by the caption plugin, so title and description can be formatted freely.
+- Initialise with `initLightbox("#gallery")` (any selector; multiple matches become separate galleries) and call `destroy()` on `astro:before-swap` with `{ once: true }`.
+- Chrome colours come from the `--lightbox-*` tokens in `global.css`; style the lightbox only through `photoswipe-theme.css` (`.pswp--site` scope), never `pswp__*` classes in page CSS.
+
 ### Adding artists
 
 Add an entry to the `artists` array in `src/pages/artists.astro`. The `imageUrl` field accepts external URLs (Twitter/Ko-Fi avatars are fine here since Astro cannot process remote images at build time).
@@ -376,6 +397,7 @@ src/
   components/
     Album.astro            — album cover card (used in music)
     BasicPage.astro        — root layout: navbar (showNavbar prop) or back link (backHref prop), hero, theme toggle, footer
+    LightboxBar.astro      — horizontal strip of lightbox anchors (used in oecontributions)
     PlaceholderImage.astro — saywhaaat placeholder Picture for pages with sparse content
     Head.astro             — <head> meta: OG tags, ClientRouter (no export const partial)
   pages/
@@ -385,12 +407,14 @@ src/
   scripts/
     home.ts                — clanker prompt + live clock (clears interval on astro:before-swap)
     theme.ts               — dark/light mode; wires theme toggle button on astro:after-swap
-    gallery.ts             — GLightbox + sort/filter logic (reads data-metadata-* off the DOM); initializes on astro:page-load
+    gallery.ts             — PhotoSwipe init + sort/filter logic (reads data-metadata-* off the DOM); initializes on astro:page-load
     gallery.types.ts       — TypeScript interfaces for gallery.ts (CollapsibleElement, ImageLI, etc.)
-    lightbox.ts            — shared GLightbox config (initLightbox), used by gallery.ts + oecontributions.ts
-    oecontributions.ts     — GLightbox init for .imagebar elements on astro:page-load
+    lightbox.ts            — shared PhotoSwipe config: initLightbox(gallerySelector) → options, chrome icons, caption plugin; used by gallery.ts + oecontributions.ts
+    photoswipe-dynamic-caption-plugin.d.ts — ambient types for the caption plugin (ships none)
+    oecontributions.ts     — PhotoSwipe init for .imagebar elements on astro:page-load
   styles/
-    global.css             — theme vars, typography, navbar, layout — edit here for site-wide changes
+    global.css             — theme vars (incl. --lightbox-* tokens), typography, navbar, layout — edit here for site-wide changes
+    photoswipe-theme.css   — lightbox chrome (square buttons, centred spinner, caption type), scoped to .pswp--site
     home.css, gallery.css, artists.css, etc. — page-specific styles
   media/
     bunger/                — character PNG assets + metadata.json (gallery collection data)

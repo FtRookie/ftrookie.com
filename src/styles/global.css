@@ -16,6 +16,12 @@
     --navbar-text: #fff;
 
     --credits: #222;
+
+    --lightbox-bg: #000;
+    --lightbox-text: #fff;
+    --lightbox-control-bg: rgba(255, 255, 255, 0.12);
+    --lightbox-control-hover-bg: rgba(255, 255, 255, 0.25);
+    --lightbox-control-border: rgba(255, 255, 255, 0.5);
 }
 
 :root[data-theme="dark"] {
