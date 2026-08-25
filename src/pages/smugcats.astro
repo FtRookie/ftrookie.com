@@ -1,0 +1,74 @@
+---
+import Basic from "../components/BasicPage.astro";
+import PlaceholderImage from "../components/PlaceholderImage.astro";
+import { getImage, Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import "../styles/smugcats.css";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+      "/src/media/smugcats/*.{jpg,jpeg,png,gif,webp,avif}",
+);
+
+const prettify = (path: string): string =>
+      path
+            .split("/")
+            .pop()!
+            .replace(/\.[^.]+$/, "")
+            .replace(/[-_]+/g, " ")
+            .replace(/\b\w/g, (c) => c.toUpperCase());
+
+const smugcats = await Promise.all(
+      Object.keys(images)
+            .sort()
+            .map(async (path) => {
+                  const image = (await images[path]!()).default;
+                  // gifs stay gifs so they keep animating; everything else
+                  // gets a webp for the full-size lightbox slide
+                  const full = await getImage({
+                        src: image,
+                        format: image.format === "gif" ? "gif" : "webp",
+                  });
+                  return {
+                        image,
+                        title: prettify(path),
+                        src: full.src,
+                        width: image.width,
+                        height: image.height,
+                  };
+            }),
+);
+---
+
+<Basic title="Smug Cats" favicon="judgment">
+      {
+            smugcats.length > 0 ? (
+                  <ul id="smugcats">
+                        {smugcats.map(({ image, title, src, width, height }) => (
+                              <li>
+                                    <a
+                                          href={src}
+                                          data-pswp-width={width}
+                                          data-pswp-height={height}
+                                          class="lightbox"
+                                    >
+                                          <Picture
+                                                src={image}
+                                                alt={title}
+                                                loading="lazy"
+                                          />
+                                          <span class="lightbox-caption" hidden>
+                                                <strong>{title}</strong>
+                                          </span>
+                                    </a>
+                              </li>
+                        ))}
+                  </ul>
+            ) : (
+                  <div id="smugcats-empty">
+                        <p>No smug cats yet. Check back later.</p>
+                        <PlaceholderImage />
+                  </div>
+            )
+      }
+</Basic>
+<script src="../scripts/smugcats.ts"></script>
