@@ -22,7 +22,6 @@ const smugcats = await Promise.all(
             .sort()
             .map(async (path) => {
                   const image = (await images[path]!()).default;
-                  // gifs stay gifs so they keep animating; everything else
                   // gets a webp for the full-size lightbox slide
                   const full = await getImage({
                         src: image,
