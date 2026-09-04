@@ -3,8 +3,7 @@ import Basic from "../components/BasicPage.astro";
 import { bungers } from "../scripts/bunger";
 import { Picture } from "astro:assets";
 import Yippee from "../media/bunger/yippee.png";
-import Rowenrizz from "../media/bunger/rowenrizz.png";
-import reference from "../media/fortuneisacat.jpg";
+import startdoingthis from "../media/smugcats/start-doing-this.png";
 import blehh from "../media/blehh.gif";
 import "../styles/home.css";
 ---
@@ -38,25 +37,7 @@ import "../styles/home.css";
             loading={"eager"}
          />
       </div>
-      <div>
-         <p>It's finished!!!</p>
-         <div
-            style="display:flexbox;width:fit-content;justify-content:flex-start;flex-direction: row;"
-         >
-            <Picture
-               src={Rowenrizz}
-               alt="rizznetre"
-               style="width:40%;aspect-ratio:1;height:auto;object-fit:contain;"
-               loading={"eager"}
-            />
-            <Picture
-               src={reference}
-               alt="fortuneisacat"
-               style="width:40%;aspect-ratio:1;height:auto;object-fit:contain;"
-               loading={"eager"}
-            />
-         </div>
-      </div>
+      <Picture src={startdoingthis} alt="start doing this" loading={"eager"} />
       <Picture src={blehh} alt="freaky" style="display:block" />
    </div>
    <div id="info">
