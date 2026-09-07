@@ -1,5 +1,15 @@
 [
     {
+        "id": "cravote",
+        "path": "cravote.png",
+        "author": "cravote",
+        "date": "2026-09-06",
+        "type": "icon",
+        "price": 0,
+        "lightboxTitle": "He was bored",
+        "lightboxDescription": "artist: cravote, a gift from someone who was bored"
+    },
+    {
         "id": "newangry-alt",
         "path": "newFTRookie_angry-alt.png",
         "author": "roweniee",
@@ -178,6 +188,26 @@
         "price": 0,
         "lightboxTitle": "Yayy",
         "lightboxDescription": "artist: badjellbungus, from Rate My Avatar"
+    },
+    {
+        "id": "rma2",
+        "path": "rma2.png",
+        "author": "unknown",
+        "date": "2025-05-26",
+        "type": "icon",
+        "price": 0,
+        "lightboxTitle": "Rate My Avatar Sketch 2",
+        "lightboxDescription": "artist: unknown, from Rate My Avatar"
+    },
+    {
+        "id": "rma1",
+        "path": "rma1.png",
+        "author": "flyingvi",
+        "date": "2025-05-22",
+        "type": "icon",
+        "price": 0,
+        "lightboxTitle": "Rate My Avatar Sketch 1",
+        "lightboxDescription": "artist: flyingvi, from Rate My Avatar"
     },
     {
         "id": "fullbody",
