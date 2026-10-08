@@ -2,44 +2,44 @@ p,
 h2,
 em,
 footer {
-    text-align: center;
-    display: block;
-    margin: auto;
+	text-align: center;
+	display: block;
+	margin: auto;
 }
 
 h2 {
-    font-size: 200%;
+	font-size: 200%;
 }
 
-#list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+.list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
 }
 
 @media (orientation: portrait) {
-    #list {
-        grid-template-columns: 1fr;
-    }
+	.list {
+		grid-template-columns: 1fr;
+	}
 }
 
 .artist {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .artist a {
-    text-decoration: none;
-    color: var(--primary-text);
-    font-size: clamp(1rem, 5vh, 3rem);
-    margin-left: 10px;
+	text-decoration: none;
+	color: var(--primary-text);
+	font-size: clamp(1rem, 5vh, 3rem);
+	margin-left: 10px;
 }
 
 .artist img {
-    width: clamp(3rem, 20vw, 12.5rem);
-    height: auto;
+	width: clamp(3rem, 20vw, 12.5rem);
+	height: auto;
 }
 
 i {
-    color: var(--primary-text);
+	color: var(--primary-text);
 }

@@ -5,81 +5,101 @@ import "../styles/global.css";
 import { bungers, type Bunger } from "../scripts/bunger";
 
 interface Props {
-    title?: string;
-    favicon?: Bunger;
-    hero?: string;
-    showNavbar?: boolean;
-    backHref?: string;
+	title?: string;
+	favicon?: Bunger;
+	hero?: string;
+	showNavbar?: boolean;
+	backHref?: string;
 }
 
 const {
-    title = "FtRookie",
-    favicon = "thumbsup",
-    hero = `FtRookie's ${title}`,
-    backHref,
-    showNavbar = !backHref,
+	title = "FtRookie",
+	favicon = "thumbsup",
+	hero = `FtRookie's ${title}`,
+	backHref,
+	showNavbar = !backHref,
 } = Astro.props;
 const faviconImage = bungers[favicon];
 ---
 
 <html lang="en">
-    <head>
-        <title>{title}</title>
-        <link rel="icon" type="image/png" href={faviconImage.src} />
-        <meta charset="utf-8" />
-        <script src="../scripts/theme.ts"></script>
-        <script
-            src="https://kit.fontawesome.com/fba9df0135.js"
-            is:inline
-            data-astro-rerun></script>
-        <Head />
-    </head>
-    <body>
-        <div id="viewport">
-            <button transition:animate="none" id="theme-toggle"
-                >&#127769;</button
-            ><div id="headbox">
-                <div id="hero" transition:animate="fade">
-                    <h1>{hero}</h1>
-                    <Picture src={faviconImage} loading="eager" alt={title} />
-                </div>
-                {
-                    showNavbar && (
-                        <div class="navbar" transition:animate="none">
-                            <a href="/home">Home</a>
-                            <a href="/gallery">Gallery</a>
-                            <a href="/projects">Projects</a>
-                            <a href="/likes">Likes</a>
-                            <a href="/socials">Socials</a>
-                            <a href="/artists">Artists</a>
-                            <a href="/smugcats">Smug Cats</a>
-                        </div>
-                    )
-                }
-                {
-                    backHref && (
-                        <>
-                            <a class="naventry" href={backHref}>
-                                &#60; Back
-                            </a>
-                            <br />
-                        </>
-                    )
-                }
-            </div>
-            <slot />
-            <div class="credits" transition:animate="fade">
-                <a href="https://i3ym.ru">
-                    Thanks to i3ym for making this possible
-                </a>
-                <footer>
-                    I host this website on my old PC, it might be slow
-                </footer>
-                <footer>
-                    Portions of this website were written with the assistance of
-                    LLMs
-                </footer>
-            </div>
-        </div>
-    </body>
+	<head>
+		<title>{title}</title>
+		<link rel="icon" type="image/png" href={faviconImage.src} />
+		<meta charset="utf-8" />
+		<script src="../scripts/theme.ts"></script>
+		<script src="../scripts/navbar.ts"></script>
+		<script src="https://kit.fontawesome.com/fba9df0135.js" is:inline data-astro-rerun></script>
+		<Head />
+	</head>
+	<body>
+		<a class="skip-link" href="#main">
+			Skip to content
+		</a>
+		<div id="viewport">
+			<button
+				transition:animate="none"
+				id="theme-toggle"
+				type="button"
+				aria-label="Dark mode"
+				aria-pressed="false"
+			>
+				&#127769;
+			</button>
+			<header id="headbox">
+				<div id="hero" transition:animate="fade">
+					<h1>{hero}</h1>
+					<Picture src={faviconImage} loading="eager" alt={title} />
+				</div>
+				{showNavbar && (
+					<div class="navwrap" transition:animate="none">
+						<button
+							class="nav-arrow"
+							data-direction="-1"
+							type="button"
+							tabindex="-1"
+							aria-hidden="true"
+							hidden
+						>
+							<i class="fa-solid fa-chevron-left" />
+						</button>
+						<nav class="navbar" aria-label="Main">
+							<a href="/home">Home</a>
+							<a href="/gallery">Gallery</a>
+							<a href="/projects">Projects</a>
+							<a href="/likes">Likes</a>
+							<a href="/socials">Socials</a>
+							<a href="/artists">Artists</a>
+							<a href="/smugcats">Smug Cats</a>
+						</nav>
+						<button
+							class="nav-arrow"
+							data-direction="1"
+							type="button"
+							tabindex="-1"
+							aria-hidden="true"
+							hidden
+						>
+							<i class="fa-solid fa-chevron-right" />
+						</button>
+					</div>
+				)}
+				{backHref && (
+					<>
+						<a class="naventry" href={backHref}>
+							&#60; Back
+						</a>
+						<br />
+					</>
+				)}
+			</header>
+			<main id="main">
+				<slot />
+			</main>
+			<br />
+			<footer class="credits" transition:animate="fade">
+				<a href="https://i3ym.ru">Thanks to i3ym for making this possible</a>
+			</footer>
+		</div>
+	</body>
 </html>

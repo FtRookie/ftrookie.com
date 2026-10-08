@@ -9,63 +9,57 @@ import "../styles/home.css";
 ---
 
 <Basic title="FtRookie's Website" hero="FtRookie's Website" favicon="thinker">
-   <div id="clankerprompt" style="display:none">
-      <Picture
-         src={bungers.judgment}
-         alt="Judgment"
-         layout="full-width"
-         loading={"eager"}
-      />
-      <h1>Are you a clanker?</h1>
-      <div>
-         <button id="clankeryes" type="button">Yes I'm a dirty RAM eater</button
-         >
-         <button id="clankerno" type="button"
-            >No I'm a carbon based lifeform</button
-         >
-      </div>
-   </div>
-   <div id="content">
-      <h2 style="display:inline-block">Who am I?</h2>
-      <div>
-         <p>I am the bunger, you will be bungled</p>
-         <br />
-         <Picture
-            class="yippee"
-            src={Yippee}
-            alt="roweniee"
-            loading={"eager"}
-         />
-      </div>
-      <Picture src={startdoingthis} alt="start doing this" loading={"eager"} />
-      <Picture src={blehh} alt="freaky" style="display:block" />
-   </div>
-   <div id="info">
-      <h2>Species:</h2>
-      <p>Domestic Cat / Furred Dragon (Hybrid)</p>
-      <h2>Birthday:</h2>
-      <p>December 29</p>
-      <h2>Gender:</h2>
-      <p>Cisgender Male (he/him)</p>
-      <h2>Country & Current Time:</h2>
-      <p>
-         United States <img class="icon" src="/USFlag.svg" alt="🇺🇸" />
-      </p>
-      <p id="timenow"></p>
-      <h2>How to address me:</h2>
-      <p>
-         &#10004 Rook <br />
-         &#10004 Rookie <br />
-         &#10004 Bung <br />
-         &#10004 Bunger <br />
-         &#10006 "Ef-tee" Rookie (sounds awkward) <br />
-         &#10006 "Ef-tee" (sounds stupid)<br />
-      </p>
-      <h2>Also known as:</h2>
-      <p>
-         Rookie5102<br />
-         CrimeToHumanity<br />
-      </p>
-   </div>
+	<dialog id="clankerprompt" aria-labelledby="clankerprompt-title">
+		<Picture src={bungers.judgment} alt="Judgment" layout="full-width" loading={"eager"} />
+		<h2 id="clankerprompt-title">Are you a clanker?</h2>
+		<div>
+			<button id="clankeryes" type="button">
+				Yes I'm a dirty RAM eater
+			</button>
+			<button id="clankerno" type="button">
+				No I'm a carbon based lifeform
+			</button>
+		</div>
+	</dialog>
+	<div id="content">
+		<h2 style="display:inline-block">Who am I?</h2>
+		<div>
+			<p>I am the bunger, you will be bungled</p>
+			<br />
+			<Picture class="yippee" src={Yippee} alt="roweniee" loading={"eager"} />
+		</div>
+		<Picture src={startdoingthis} alt="start doing this" style="aspect-ratio:auto;height:auto" />
+		<Picture src={blehh} alt="freaky" style="display:block" />
+	</div>
+	<div id="info">
+		<h2>Species:</h2>
+		<p>Domestic Cat / Furred Dragon (Hybrid)</p>
+		<h2>Birthday:</h2>
+		<p>December 29</p>
+		<h2>Gender:</h2>
+		<p>Cisgender Male (he/him)</p>
+		<h2>Country & Current Time:</h2>
+		<p>
+			United States <img class="icon" src="/USFlag.svg" alt="🇺🇸" />
+		</p>
+		<p id="timenow"></p>
+		<h2>How to address me:</h2>
+		<p>
+			&#10004 Rook <br />
+			&#10004 Rookie <br />
+			&#10004 Bung <br />
+			&#10004 Bunger <br />
+			&#10006 "Ef-tee" Rookie (sounds awkward) <br />
+			&#10006 "Ef-tee" (sounds stupid)
+			<br />
+		</p>
+		<h2>Also known as:</h2>
+		<p>
+			Rookie5102
+			<br />
+			CrimeToHumanity
+			<br />
+		</p>
+	</div>
 </Basic>
 <script src="../scripts/home.ts"></script>

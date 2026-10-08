@@ -1,17 +1,17 @@
 name: deploy
 
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 
 jobs:
-  deploy:
-    runs-on: self-hosted
+    deploy:
+        runs-on: self-hosted
 
-    steps:
-      - run: |
-          cd /var/www/html
-          git pull
-          npm ci
-          npm run build
-          sudo systemctl restart deploy
+        steps:
+            - run: |
+                  cd /var/www/html
+                  git pull
+                  npm ci
+                  npm run build
+                  sudo systemctl restart deploy

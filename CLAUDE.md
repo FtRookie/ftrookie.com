@@ -340,8 +340,8 @@ Do not copy-paste markup blocks for similar items. If you find yourself repeatin
 
 ### Adding album covers
 
-1. Drop the image file into `src/media/albumcovers/`
-2. Add an entry to the `albums` array in `src/pages/likes/music.astro`:
+1. Fetch the cover with `npm run cover -- "Artist Name" "Song Title"`. It searches iTunes, then Deezer (no API key), saves a 1000px JPG into `src/media/albumcovers/`, and prints the matched album so a wrong match can be caught. It will not overwrite an existing file without `--force`. Exit status: 0 saved, 1 bad arguments, 2 no match, 3 network/HTTP error, 4 file already exists, 5 write failed (documented at the top of `scripts/fetch-cover.mjs`). Alternatively, drop an image file into `src/media/albumcovers/` by hand.
+2. Add an entry to the `albums` array in `src/pages/likes/music.astro`. The script prints this line ready to paste:
 
 ```typescript
 { author: "Artist Name", song: "Song Title", image: "filename.jpg" }
@@ -406,7 +406,8 @@ src/
     project/               — website, oecontributions
   scripts/
     home.ts                — clanker prompt + live clock (clears interval on astro:before-swap)
-    theme.ts               — dark/light mode; wires theme toggle button on astro:after-swap
+    theme.ts               — dark/light mode; wires theme toggle button (and its aria-pressed) on astro:after-swap
+    navbar.ts              — shows/hides the nav overflow arrows and scrolls the nav on click; initializes on astro:page-load
     gallery.ts             — PhotoSwipe init + sort/filter logic (reads data-metadata-* off the DOM); initializes on astro:page-load
     gallery.types.ts       — TypeScript interfaces for gallery.ts (CollapsibleElement, ImageLI, etc.)
     lightbox.ts            — shared PhotoSwipe config: initLightbox(gallerySelector) → options, chrome icons, caption plugin; used by gallery.ts + oecontributions.ts
@@ -420,6 +421,8 @@ src/
     bunger/                — character PNG assets + metadata.json (gallery collection data)
     albumcovers/           — album cover images (processed by Astro into WebP)
     *.gif, *.png           — misc media (GIFs passed through; PNGs converted to WebP)
+scripts/
+  fetch-cover.mjs          — `npm run cover`: downloads album art from iTunes/Deezer into src/media/albumcovers/
 public/
   *.png, *.svg, favicon.ico — static assets served at fixed URLs, not processed by Astro
 ```

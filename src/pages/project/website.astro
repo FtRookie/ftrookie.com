@@ -7,42 +7,43 @@ import "../../styles/projectpage.css";
 ---
 
 <style>
-    #insanity {
-        width: max(30rem, 30%);
-        height: auto;
-    }
+	#insanity {
+		width: max(30rem, 30%);
+		height: auto;
+	}
 </style>
 
 <Basic title="Website" favicon="thumbsup" backHref="/projects">
-    <div id="content">
-        <p>The server is ran on my old PC running debian</p>
-        <PlaceholderImage />
-        <footer>feeble creature</footer>
-        <h2>brute force</h2>
-        <Picture id="insanity" src={insanity} alt="insanity" />
-    </div>
-    <div id="info">
-        <p>Self-hosted website with a CI/CD workflow</p>
-        <p>Git deployed with self-hosted runner and deploy action</p>
-        <p>Registered and proxied with Cloudflare</p>
-        <h2>Made with...</h2>
-        <ul>
-            <li>
-                <a href="https://astro.build/">Astro</a>
-            </li>
-            <li>
-                <a href="https://photoswipe.com/">PhotoSwipe</a>
-            </li>
-            <li>
-                <a href="https://fontawesome.com">fontawesome</a>
-            </li>
-            <li><a href="https://nginx.org/">nginx</a></li>
-            <li><a href="https://certbot.eff.org/">certbot</a></li>
-        </ul>
-        <br />
-        <p>
-            Server Machine Specifications: Intel i5-4670K, 8GB DDR3 1666Mhz,
-            256Gb SSD
-        </p>
-    </div>
+	<div id="content">
+		<p>The server is ran on my old PC running debian</p>
+		<PlaceholderImage />
+		<footer>feeble creature</footer>
+		<h2>brute force</h2>
+		<Picture id="insanity" src={insanity} alt="insanity" />
+	</div>
+	<div id="info">
+		<p>Self-hosted website with a CI/CD workflow</p>
+		<p>Git deployed with self-hosted runner and deploy action</p>
+		<p>Registered and proxied with Cloudflare</p>
+		<h2>Made with...</h2>
+		<ul>
+			<li>
+				<a href="https://astro.build/">Astro</a>
+			</li>
+			<li>
+				<a href="https://photoswipe.com/">PhotoSwipe</a>
+			</li>
+			<li>
+				<a href="https://fontawesome.com">fontawesome</a>
+			</li>
+			<li>
+				<a href="https://nginx.org/">nginx</a>
+			</li>
+			<li>
+				<a href="https://certbot.eff.org/">certbot</a>
+			</li>
+		</ul>
+		<br />
+		<p>Server Machine Specifications: Intel i5-4670K, 8GB DDR3 1666Mhz, 256Gb SSD</p>
+	</div>
 </Basic>

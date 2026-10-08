@@ -1,41 +1,44 @@
 {
-  "name": "ftrookie-com",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/node": "^11.1.5",
-    "astro": "^7.3.1",
-    "marked": "^18.0.6",
-    "photoswipe": "^5.4.4",
-    "photoswipe-dynamic-caption-plugin": "^1.2.7",
-    "typescript": "^5.9.3"
-  },
-  "description": "Personal portfolio site",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FtRookie/ftrookie.com.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FtRookie/ftrookie.com/issues"
-  },
-  "homepage": "https://github.com/FtRookie/ftrookie.com#readme",
-  "allowScripts": {
-    "esbuild@0.28.2": true
-  },
-  "devDependencies": {
-    "playwright": "^1.62.1"
-  }
+	"name": "ftrookie-com",
+	"type": "module",
+	"version": "0.0.1",
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"cover": "node scripts/fetch-cover.mjs"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.10",
+		"@astrojs/node": "^11.1.5",
+		"astro": "^7.3.1",
+		"marked": "^18.0.6",
+		"photoswipe": "^5.4.4",
+		"photoswipe-dynamic-caption-plugin": "^1.2.7",
+		"typescript": "^5.9.3"
+	},
+	"description": "Personal portfolio site",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FtRookie/ftrookie.com.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/FtRookie/ftrookie.com/issues"
+	},
+	"homepage": "https://github.com/FtRookie/ftrookie.com#readme",
+	"allowScripts": {
+		"esbuild@0.28.2": true
+	},
+	"devDependencies": {
+		"playwright": "^1.62.1",
+		"prettier": "^3.9.9",
+		"prettier-plugin-astro": "^1.1.0"
+	}
 }

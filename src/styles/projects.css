@@ -1,50 +1,50 @@
 :root {
-    --project-bg1: #222;
-    --project-bg2: #333;
-    --project-text: #fff;
+	--project-bg1: #222;
+	--project-bg2: #333;
+	--project-text: #fff;
 }
 
 :root[data-theme="dark"] {
-    --project-bg1: #ddd;
-    --project-bg2: #c5c5c5;
-    --project-text: #000000;
+	--project-bg1: #ddd;
+	--project-bg2: #c5c5c5;
+	--project-text: #000000;
 }
 
 .project {
-    background-color: var(--project-bg1);
-    padding: 1%;
-    height: clamp(6rem, 15vh, 12rem);
+	background-color: var(--project-bg1);
+	padding: 1%;
+	height: clamp(6rem, 15vh, 12rem);
 }
 
 .project:nth-child(even) {
-    background-color: var(--project-bg2)
+	background-color: var(--project-bg2);
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .project div h2 {
-    margin: auto;
-    font-size: clamp(1.8rem, 5vmin, 3.6rem);
-    font-weight: normal;
-    text-decoration: underline;
-    color: var(--project-text);
+	margin: auto;
+	font-size: clamp(1.8rem, 5vmin, 3.6rem);
+	font-weight: normal;
+	text-decoration: underline;
+	color: var(--project-text);
 }
 
 .project p {
-    font-size: clamp(1rem, 3vmin, 2rem);
-    max-width: 100ch;
-    display: block;
-    color: var(--project-text);
+	font-size: clamp(1rem, 3vmin, 2rem);
+	max-width: 100ch;
+	display: block;
+	color: var(--project-text);
 }
 
 .project img {
-    float: left;
-    display: inline;
-    height: 100%;
-    aspect-ratio: 1;
-    width: auto;
-    object-fit: contain;
-    margin-right: 20px;
+	float: left;
+	display: inline;
+	height: 100%;
+	aspect-ratio: 1;
+	width: auto;
+	object-fit: contain;
+	margin-right: 20px;
 }

@@ -5,72 +5,77 @@ import "../../styles/music.css";
 import Album from "../../components/Album.astro";
 
 interface AlbumEntry {
-    author: string;
-    song: string;
-    image: string;
+	author: string;
+	song: string;
+	image: string;
 }
 
 const albums: AlbumEntry[] = [
-    { author: "KaNa", song: "Mimage", image: "MimageEP.jpg" },
-    {
-        author: "Nhato",
-        song: "Tokyo Blue Pipe (KIWAMU Remix)",
-        image: "TokyoBluePipeRemixes.jpg",
-    },
-    {
-        author: "Shingo Nakamura",
-        song: "1247",
-        image: "ShingoNakamuraDays.jpg",
-    },
-    {
-        author: "Shingo Nakamura",
-        song: "Travelog",
-        image: "ShingoNakamuraDays.jpg",
-    },
-    {
-        author: "Nhato & Glascat",
-        song: "One Step Forward",
-        image: "OneStepForward.jpg",
-    },
+	{ author: "KaNa", song: "Mimage", image: "MimageEP.jpg" },
+	{
+		author: "Nhato",
+		song: "Tokyo Blue Pipe (KIWAMU Remix)",
+		image: "TokyoBluePipeRemixes.jpg",
+	},
+	{
+		author: "Shingo Nakamura",
+		song: "1247",
+		image: "ShingoNakamuraDays.jpg",
+	},
+	{
+		author: "Shingo Nakamura",
+		song: "Travelog",
+		image: "ShingoNakamuraDays.jpg",
+	},
+	{
+		author: "Nhato & Glascat",
+		song: "One Step Forward",
+		image: "OneStepForward.jpg",
+	},
+	{
+		author: "Кино",
+		song: "Группа Крови",
+		image: "GruppaKrovi.jpg",
+	},
+	{
+		author: "Кино",
+		song: "песня без слов",
+		image: "ZvezdaPoImeniSolntse.jpg",
+	},
 ];
 ---
 
 <Basic title="Music Taste" favicon="judgment" backHref="/likes">
-    <div id="content">
-        <h2>I listen to many different genres</h2>
-        <p>
-            I like to listen to activity-appropriate music, but also like just
-            general listening, typically Pop music
-        </p>
-        <PlaceholderImage />
-        <ul id="albums">
-            {
-                albums.map((a) => (
-                    <Album author={a.author} song={a.song} image={a.image} />
-                ))
-            }
-        </ul>
-    </div>
-    <div id="info">
-        <h2>Some notable genres</h2>
-        <ul>
-            <li>2010s Pop</li>
-            <li>EDM</li>
-            <li>Funk Wav</li>
-            <li>Rap</li>
-            <li>Hardstyle/Hardbass</li>
-            <li>Post-punk Rock</li>
-        </ul>
-        <h2>Musical artists/groups I like</h2>
-        <ul>
-            <li>Calvin Harris</li>
-            <li>Daniel Caesar</li>
-            <li>The Weeknd</li>
-            <li>Bruno Mars</li>
-            <li>Metro Boomin</li>
-            <li>Kendrick Lamar</li>
-            <li>Кино</li>
-            <li>Otographic Music</li>
-        </ul>
-    </div>
+	<div id="content">
+		<h2>I listen to many different genres</h2>
+		<p>I like to listen to activity-appropriate music, but also like just general listening, typically Pop music</p>
+		<PlaceholderImage />
+		<ul id="albums">
+			{albums.map((a) => (
+				<Album author={a.author} song={a.song} image={a.image} />
+			))}
+		</ul>
+	</div>
+	<div id="info">
+		<h2>Some notable genres</h2>
+		<ul>
+			<li>2010s Pop</li>
+			<li>EDM</li>
+			<li>Funk Wav</li>
+			<li>Rap</li>
+			<li>Hardstyle/Hardbass</li>
+			<li>Post-punk Rock</li>
+		</ul>
+		<h2>Musical artists/groups I like</h2>
+		<ul>
+			<li>Calvin Harris</li>
+			<li>Daniel Caesar</li>
+			<li>The Weeknd</li>
+			<li>Bruno Mars</li>
+			<li>Metro Boomin</li>
+			<li>Kendrick Lamar</li>
+			<li>Кино</li>
+			<li>Otographic Music</li>
+		</ul>
+	</div>
 </Basic>

@@ -1,222 +1,222 @@
 [
-    {
-        "id": "cravote",
-        "path": "cravote.png",
-        "author": "cravote",
-        "date": "2026-09-06",
-        "type": "icon",
-        "price": 0,
-        "lightboxTitle": "He was bored",
-        "lightboxDescription": "artist: cravote, a gift from someone who was bored"
-    },
-    {
-        "id": "newangry-alt",
-        "path": "newFTRookie_angry-alt.png",
-        "author": "roweniee",
-        "date": "2026-08-21",
-        "type": "sticker",
-        "price": 10,
-        "lightboxTitle": "New Angry Alt",
-        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
-    },
-    {
-        "id": "newangry",
-        "path": "newFTRookie_angry.png",
-        "author": "roweniee",
-        "date": "2026-08-21",
-        "type": "sticker",
-        "price": 10,
-        "lightboxTitle": "New Angry",
-        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
-    },
-    {
-        "id": "newthinker",
-        "path": "newFTRookie_thinker.png",
-        "author": "roweniee",
-        "date": "2026-08-21",
-        "type": "sticker",
-        "price": 10,
-        "lightboxTitle": "New Thinker",
-        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
-    },
-    {
-        "id": "newjudgment",
-        "path": "newFTRookie_judge.png",
-        "author": "roweniee",
-        "date": "2026-08-21",
-        "type": "sticker",
-        "price": 10,
-        "lightboxTitle": "New Judgment",
-        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
-    },
-    {
-        "id": "newthumbsup",
-        "path": "newFTRookie_thumbsup.png",
-        "author": "roweniee",
-        "date": "2026-08-21",
-        "type": "sticker",
-        "price": 10,
-        "lightboxTitle": "New Thumbs Up",
-        "lightboxDescription": "artist: roweniee, refresh of a sticker pack"
-    },
-    {
-        "id": "rowenrizzalt",
-        "path": "rowenrizzalt.png",
-        "author": "roweniee",
-        "date": "2026-07-09",
-        "type": "icon",
-        "price": 40,
-        "lightboxTitle": "rizz alt",
-        "lightboxDescription": "artist: roweniee, based off fortuneisacat, but with the sparklies"
-    },
-    {
-        "id": "rowenrizz",
-        "path": "rowenrizz.png",
-        "author": "roweniee",
-        "date": "2026-07-09",
-        "type": "icon",
-        "price": 40,
-        "lightboxTitle": "rizz",
-        "lightboxDescription": "artist: roweniee, based off fortuneisacat"
-    },
-    {
-        "id": "expansion",
-        "path": "expansion.png",
-        "author": "roweniee",
-        "date": "2026-06-29",
-        "type": "icon",
-        "price": 15,
-        "lightboxTitle": "expansion",
-        "lightboxDescription": "artist: roweniee, expansion of my second commission to better fit circular profile pictures"
-    },
-    {
-        "id": "wafflerizz",
-        "path": "wafflerizz.png",
-        "author": "waffles",
-        "date": "2026-05-11",
-        "type": "halfbody",
-        "price": 20,
-        "lightboxTitle": "rizznetre",
-        "lightboxDescription": "artist: Waffles; what is he staring at?"
-    },
-    {
-        "id": "rizz",
-        "path": "b0netterizz.png",
-        "author": "b0nette",
-        "date": "2026-02-20",
-        "type": "icon",
-        "price": 25,
-        "lightboxTitle": "rizz",
-        "lightboxDescription": "artist: b0nette, based on fortuneisacat"
-    },
-    {
-        "id": "fullbodykoi",
-        "path": "fullbodykoi.png",
-        "author": "vylpen",
-        "date": "2026-02-10",
-        "type": "fullbody",
-        "price": 0,
-        "lightboxTitle": "Full Body Koi",
-        "lightboxDescription": "artist: Vulpen, commissioned by KENEMONY"
-    },
-    {
-        "id": "angry-alt",
-        "path": "FTRookie_angry-alt.png",
-        "author": "roweniee",
-        "date": "2025-12-15",
-        "type": "sticker",
-        "price": 0,
-        "lightboxTitle": "Angry Alt",
-        "lightboxDescription": "artist: roweniee, part of a sticker pack"
-    },
-    {
-        "id": "angry",
-        "path": "FTRookie_angry.png",
-        "author": "roweniee",
-        "date": "2025-12-15",
-        "type": "sticker",
-        "price": 30,
-        "lightboxTitle": "Angry",
-        "lightboxDescription": "artist: roweniee, part of a sticker pack"
-    },
-    {
-        "id": "thinker",
-        "path": "FTRookie_think.png",
-        "author": "roweniee",
-        "date": "2025-12-15",
-        "type": "sticker",
-        "price": 30,
-        "lightboxTitle": "Thinker",
-        "lightboxDescription": "artist: roweniee, part of a sticker pack"
-    },
-    {
-        "id": "judgment",
-        "path": "FTRookie_judge.png",
-        "author": "roweniee",
-        "date": "2025-12-15",
-        "type": "sticker",
-        "price": 30,
-        "lightboxTitle": "Judgment",
-        "lightboxDescription": "artist: roweniee, part of a sticker pack"
-    },
-    {
-        "id": "thumbsup",
-        "path": "FTRookie_thumbsup.png",
-        "author": "roweniee",
-        "date": "2025-12-15",
-        "type": "sticker",
-        "price": 0,
-        "lightboxTitle": "Thumbs Up",
-        "lightboxDescription": "artist: roweniee, part of a sticker pack"
-    },
-    {
-        "id": "yippee",
-        "path": "yippee.png",
-        "author": "roweniee",
-        "date": "2025-10-02",
-        "type": "icon",
-        "price": 35,
-        "lightboxTitle": "Yippee",
-        "lightboxDescription": "artist: roweniee, my second commission"
-    },
-    {
-        "id": "yayy",
-        "path": "yayy.png",
-        "author": "badjellbungus",
-        "date": "2025-08-24",
-        "type": "icon",
-        "price": 0,
-        "lightboxTitle": "Yayy",
-        "lightboxDescription": "artist: badjellbungus, from Rate My Avatar"
-    },
-    {
-        "id": "rma2",
-        "path": "rma2.png",
-        "author": "unknown",
-        "date": "2025-05-26",
-        "type": "icon",
-        "price": 0,
-        "lightboxTitle": "Rate My Avatar Sketch 2",
-        "lightboxDescription": "artist: unknown, from Rate My Avatar"
-    },
-    {
-        "id": "rma1",
-        "path": "rma1.png",
-        "author": "flyingvi",
-        "date": "2025-05-22",
-        "type": "icon",
-        "price": 0,
-        "lightboxTitle": "Rate My Avatar Sketch 1",
-        "lightboxDescription": "artist: flyingvi, from Rate My Avatar"
-    },
-    {
-        "id": "fullbody",
-        "path": "fullbody.png",
-        "author": "vylpen",
-        "date": "2023-04-23",
-        "type": "fullbody",
-        "price": 40,
-        "lightboxTitle": "Full Body",
-        "lightboxDescription": "artist: Vulpen, very old first commission"
-    }
+	{
+		"id": "cravote",
+		"path": "cravote.png",
+		"author": "cravote",
+		"date": "2026-09-06",
+		"type": "icon",
+		"price": 0,
+		"lightboxTitle": "He was bored",
+		"lightboxDescription": "artist: cravote, a gift from someone who was bored"
+	},
+	{
+		"id": "newangry-alt",
+		"path": "newFTRookie_angry-alt.png",
+		"author": "roweniee",
+		"date": "2026-08-21",
+		"type": "sticker",
+		"price": 10,
+		"lightboxTitle": "New Angry Alt",
+		"lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+	},
+	{
+		"id": "newangry",
+		"path": "newFTRookie_angry.png",
+		"author": "roweniee",
+		"date": "2026-08-21",
+		"type": "sticker",
+		"price": 10,
+		"lightboxTitle": "New Angry",
+		"lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+	},
+	{
+		"id": "newthinker",
+		"path": "newFTRookie_thinker.png",
+		"author": "roweniee",
+		"date": "2026-08-21",
+		"type": "sticker",
+		"price": 10,
+		"lightboxTitle": "New Thinker",
+		"lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+	},
+	{
+		"id": "newjudgment",
+		"path": "newFTRookie_judge.png",
+		"author": "roweniee",
+		"date": "2026-08-21",
+		"type": "sticker",
+		"price": 10,
+		"lightboxTitle": "New Judgment",
+		"lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+	},
+	{
+		"id": "newthumbsup",
+		"path": "newFTRookie_thumbsup.png",
+		"author": "roweniee",
+		"date": "2026-08-21",
+		"type": "sticker",
+		"price": 10,
+		"lightboxTitle": "New Thumbs Up",
+		"lightboxDescription": "artist: roweniee, refresh of a sticker pack"
+	},
+	{
+		"id": "rowenrizzalt",
+		"path": "rowenrizzalt.png",
+		"author": "roweniee",
+		"date": "2026-07-09",
+		"type": "icon",
+		"price": 40,
+		"lightboxTitle": "rizz alt",
+		"lightboxDescription": "artist: roweniee, based off fortuneisacat, but with the sparklies"
+	},
+	{
+		"id": "rowenrizz",
+		"path": "rowenrizz.png",
+		"author": "roweniee",
+		"date": "2026-07-09",
+		"type": "icon",
+		"price": 40,
+		"lightboxTitle": "rizz",
+		"lightboxDescription": "artist: roweniee, based off fortuneisacat"
+	},
+	{
+		"id": "expansion",
+		"path": "expansion.png",
+		"author": "roweniee",
+		"date": "2026-06-29",
+		"type": "icon",
+		"price": 15,
+		"lightboxTitle": "expansion",
+		"lightboxDescription": "artist: roweniee, expansion of my second commission to better fit circular profile pictures"
+	},
+	{
+		"id": "wafflerizz",
+		"path": "wafflerizz.png",
+		"author": "waffles",
+		"date": "2026-05-11",
+		"type": "halfbody",
+		"price": 20,
+		"lightboxTitle": "rizznetre",
+		"lightboxDescription": "artist: Waffles; what is he staring at?"
+	},
+	{
+		"id": "rizz",
+		"path": "b0netterizz.png",
+		"author": "b0nette",
+		"date": "2026-02-20",
+		"type": "icon",
+		"price": 25,
+		"lightboxTitle": "rizz",
+		"lightboxDescription": "artist: b0nette, based on fortuneisacat"
+	},
+	{
+		"id": "fullbodykoi",
+		"path": "fullbodykoi.png",
+		"author": "vylpen",
+		"date": "2026-02-10",
+		"type": "fullbody",
+		"price": 0,
+		"lightboxTitle": "Full Body Koi",
+		"lightboxDescription": "artist: Vulpen, commissioned by KENEMONY"
+	},
+	{
+		"id": "angry-alt",
+		"path": "FTRookie_angry-alt.png",
+		"author": "roweniee",
+		"date": "2025-12-15",
+		"type": "sticker",
+		"price": 0,
+		"lightboxTitle": "Angry Alt",
+		"lightboxDescription": "artist: roweniee, part of a sticker pack"
+	},
+	{
+		"id": "angry",
+		"path": "FTRookie_angry.png",
+		"author": "roweniee",
+		"date": "2025-12-15",
+		"type": "sticker",
+		"price": 30,
+		"lightboxTitle": "Angry",
+		"lightboxDescription": "artist: roweniee, part of a sticker pack"
+	},
+	{
+		"id": "thinker",
+		"path": "FTRookie_think.png",
+		"author": "roweniee",
+		"date": "2025-12-15",
+		"type": "sticker",
+		"price": 30,
+		"lightboxTitle": "Thinker",
+		"lightboxDescription": "artist: roweniee, part of a sticker pack"
+	},
+	{
+		"id": "judgment",
+		"path": "FTRookie_judge.png",
+		"author": "roweniee",
+		"date": "2025-12-15",
+		"type": "sticker",
+		"price": 30,
+		"lightboxTitle": "Judgment",
+		"lightboxDescription": "artist: roweniee, part of a sticker pack"
+	},
+	{
+		"id": "thumbsup",
+		"path": "FTRookie_thumbsup.png",
+		"author": "roweniee",
+		"date": "2025-12-15",
+		"type": "sticker",
+		"price": 0,
+		"lightboxTitle": "Thumbs Up",
+		"lightboxDescription": "artist: roweniee, part of a sticker pack"
+	},
+	{
+		"id": "yippee",
+		"path": "yippee.png",
+		"author": "roweniee",
+		"date": "2025-10-02",
+		"type": "icon",
+		"price": 35,
+		"lightboxTitle": "Yippee",
+		"lightboxDescription": "artist: roweniee, my second commission"
+	},
+	{
+		"id": "yayy",
+		"path": "yayy.png",
+		"author": "badjellbungus",
+		"date": "2025-08-24",
+		"type": "icon",
+		"price": 0,
+		"lightboxTitle": "Yayy",
+		"lightboxDescription": "artist: badjellbungus, from Rate My Avatar"
+	},
+	{
+		"id": "rma2",
+		"path": "rma2.png",
+		"author": "unknown",
+		"date": "2025-05-26",
+		"type": "icon",
+		"price": 0,
+		"lightboxTitle": "Rate My Avatar Sketch 2",
+		"lightboxDescription": "artist: unknown, from Rate My Avatar"
+	},
+	{
+		"id": "rma1",
+		"path": "rma1.png",
+		"author": "flyingvi",
+		"date": "2025-05-22",
+		"type": "icon",
+		"price": 0,
+		"lightboxTitle": "Rate My Avatar Sketch 1",
+		"lightboxDescription": "artist: flyingvi, from Rate My Avatar"
+	},
+	{
+		"id": "fullbody",
+		"path": "fullbody.png",
+		"author": "vylpen",
+		"date": "2023-04-23",
+		"type": "fullbody",
+		"price": 40,
+		"lightboxTitle": "Full Body",
+		"lightboxDescription": "artist: Vulpen, very old first commission"
+	}
 ]

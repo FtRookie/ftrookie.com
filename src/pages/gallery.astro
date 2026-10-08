@@ -4,101 +4,76 @@ import { getImage, Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import "../styles/gallery.css";
 
-const entries = (await getCollection("bunger")).sort((a, b) =>
-      b.data.date.localeCompare(a.data.date),
-);
+const entries = (await getCollection("bunger")).sort((a, b) => b.data.date.localeCompare(a.data.date));
 const galleryItems = await Promise.all(
-      entries.map(async (entry) => ({
-            ...entry,
-            full: await getImage({ src: entry.data.path, format: "webp" }),
-      })),
+	entries.map(async (entry) => ({
+		...entry,
+		full: await getImage({ src: entry.data.path, format: "webp" }),
+	})),
 );
 ---
 
 <Basic title="Gallery" favicon="thumbsup">
-      <div id="something">
-            <ul id="options">
-                  <button
-                        class="collapsible"
-                        id="sort-direction-button"
-                        data-type="numerical"
-                        data-order="up"
-                  >
-                        sort direction:
-                        <i class="fa-solid fa-arrow-down-a-z"></i>
-                        <i class="fa-solid fa-arrow-up-z-a"></i>
-                        <i class="fa-solid fa-arrow-down-1-9"></i>
-                        <i class="fa-solid fa-arrow-up-9-1"></i>
-                  </button>
-                  <div
-                        class="option"
-                        id="collapsible-sort-by"
-                        data-state="collapsed"
-                  >
-                        <button class="collapsible">
-                              <span id="label-sort-by">sort by: date</span>
-                              <i class="fa-solid fa-angle-right"></i>
-                              <i class="fa-solid fa-angle-down"></i>
-                        </button>
-                        <div class="collapser"></div>
-                  </div>
-                  <div
-                        class="option"
-                        id="collapsible-filter-author"
-                        data-state="collapsed"
-                  >
-                        <button class="collapsible">
-                              filter: author
-                              <i class="fa-solid fa-angle-right"></i>
-                              <i class="fa-solid fa-angle-down"></i>
-                        </button>
-                        <div class="collapser"></div>
-                  </div>
-                  <div
-                        class="option"
-                        id="collapsible-filter-type"
-                        data-state="collapsed"
-                  >
-                        <button class="collapsible">
-                              filter: type
-                              <i class="fa-solid fa-angle-right"></i>
-                              <i class="fa-solid fa-angle-down"></i>
-                        </button>
-                        <div class="collapser"></div>
-                  </div>
-            </ul>
-            <ul id="gallery">
-                  {
-                        galleryItems.map(({ id, data, full }) => (
-                              <li id={id}>
-                                    <a
-href={full.src}
-data-pswp-width={full.attributes.width}
-data-pswp-height={full.attributes.height}
-class="lightbox"
->
-                                          <Picture
-                                                src={data.path}
-                                                alt={data.lightboxTitle}
-                                                data-metadata-title={
-                                                      data.lightboxTitle
-                                                }
-                                                data-metadata-author={
-                                                      data.author
-                                                }
-                                                data-metadata-date={data.date}
-                                                data-metadata-type={data.type}
-                                          />
-<span class="lightbox-caption" hidden>
-<strong>{data.lightboxTitle}</strong>
-<br />
-{data.lightboxDescription}
-</span>
-                                    </a>
-                              </li>
-                        ))
-                  }
-            </ul>
-      </div>
+	<div id="something">
+		<div id="options">
+			<button class="collapsible" type="button" id="sort-direction-button" data-type="numerical" data-order="up">
+				sort direction:
+				<i class="fa-solid fa-arrow-down-a-z" aria-hidden="true"></i>
+				<i class="fa-solid fa-arrow-up-z-a" aria-hidden="true"></i>
+				<i class="fa-solid fa-arrow-down-1-9" aria-hidden="true"></i>
+				<i class="fa-solid fa-arrow-up-9-1" aria-hidden="true"></i>
+			</button>
+			<div class="option" id="collapsible-sort-by" data-state="collapsed">
+				<button class="collapsible" type="button" aria-expanded="false">
+					<span id="label-sort-by">sort by: date</span>
+					<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+					<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+				</button>
+				<div class="collapser"></div>
+			</div>
+			<div class="option" id="collapsible-filter-author" data-state="collapsed">
+				<button class="collapsible" type="button" aria-expanded="false">
+					filter: author
+					<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+					<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+				</button>
+				<div class="collapser"></div>
+			</div>
+			<div class="option" id="collapsible-filter-type" data-state="collapsed">
+				<button class="collapsible" type="button" aria-expanded="false">
+					filter: type
+					<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+					<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+				</button>
+				<div class="collapser"></div>
+			</div>
+		</div>
+		<ul id="gallery">
+			{galleryItems.map(({ id, data, full }) => (
+				<li id={id}>
+					<a
+						href={full.src}
+						data-pswp-width={full.attributes.width}
+						data-pswp-height={full.attributes.height}
+						class="lightbox"
+					>
+						<Picture
+							src={data.path}
+							alt={data.lightboxTitle}
+							data-metadata-title={data.lightboxTitle}
+							data-metadata-author={data.author}
+							data-metadata-date={data.date}
+							data-metadata-type={data.type}
+						/>
+						<span class="lightbox-caption" hidden>
+							<strong>{data.lightboxTitle}</strong>
+							<br />
+							{data.lightboxDescription}
+						</span>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
 </Basic>
 <script src="../scripts/gallery.ts"></script>

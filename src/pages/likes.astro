@@ -9,70 +9,66 @@ import AngryCat from "../media/angrycatlaptop.gif";
 import Nerd from "../media/nerd.png";
 
 interface Like {
-    href: string;
-    image: ImageMetadata;
-    alt: string;
-    title: string;
-    description: string;
-    cover?: boolean;
+	href: string;
+	image: ImageMetadata;
+	alt: string;
+	title: string;
+	description: string;
+	cover?: boolean;
 }
 
 const likes: Like[] = [
-    {
-        href: "/likes/gaming",
-        image: RageDoge,
-        alt: "ragedoge",
-        title: "Gaming",
-        description: "I play a lot of video games",
-    },
-    {
-        href: "/likes/music",
-        image: CatJam,
-        alt: "music",
-        title: "Music",
-        description: "I listen to lots of different types of music",
-        cover: true,
-    },
-    {
-        href: "/likes/coding",
-        image: AngryCat,
-        alt: "angrycatlaptop",
-        title: "Coding",
-        description: "I don't do it too often but I guess it's okay",
-        cover: true,
-    },
-    {
-        href: "/likes/pcbuilding",
-        image: Nerd,
-        alt: "nerd",
-        title: "PC Building",
-        description: "I built my own computer and like to discuss PC hardware",
-    },
+	{
+		href: "/likes/gaming",
+		image: RageDoge,
+		alt: "ragedoge",
+		title: "Gaming",
+		description: "I play a lot of video games",
+	},
+	{
+		href: "/likes/music",
+		image: CatJam,
+		alt: "music",
+		title: "Music",
+		description: "I listen to lots of different types of music",
+		cover: true,
+	},
+	{
+		href: "/likes/coding",
+		image: AngryCat,
+		alt: "angrycatlaptop",
+		title: "Coding",
+		description: "I don't do it too often but I guess it's okay",
+		cover: true,
+	},
+	{
+		href: "/likes/pcbuilding",
+		image: Nerd,
+		alt: "nerd",
+		title: "PC Building",
+		description: "I built my own computer and like to discuss PC hardware",
+	},
 ];
 ---
 
 <Basic title="Likes" favicon="thumbsup">
-    <h2>some things I like to do</h2>
-    <div style="display:flex;flex-direction:column;">
-        {
-            likes.map((like) => (
-                <article class="project">
-                    <a href={like.href}>
-                        <Picture
-                            src={like.image}
-                            alt={like.alt}
-                            style={
-                                like.cover ? "object-fit: cover;" : undefined
-                            }
-                            loading="eager"
-                        />
-                        <div style="display:inline;margin:auto">
-                            <h2>{like.title}</h2>
-                            <p>{like.description}</p>
-                        </div>
-                    </a>
-                </article>
-            ))
-        }
-    </div>
+	<h2>some things I like to do</h2>
+	<div style="display:flex;flex-direction:column;">
+		{likes.map((like) => (
+			<article class="project">
+				<a href={like.href}>
+					<Picture
+						src={like.image}
+						alt={like.alt}
+						style={like.cover ? "object-fit: cover;" : undefined}
+						loading="eager"
+					/>
+					<div style="display:inline;margin:auto">
+						<h2>{like.title}</h2>
+						<p>{like.description}</p>
+					</div>
+				</a>
+			</article>
+		))}
+	</div>
 </Basic>
