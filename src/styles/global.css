@@ -242,8 +242,8 @@ img {
 	align-items: center;
 	padding: 0 0.75rem;
 	border: 0;
-	background-color: var(--navbar-text);
-	color: var(--navbar-bg);
+	background-color: var(--primary-text);
+	color: var(--primary-bg);
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -254,6 +254,7 @@ img {
 
 .nav-arrow[data-direction="-1"] {
 	left: 0;
+	transform: scaleX(-1);
 }
 
 .nav-arrow[data-direction="1"] {
@@ -270,7 +271,7 @@ img {
 	padding-right: 1rem;
 	justify-content: space-evenly;
 	overflow-x: auto;
-	scrollbar-width: thin;
+	scrollbar-width: none;
 	background-color: var(--navbar-bg);
 }
 
