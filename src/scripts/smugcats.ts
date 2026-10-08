@@ -1,4 +1,4 @@
-import { initLightbox } from "./lightbox";
+import { initLightbox } from "@/scripts/lightbox";
 
 document.addEventListener("astro:page-load", () => {
 	if (!document.querySelector("#smugcats")) return;

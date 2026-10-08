@@ -1,10 +1,17 @@
 ---
-import Basic from "../components/BasicPage.astro";
+import Basic from "@/components/BasicPage.astro";
+import LightboxCaption from "@/components/LightboxCaption.astro";
 import { getImage, Picture } from "astro:assets";
-import { getCollection } from "astro:content";
-import "../styles/gallery.css";
+import metadata from "@/media/bunger/metadata.json";
+import { getCompleteCollection } from "@/scripts/collections";
+import "@/styles/gallery.css";
 
-const entries = (await getCollection("bunger")).sort((a, b) => b.data.date.localeCompare(a.data.date));
+const entries = (
+	await getCompleteCollection(
+		"bunger",
+		metadata.map((m) => m.id),
+	)
+).sort((a, b) => b.data.date.localeCompare(a.data.date));
 const galleryItems = await Promise.all(
 	entries.map(async (entry) => ({
 		...entry,
@@ -23,30 +30,30 @@ const galleryItems = await Promise.all(
 				<i class="fa-solid fa-arrow-down-1-9" aria-hidden="true"></i>
 				<i class="fa-solid fa-arrow-up-9-1" aria-hidden="true"></i>
 			</button>
-			<div class="option" id="collapsible-sort-by" data-state="collapsed">
-				<button class="collapsible" type="button" aria-expanded="false">
+			<details class="option" id="collapsible-sort-by">
+				<summary class="collapsible">
 					<span id="label-sort-by">sort by: date</span>
 					<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
 					<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-				</button>
+				</summary>
 				<div class="collapser"></div>
-			</div>
-			<div class="option" id="collapsible-filter-author" data-state="collapsed">
-				<button class="collapsible" type="button" aria-expanded="false">
+			</details>
+			<details class="option" id="collapsible-filter-author">
+				<summary class="collapsible">
 					filter: author
 					<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
 					<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-				</button>
+				</summary>
 				<div class="collapser"></div>
-			</div>
-			<div class="option" id="collapsible-filter-type" data-state="collapsed">
-				<button class="collapsible" type="button" aria-expanded="false">
+			</details>
+			<details class="option" id="collapsible-filter-type">
+				<summary class="collapsible">
 					filter: type
 					<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
 					<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-				</button>
+				</summary>
 				<div class="collapser"></div>
-			</div>
+			</details>
 		</div>
 		<ul id="gallery">
 			{galleryItems.map(({ id, data, full }) => (
@@ -65,15 +72,11 @@ const galleryItems = await Promise.all(
 							data-metadata-date={data.date}
 							data-metadata-type={data.type}
 						/>
-						<span class="lightbox-caption" hidden>
-							<strong>{data.lightboxTitle}</strong>
-							<br />
-							{data.lightboxDescription}
-						</span>
+						<LightboxCaption title={data.lightboxTitle} description={data.lightboxDescription} />
 					</a>
 				</li>
 			))}
 		</ul>
 	</div>
 </Basic>
-<script src="../scripts/gallery.ts"></script>
+<script src="@/scripts/gallery.ts"></script>

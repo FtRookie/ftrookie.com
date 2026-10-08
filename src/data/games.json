@@ -1,0 +1,377 @@
+[
+	{
+		"name": "War Thunder",
+		"genre": "Military",
+		"appId": 236390,
+		"url": "https://statshark.net/player/75642739#Profile",
+		"hours": 860.4,
+		"lastPlayed": "2026-09-14",
+		"achievements": "52/91"
+	},
+	{
+		"name": "Deadlock",
+		"appId": 1422450,
+		"hours": 333.3,
+		"lastPlayed": "2026-10-06"
+	},
+	{
+		"name": "Ready or Not",
+		"genre": "FPS",
+		"appId": 1144200,
+		"hours": 310.2,
+		"lastPlayed": "2026-05-09",
+		"achievements": "61/66"
+	},
+	{
+		"name": "7 Days to Die",
+		"genre": "Co-op",
+		"appId": 251570,
+		"hours": 166.9,
+		"lastPlayed": "2025-11-11",
+		"achievements": "32/43"
+	},
+	{
+		"name": "Automation",
+		"appId": 293760,
+		"hours": 166.8,
+		"lastPlayed": "2026-02-06"
+	},
+	{
+		"name": "Raft",
+		"genre": "Co-op",
+		"appId": 648800,
+		"hours": 154.7,
+		"lastPlayed": "2024-11-29",
+		"achievements": "88/104"
+	},
+	{
+		"name": "Crossout",
+		"appId": 386180,
+		"hours": 130.9,
+		"lastPlayed": "2025-09-11",
+		"achievements": "95/193"
+	},
+	{
+		"name": "Grand Theft Auto V Enhanced",
+		"genre": "Story",
+		"appId": 3240220,
+		"hours": 130.6,
+		"lastPlayed": "2026-02-17",
+		"achievements": "20/77"
+	},
+	{
+		"name": "Pixel Starships",
+		"appId": 378760,
+		"hours": 127.8,
+		"lastPlayed": "2026-10-01",
+		"achievements": "34/54"
+	},
+	{
+		"name": "Sprocket",
+		"genre": "Military",
+		"appId": 1674170,
+		"hours": 100.9,
+		"lastPlayed": "2026-10-02"
+	},
+	{
+		"name": "Tom Clancy's Rainbow Six Siege",
+		"genre": "FPS",
+		"appId": 359550,
+		"hours": 92.8,
+		"lastPlayed": "2026-05-09",
+		"achievements": "35/48"
+	},
+	{
+		"name": "Schedule I",
+		"genre": "Co-op",
+		"appId": 3164500,
+		"hours": 89.5,
+		"lastPlayed": "2026-06-10",
+		"achievements": "11/13"
+	},
+	{
+		"name": "Grand Theft Auto V Legacy",
+		"genre": "Story",
+		"appId": 271590,
+		"hours": 89,
+		"lastPlayed": "2024-08-08",
+		"achievements": "23/77"
+	},
+	{
+		"name": "Tom Clancy's The Division 2",
+		"genre": "Co-op",
+		"appId": 2221490,
+		"hours": 88.3,
+		"lastPlayed": "2023-12-25",
+		"achievements": "0/67"
+	},
+	{
+		"name": "Arma 3",
+		"genre": "Military",
+		"appId": 107410,
+		"hours": 70.1,
+		"lastPlayed": "2024-11-03",
+		"achievements": "6/123"
+	},
+	{
+		"name": "Cities: Skylines",
+		"appId": 255710,
+		"hours": 67.7,
+		"lastPlayed": "2023-10-16",
+		"achievements": "19/135"
+	},
+	{
+		"name": "Tactical Assault VR",
+		"genre": "FPS",
+		"appId": 2314160,
+		"hours": 67,
+		"lastPlayed": "2026-01-17"
+	},
+	{
+		"name": "BeamNG.drive",
+		"appId": 284160,
+		"hours": 56.7,
+		"lastPlayed": "2026-02-06",
+		"achievements": "0/58"
+	},
+	{
+		"name": "Tom Clancy's Ghost Recon® Wildlands",
+		"genre": "Co-op",
+		"appId": 460930,
+		"hours": 50.6,
+		"lastPlayed": "2026-04-19",
+		"achievements": "25/57"
+	},
+	{
+		"name": "Stormworks: Build and Rescue",
+		"appId": 573090,
+		"hours": 48.9,
+		"lastPlayed": "2026-07-17"
+	},
+	{
+		"name": "Gunner, HEAT, PC!",
+		"genre": "Military",
+		"appId": 1705180,
+		"hours": 45.9,
+		"lastPlayed": "2026-09-08"
+	},
+	{
+		"name": "Car Mechanic Simulator 2018",
+		"appId": 645630,
+		"hours": 42.9,
+		"lastPlayed": "2026-02-16",
+		"achievements": "37/60"
+	},
+	{
+		"name": "Garry's Mod",
+		"appId": 4000,
+		"hours": 35.5,
+		"lastPlayed": "2021-07-11",
+		"achievements": "4/29"
+	},
+	{
+		"name": "METAL GEAR RISING: REVENGEANCE",
+		"genre": "Story",
+		"appId": 235460,
+		"hours": 23.6,
+		"lastPlayed": "2022-06-18",
+		"achievements": "22/60"
+	},
+	{
+		"name": "Roadside Research",
+		"genre": "Co-op",
+		"appId": 3643170,
+		"hours": 22.6,
+		"lastPlayed": "2026-05-28"
+	},
+	{
+		"name": "Green Hell",
+		"genre": "Co-op",
+		"appId": 815370,
+		"hours": 19.8,
+		"lastPlayed": "2026-03-02",
+		"achievements": "25/68"
+	},
+	{
+		"name": "Incursion Red River",
+		"genre": "FPS",
+		"appId": 2116120,
+		"hours": 17.4,
+		"lastPlayed": "2025-02-20",
+		"achievements": "0/8"
+	},
+	{
+		"name": "BattleBit Remastered",
+		"genre": "FPS",
+		"appId": 671860,
+		"hours": 17,
+		"lastPlayed": "2023-10-02"
+	},
+	{
+		"name": "Half Sword Demo",
+		"appId": 2642680,
+		"hours": 13.6,
+		"lastPlayed": "2026-02-13"
+	},
+	{
+		"name": "The Last of Us™ Part I",
+		"genre": "Story",
+		"appId": 1888930,
+		"hours": 12.9,
+		"lastPlayed": "2026-05-04",
+		"achievements": "7/29"
+	},
+	{
+		"name": "Squad",
+		"genre": "Military",
+		"appId": 393380,
+		"hours": 12,
+		"lastPlayed": "2024-12-28"
+	},
+	{
+		"name": "Thief Simulator",
+		"appId": 704850,
+		"hours": 8.6,
+		"lastPlayed": "2021-03-04",
+		"achievements": "2/33"
+	},
+	{
+		"name": "Half-Life",
+		"genre": "Story",
+		"appId": 70,
+		"hours": 8.5,
+		"lastPlayed": "2023-11-23"
+	},
+	{
+		"name": "Tom Clancy's The Division",
+		"genre": "Co-op",
+		"appId": 365590,
+		"hours": 7.1,
+		"lastPlayed": "2026-03-10",
+		"achievements": "13/60"
+	},
+	{
+		"name": "WARNO",
+		"genre": "Military",
+		"appId": 1611600,
+		"hours": 6.7,
+		"lastPlayed": "2025-07-10",
+		"achievements": "4/49"
+	},
+	{
+		"name": "Red Dead Redemption 2",
+		"genre": "Story",
+		"appId": 1174180,
+		"hours": 6.6,
+		"lastPlayed": "2025-05-22",
+		"achievements": "2/51"
+	},
+	{
+		"name": "Undertale",
+		"genre": "Story",
+		"appId": 391540,
+		"hours": 6.2,
+		"lastPlayed": "2021-07-16"
+	},
+	{
+		"name": "One-armed robber",
+		"genre": "Co-op",
+		"appId": 2551020,
+		"hours": 6,
+		"lastPlayed": "2025-01-06",
+		"achievements": "7/43"
+	},
+	{
+		"name": "Counter-Strike 2",
+		"genre": "FPS",
+		"appId": 730,
+		"hours": 6,
+		"lastPlayed": "2021-05-17",
+		"achievements": "0/1"
+	},
+	{
+		"name": "Arena Breakout: Infinite",
+		"genre": "FPS",
+		"appId": 2073620,
+		"hours": 5.3,
+		"lastPlayed": "2026-02-01",
+		"achievements": "3/33"
+	},
+	{
+		"name": "Arma Reforger",
+		"genre": "Military",
+		"appId": 1874880,
+		"hours": 4.8,
+		"lastPlayed": "2024-11-13",
+		"achievements": "0/24"
+	},
+	{
+		"name": "Brick Rigs",
+		"appId": 552100,
+		"hours": 4.4,
+		"lastPlayed": "2025-04-06"
+	},
+	{
+		"name": "Road to Vostok",
+		"genre": "FPS",
+		"appId": 1963610,
+		"hours": 4.4,
+		"lastPlayed": "2026-05-09"
+	},
+	{
+		"name": "Hand Simulator",
+		"appId": 657200,
+		"hours": 3.7,
+		"lastPlayed": "2021-03-29",
+		"achievements": "3/72"
+	},
+	{
+		"name": "Papers, Please",
+		"genre": "Story",
+		"appId": 239030,
+		"hours": 3.2,
+		"lastPlayed": "2021-08-05",
+		"achievements": "1/13"
+	},
+	{
+		"name": "Call of Duty: Black Ops III",
+		"genre": "FPS",
+		"appId": 311210,
+		"hours": 2,
+		"lastPlayed": "2025-05-18",
+		"achievements": "0/98"
+	},
+	{
+		"name": "Assetto Corsa",
+		"appId": 244210,
+		"hours": 1.9,
+		"lastPlayed": "2024-01-02",
+		"achievements": "4/709"
+	},
+	{
+		"name": "Heroes & Generals",
+		"genre": "Military",
+		"appId": 227940,
+		"hours": 1.1,
+		"lastPlayed": "2020-09-14"
+	},
+	{
+		"name": "ARK: Survival Evolved",
+		"genre": "Co-op",
+		"appId": 346110,
+		"hours": 0.8,
+		"lastPlayed": "2026-01-26",
+		"achievements": "0/32"
+	},
+	{
+		"name": "Robot Rumble 2",
+		"appId": 884180,
+		"hours": 0.3,
+		"lastPlayed": "2025-03-17"
+	},
+	{
+		"name": "Tower Defense X (Roblox)",
+		"genre": "Co-op",
+		"url": "https://www.roblox.com/games/9503261072/ENGINEER-Tower-Defense-X-BETA"
+	}
+]

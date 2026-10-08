@@ -10,7 +10,8 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"cover": "node scripts/fetch-cover.mjs"
+		"cover": "node scripts/fetch-cover.mjs",
+		"lint": "eslint ."
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.10",
@@ -37,8 +38,13 @@
 		"esbuild@0.28.2": true
 	},
 	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"eslint": "^10.12.0",
+		"eslint-plugin-astro": "^3.2.1",
+		"eslint-plugin-unused-imports": "^4.4.1",
 		"playwright": "^1.62.1",
 		"prettier": "^3.9.9",
-		"prettier-plugin-astro": "^1.1.0"
+		"prettier-plugin-astro": "^1.1.0",
+		"typescript-eslint": "^8.71.1"
 	}
 }

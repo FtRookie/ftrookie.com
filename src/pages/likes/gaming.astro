@@ -1,38 +1,48 @@
 ---
-import Basic from "../../components/BasicPage.astro";
-import PlaceholderImage from "../../components/PlaceholderImage.astro";
+import Basic from "@/components/BasicPage.astro";
+import PlaceholderImage from "@/components/PlaceholderImage.astro";
+import gamesFile from "@/data/games.json";
+import { getCompleteCollection } from "@/scripts/collections";
+import { GAME_GENRES, gameId } from "@/scripts/games";
+import "@/styles/gaming.css";
+import { marked } from "marked";
 
-interface Game {
-	name: string;
-	url: string;
-}
+// Every game played, Steam or not, from src/data/games.json (validated by the `games` collection).
+// Fields can be unknown: the top games by hours get a dropdown in "Most played", every other game
+// is only linked under "Other games", and dated games feed "Recently played".
+const games = (await getCompleteCollection("games", gamesFile.map(gameId))).map(({ data }) => ({
+	...data,
+	steamUrl: data.appId !== undefined ? `https://store.steampowered.com/app/${data.appId}/` : undefined,
+}));
 
-const recentGames: Game[] = [
-	{
-		name: "Deadlock",
-		url: "https://store.steampowered.com/app/1422450/Deadlock/",
-	},
-	{
-		name: "Ready or Not",
-		url: "https://store.steampowered.com/app/1144200/Ready_or_Not/",
-	},
-	{
-		name: "Tower Defense X (Roblox)",
-		url: "https://www.roblox.com/games/9503261072/ENGINEER-Tower-Defense-X-BETA",
-	},
-	{
-		name: "Roadside Research",
-		url: "https://store.steampowered.com/app/3643170/Roadside_Research/",
-	},
-	{
-		name: "Rainbow Six Siege",
-		url: "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/",
-	},
-	{
-		name: "War Thunder",
-		url: "https://store.steampowered.com/app/236390/War_Thunder/",
-	},
-];
+const RECENT_COUNT = 6;
+const MOST_PLAYED_COUNT = 10;
+
+const timedGames = games.filter((game): game is typeof game & { hours: number } => game.hours !== undefined);
+const datedGames = games.filter((game): game is typeof game & { lastPlayed: string } => game.lastPlayed !== undefined);
+
+const recentGames = [...datedGames].sort((a, b) => b.lastPlayed.localeCompare(a.lastPlayed)).slice(0, RECENT_COUNT);
+const mostPlayed = [...timedGames].sort((a, b) => b.hours - a.hours).slice(0, MOST_PLAYED_COUNT);
+// Everything outside the top list, grouped by genre and sorted by playtime (unknown last); hours aren't shown.
+const otherGames = games
+	.filter((game) => !mostPlayed.some((top) => top.name === game.name))
+	.sort((a, b) => (b.hours ?? -1) - (a.hours ?? -1));
+const otherGroups = [...GAME_GENRES, "Miscellaneous" as const]
+	.map((genre) => ({
+		genre,
+		games: otherGames.filter((game) => (game.genre ?? "Miscellaneous") === genre),
+	}))
+	.filter((group) => group.games.length > 0);
+const totalHours = Math.round(timedGames.reduce((sum, game) => sum + game.hours, 0));
+
+const formatDate = (iso: string) =>
+	new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+		day: "numeric",
+		month: "short",
+		year: "numeric",
+		timeZone: "UTC",
+	});
+const formatHours = (hours: number) => (hours < 1 ? `${Math.round(hours * 60)} minutes` : `${hours} hours`);
 ---
 
 <Basic title="Gaming" favicon="thumbsup" backHref="/likes">
@@ -43,14 +53,61 @@ const recentGames: Game[] = [
 			of games I play
 		</p>
 		<PlaceholderImage />
+		<h2>Most played</h2>
+		<p>
+			{totalHours.toLocaleString("en-GB")} hours across {timedGames.length} games.
+		</p>
+		<ol>
+			{mostPlayed.map((game) => (
+				<li>
+					<details class="game">
+						<summary>
+							<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+							<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+							<span>
+								{game.name} ({formatHours(game.hours)})
+							</span>
+						</summary>
+						<div class="game-body">
+							{game.notes && <Fragment set:html={marked.parse(game.notes)} />}
+							<p class="game-facts">
+								{game.lastPlayed && (
+									<>
+										Last played{" "}
+										<time datetime={game.lastPlayed}>{formatDate(game.lastPlayed)}</time>
+										{game.achievements && `, ${game.achievements} achievements`}.{" "}
+									</>
+								)}
+								{game.steamUrl && <a href={game.steamUrl}>Steam page</a>}{" "}
+								{game.url && <a href={game.url}>{new URL(game.url).hostname}</a>}
+							</p>
+						</div>
+					</details>
+				</li>
+			))}
+		</ol>
+		{otherGroups.length > 0 && <h2>Other games</h2>}
+		{otherGroups.map(({ genre, games }) => (
+			<>
+				<h3>{genre}</h3>
+				<ul class="other-games">
+					{games.map((game) => (
+						<li>
+							<a href={game.steamUrl ?? game.url}>{game.name}</a>
+						</li>
+					))}
+				</ul>
+			</>
+		))}
 	</div>
 	<div id="info">
-		<a href="pcbuilding">Info about my rig</a>
-		<h2>some recent games i'm playing include:</h2>
+		<a href="pcbuilding">Info about my PC</a>
+		<h2>Recently played:</h2>
 		<ul>
 			{recentGames.map((game) => (
 				<li>
-					<a href={game.url}>{game.name}</a>
+					<a href={game.steamUrl ?? game.url}>{game.name}</a>{" "}
+					<time datetime={game.lastPlayed}>({formatDate(game.lastPlayed)})</time>
 				</li>
 			))}
 		</ul>

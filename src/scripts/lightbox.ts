@@ -2,7 +2,7 @@ import PhotoSwipeLightbox from "photoswipe/lightbox";
 import PhotoSwipeDynamicCaption from "photoswipe-dynamic-caption-plugin";
 import "photoswipe/style.css";
 import "photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css";
-import "../styles/photoswipe-theme.css";
+import "@/styles/photoswipe-theme.css";
 
 const icon = (d: string) =>
 	`<svg class="pswp__icn" viewBox="0 0 24 24" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;

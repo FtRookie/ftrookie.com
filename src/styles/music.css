@@ -1,16 +1,78 @@
-#albums {
+/* Two columns when there is room for two 22rem cards, otherwise one. */
+.albums {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, max(22rem, (100% - 1rem) / 2)), 1fr));
+	gap: 0.5rem 1rem;
+}
+
+/* Collapsed genres don't lay out or load their covers until opened. */
+.genre {
+	margin: 0.75rem 0;
+}
+
+.genre summary {
+	cursor: pointer;
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	padding: 0.25rem 0;
 	list-style: none;
 }
 
+/* Same angle icons as the gallery filters: right when closed, down when open. */
+.genre .fa-angle-down,
+.genre[open] .fa-angle-right {
+	display: none;
+}
+
+.genre[open] .fa-angle-down {
+	display: inline;
+}
+
+.genre summary::-webkit-details-marker {
+	display: none;
+}
+
+.genre h3 {
+	margin: 0;
+	font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.genre-count {
+	color: var(--tertiary-text);
+}
+
+/* Cover on the left, title vertically centred beside it, wrapping within the card. */
+.album > div {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
 .album img {
+	flex-shrink: 0;
+	width: clamp(3.5rem, 8vw, 7.5rem);
+	height: auto;
 	aspect-ratio: 1;
-	height: min(150px, 10vw);
-	width: auto;
+	object-fit: cover;
+	margin: 0;
+}
+
+.album-text {
+	min-width: 0;
 }
 
 .album h2 {
-	display: inline-block;
-	vertical-align: middle;
-	font-size: clamp(0.75rem, 3vmin, 1.25rem);
+	overflow-wrap: anywhere;
+	font-size: clamp(0.85rem, 1.5vw + 0.5rem, 1.25rem);
 	margin: 0;
+}
+
+.album-description {
+	margin: 0.25rem 0 0;
+	font-size: clamp(0.75rem, 1vw + 0.4rem, 1rem);
+	color: var(--tertiary-text);
+	overflow-wrap: anywhere;
 }

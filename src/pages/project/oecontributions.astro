@@ -1,15 +1,16 @@
 ---
-import Basic from "../../components/BasicPage.astro";
-import LightboxBar from "../../components/LightboxBar.astro";
-import PlaneCrazy from "../../media/PlaneCrazyThumbnail.png";
-import PlaneEngineersThumbnail from "../../media/PlaneEngineersThumbnail.png";
-import PlaneEngineersBanner from "../../media/PlaneEngineersBanner.png";
-import Blocksworld from "../../media/Blocksworld.png";
-import DMCA1 from "../../media/DMCA1.png";
-import DMCA4 from "../../media/DMCA4.png";
-import "../../styles/oecontributions.css";
-import "../../styles/projectpage.css";
+import Basic from "@/components/BasicPage.astro";
+import LightboxBar from "@/components/LightboxBar.astro";
+import PlaneCrazy from "@/media/oecontributions/PlaneCrazyThumbnail.png";
+import PlaneEngineersThumbnail from "@/media/oecontributions/PlaneEngineersThumbnail.png";
+import PlaneEngineersBanner from "@/media/oecontributions/PlaneEngineersBanner.png";
+import Blocksworld from "@/media/oecontributions/Blocksworld.png";
+import DMCA1 from "@/media/oecontributions/DMCA1.png";
+import DMCA4 from "@/media/oecontributions/DMCA4.png";
+import "@/styles/oecontributions.css";
+import "@/styles/projectpage.css";
 import { marked } from "marked";
+import type { LightboxImage } from "@/scripts/lightbox.types";
 
 const md = (s: string) => marked.parse(s) as string;
 
@@ -32,7 +33,7 @@ const prose = {
 		`As a committed player with a lot of sandbox experience and a lot of feedback,
         I was very vocal in the community and garnered a reputation, soon becoming a tester.
         I quickly befriended the developers, **Maks_gaming**, **i3ym**, and **samlovebutter**.
-        By request, created a plane tutorial which was then adopted into the game.`,
+        I created a plane tutorial which was then adopted into the game.`,
 	),
 	dmca: md(
 		`**Maks**, originally the developer of *Build A Plane To Crash (BAPTC)*,
@@ -52,8 +53,8 @@ const prose = {
         since their original accounts were banned because of the claims.`,
 	),
 	openSource: md(
-		`The developers made the decision to make the game Open Sourced,
-        allowing players to contribute.<br /><br />Previously,
+		`The developers made the decision to make the game Open Source,
+        allowing players to contribute.<br/><br/>Previously,
         I never worked on anything other than my own personal projects in Roblox Studio written in Lua.
         In contrast, Overengineered was written in Typescript and managed via Github.
         Working on Overengineered was what taught me how to use Github and create pull requests.
@@ -71,9 +72,17 @@ const prose = {
 };
 
 const originImages = [
-	{ image: Blocksworld, alt: "Blocksworld", title: "Blocksworld" },
-	{ image: PlaneCrazy, alt: "Plane Crazy", title: "Plane Crazy" },
-];
+	{
+		image: Blocksworld,
+		alt: "Blocksworld",
+		title: "Blocksworld",
+	},
+	{
+		image: PlaneCrazy,
+		alt: "Plane Crazy",
+		title: "Plane Crazy",
+	},
+] satisfies LightboxImage[];
 
 const peImages = [
 	{
@@ -86,7 +95,7 @@ const peImages = [
 		alt: "PE Banner",
 		title: "Plane Engineers Banner",
 	},
-];
+] satisfies LightboxImage[];
 
 const dmcaImages = [
 	{
@@ -101,7 +110,7 @@ const dmcaImages = [
 		title: "Fourth DMCA",
 		description: "Test Engineers was taken down after it opened to the public",
 	},
-];
+] satisfies LightboxImage[];
 ---
 
 <Basic title="OE Contributions" favicon="judgment" backHref="/projects">
@@ -109,7 +118,7 @@ const dmcaImages = [
 		<h2 class="chapterheader">Origins</h2>
 		<Fragment set:html={prose.origins} />
 
-		<LightboxBar images={originImages} height="250px" />
+		<LightboxBar images={originImages} height="250px" loading="eager" />
 
 		<h2 class="chapterheader">Finding Plane Engineers</h2>
 		<Fragment set:html={prose.findingPE} />
@@ -117,15 +126,13 @@ const dmcaImages = [
 		<h2 class="chapterheader">Initial Involvement</h2>
 		<Fragment set:html={prose.involvement} />
 		<iframe
-			width="100%"
-			height="20%"
+			id="OETutorial"
 			src="https://www.youtube.com/embed/t3BecB7mwgc"
 			title="YouTube video player"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			referrerpolicy="strict-origin-when-cross-origin"
 			allowfullscreen
 			loading="lazy"
-			style="margin-top:1.5rem;"
 		>
         </iframe>
 		<footer>maks changed aero and the plane is kil</footer>
@@ -160,4 +167,4 @@ const dmcaImages = [
 		</ul>
 	</div>
 </Basic>
-<script src="../../scripts/oecontributions.ts"></script>
+<script src="@/scripts/oecontributions.ts"></script>

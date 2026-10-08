@@ -1,5 +1,9 @@
 {
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"eslint.validate": ["javascript", "typescript", "astro"],
 	"[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" }
 }

@@ -1,0 +1,430 @@
+{
+	"EDM": [
+		{
+			"author": "KaNa",
+			"song": "Reimage",
+			"image": "Mimage.jpg",
+			"description": "It sounds cool"
+		},
+		{
+			"author": "KaNa",
+			"song": "Mimage",
+			"image": "Mimage.jpg",
+			"description": "I like the synths"
+		},
+		{
+			"author": "OCOT",
+			"song": "Equinox",
+			"image": "Geode.jpg",
+			"description": "Things are about to be accomplished"
+		},
+		{
+			"author": "Shingo Nakamura, KaNa",
+			"song": "Wonder",
+			"image": "Days.jpg",
+			"description": "Truly encapsulates the feeling of Wonder"
+		},
+		{
+			"author": "Shingo Nakamura",
+			"song": "Morning Sun",
+			"image": "Days.jpg",
+			"description": "Nothing like a high city skyline while listening to this"
+		},
+		{
+			"author": "Shingo Nakamura, Nhato",
+			"song": "1247",
+			"image": "Days.jpg",
+			"description": "Hype"
+		},
+		{
+			"author": "Shingo Nakamura, Kyohei Akagawa",
+			"song": "Travelog",
+			"image": "Days.jpg",
+			"description": "Very naise"
+		},
+		{
+			"author": "Hiroyuki Oda",
+			"song": "Stargazer",
+			"image": "Thirty.jpg",
+			"description": "Trance in a nutshell"
+		},
+		{
+			"author": "Nhato",
+			"song": "Atlantis",
+			"image": "Otographies.jpg",
+			"description": "The feeling of exploration and hype, encapsulated as a song"
+		},
+		{
+			"author": "Nhato",
+			"song": "Tokyo Blue Pipe - KIWAMU Remix",
+			"image": "TokyoBluePipe.jpg",
+			"description": "So chill"
+		},
+		{
+			"author": "Nhato, Glascat",
+			"song": "One Step Forward",
+			"image": "OneStepForward.jpg",
+			"description": "Massive energy"
+		},
+		{
+			"author": "Ryo Oono",
+			"song": "Beautiful Morning",
+			"image": "SnowStarrySky.jpg",
+			"description": "Things get done"
+		},
+		{
+			"author": "Galantis",
+			"song": "Runaway (U & I)",
+			"image": "Pharmacy.jpg",
+			"description": "Think I can fly"
+		},
+		{
+			"author": "GIGI D'AGOSTINO",
+			"song": "L'Amour Toujours",
+			"image": "LAmourToujours.jpg",
+			"description": "Nostalgia"
+		},
+		{
+			"author": "Vengaboys",
+			"song": "We Like To Party! (The Vengabus)",
+			"image": "ThePartyAlbum.jpg",
+			"description": "Nostalgia"
+		},
+		{
+			"author": "O-Zone",
+			"song": "Dragostea din tei",
+			"image": "DiscOZone.jpg",
+			"description": "Nostalgia"
+		}
+	],
+	"Pop": [
+		{
+			"author": "Chappell Roan",
+			"song": "Good Luck, Babe!",
+			"image": "GoodLuckBabe.jpg",
+			"description": ""
+		},
+		{
+			"author": "The Weeknd",
+			"song": "Die For You",
+			"image": "Starboy.jpg",
+			"description": "I would die for you"
+		},
+		{
+			"author": "The Weeknd",
+			"song": "The Hills",
+			"image": "BeautyBehindTheMadness.jpg",
+			"description": ""
+		},
+		{
+			"author": "Justin Timberlake, JAY-Z",
+			"song": "Suit & Tie (feat. JAY-Z)",
+			"image": "The2020Experience.jpg",
+			"description": "I be on my suit tie shit tie shit"
+		},
+		{
+			"author": "Daniel Caesar, Kali Uchis",
+			"song": "Get You (feat. Kali Uchis)",
+			"image": "Freudian.jpg",
+			"description": "Deep"
+		},
+		{
+			"author": "Bruno Mars",
+			"song": "Treasure",
+			"image": "UnorthodoxJukebox.jpg",
+			"description": "That is what you are"
+		},
+		{
+			"author": "WILLOW",
+			"song": "Wait a Minute!",
+			"image": "Ardipithecus.jpg",
+			"description": "Lost my conciousness in the- sixth dimension"
+		},
+		{
+			"author": "Doja Cat",
+			"song": "Say So",
+			"image": "HotPink.jpg",
+			"description": "Why don't you say so?"
+		},
+		{
+			"author": "Doja Cat, SZA",
+			"song": "Kiss Me More (feat. SZA)",
+			"image": "PlanetHer.jpg",
+			"description": "Can you- kiss me more?"
+		},
+		{
+			"author": "Coldplay",
+			"song": "Paradise",
+			"image": "MyloXyloto.jpg",
+			"description": "Para- (para) paradise"
+		},
+		{
+			"author": "Coldplay",
+			"song": "Adventure of a Lifetime",
+			"image": "AHeadFullOfDreams.jpg",
+			"description": "Haha monke"
+		},
+		{
+			"author": "Katy Perry, Snoop Dogg",
+			"song": "California Gurls",
+			"image": "TeenageDream.jpg",
+			"description": "CA-LI-FORNIA GIRLS ARE UNFORGETTABLE"
+		},
+		{
+			"author": "Rihanna",
+			"song": "Don't Stop The Music",
+			"image": "GoodGirlGoneBad.jpg",
+			"description": "I wanna take you away"
+		},
+		{
+			"author": "Rihanna",
+			"song": "Only Girl (In The World)",
+			"image": "Loud.jpg",
+			"description": "WANT YOU TO MAKE ME FEEL, LIKE IM THE ONLY GIRL IN THE WORLD"
+		},
+		{
+			"author": "Maroon 5, Christina Aguilera",
+			"song": "Moves Like Jagger",
+			"image": "HandsAllOver.jpg",
+			"description": "Banger of the 2010s"
+		},
+		{
+			"author": "Empire Of The Sun",
+			"song": "Walking On A Dream",
+			"image": "WalkingOnADream.jpg",
+			"description": "A late night drive + this song"
+		},
+		{
+			"author": "Pitbull, AFROJACK, Ne-Yo, Nayer",
+			"song": "Give Me Everything (feat. Nayer)",
+			"image": "PlanetPit.jpg",
+			"description": "Mista Worldwide"
+		}
+	],
+	"Rap": [
+		{
+			"author": "The Weeknd, Playboi Carti",
+			"song": "Timeless (feat Playboi Carti)",
+			"image": "HurryUpTomorrow.jpg",
+			"description": "Cause I'm timeless"
+		},
+		{
+			"author": "M.I.A.",
+			"song": "Paper Planes",
+			"image": "Kala.jpg",
+			"description": "All I wanna do *bang bang bang bang*"
+		},
+		{
+			"author": "Metro Boomin, Future, Chris Brown",
+			"song": "Superhero (Heroes & Villains) [with Future & Chris Brown]",
+			"image": "HeroesAndVillains.jpg",
+			"description": "Die a hero or live long enough to see yourself become a villain"
+		},
+		{
+			"author": "Metro Boomin, Future, Don Toliver",
+			"song": "Too Many Nights (feat. Don Toliver & with Future)",
+			"image": "HeroesAndVillains.jpg",
+			"description": "Spend what you want and you want and you want"
+		},
+		{
+			"author": "Kendrick Lamar, Blxst, Amanda Reifer",
+			"song": "Die Hard",
+			"image": "MrMorale.jpg",
+			"description": "I have regrets"
+		},
+		{
+			"author": "Kendrick Lamar",
+			"song": "heart pt. 6",
+			"image": "GNX.jpg",
+			"description": "Word of advice"
+		},
+		{
+			"author": "Kendrick Lamar",
+			"song": "Not Like Us",
+			"image": "NotLikeUs.jpg",
+			"description": "mustard on that beat hoe"
+		},
+		{
+			"author": "Kendrick Lamar, SZA",
+			"song": "All The Stars (with SZA)",
+			"image": "BlackPanther.jpg",
+			"description": "Or do the feelin' haunt you?"
+		},
+		{
+			"author": "Kendrick Lamar, Jay Rock",
+			"song": "Money Trees",
+			"image": "GoodKidMaadCity.jpg",
+			"description": "A dolla might"
+		},
+		{
+			"author": "Future, Metro Boomin, Kendrick Lamar",
+			"song": "Like That",
+			"image": "WeDontTrustYou.jpg",
+			"description": "Metro Boomin"
+		},
+		{
+			"author": "Drake, Wizkid, Kyla",
+			"song": "One Dance",
+			"image": "Views.jpg",
+			"description": "Great beat"
+		},
+		{
+			"author": "Drake",
+			"song": "Passionfruit",
+			"image": "MoreLife.jpg",
+			"description": "So calm"
+		},
+		{
+			"author": "Geto Boys",
+			"song": "Mind Playing Tricks on Me",
+			"image": "WeCantBeStopped.jpg",
+			"description": "WCC"
+		},
+		{
+			"author": "N.W.A.",
+			"song": "Appetite For Destruction",
+			"image": "Efil4zaggin.jpg",
+			"description": "WCC"
+		},
+		{
+			"author": "Nujabes",
+			"song": "Luv (sic)",
+			"image": "LuvSic.jpg",
+			"description": "Lyrics that resonate with reality"
+		},
+		{
+			"author": "Nujabes",
+			"song": "Feather (feat. Cise Starr & Akin from CYNE)",
+			"image": "ModalSoul.jpg",
+			"description": "The common man"
+		}
+	],
+	"Funk Wav": [
+		{
+			"author": "Flight Facilities, Giselle",
+			"song": "Crave You",
+			"image": "DownToEarth.jpg",
+			"description": "Deep"
+		},
+		{
+			"author": "Calvin Harris, Pharrell Williams, Katy Perry, Big Sean",
+			"song": "Feels (feat. Pharrell Williams, Katy Perry & Big Sean)",
+			"image": "FunkWavBounces.jpg",
+			"description": "I like funk wav"
+		},
+		{
+			"author": "Calvin Harris, Frank Ocean, Migos",
+			"song": "Slide (feat. Frank Ocean & Migos)",
+			"image": "Slide.jpg",
+			"description": "I MIGHT"
+		}
+	],
+	"Hardstyle/Hardbass": [
+		{
+			"author": "XS Project, Dragon Boys",
+			"song": "Hardbass Goes Fast!",
+			"image": "HardbassGoesFast.jpg",
+			"description": "Hardbass goes fast!"
+		},
+		{
+			"author": "XS Project, Hard Bass School",
+			"song": "Do It Hard",
+			"image": "DoItHard.jpg",
+			"description": "Hardbass kak ran'she"
+		}
+	],
+	"Post-punk Rock": [
+		{
+			"author": "Кино",
+			"song": "Лето",
+			"image": "ChernyiAlbom.jpg",
+			"description": "The post-summer chaos"
+		},
+		{
+			"author": "Кино",
+			"song": "Группа крови",
+			"image": "GruppaKrovi.jpg",
+			"description": "Raw unfiltered Soviet era emotion"
+		},
+		{
+			"author": "Кино",
+			"song": "Песня без слов",
+			"image": "ZvezdaPoImeniSolntse.jpg",
+			"description": "One of the best"
+		}
+	],
+	"Other": [
+		{
+			"author": "Bad Bunny",
+			"song": "DtMF",
+			"image": "DtMF.png",
+			"description": "I feel this way sometimes"
+		},
+		{
+			"author": "Seeed",
+			"song": "Seeeds Haus",
+			"image": "Seeed.jpg",
+			"description": "Something about german techno"
+		},
+		{
+			"author": "HUS",
+			"song": "BANANA SHAKE (SPED UP)",
+			"image": "BananaShake.jpg",
+			"description": "전부"
+		},
+		{
+			"author": "Tame Impala",
+			"song": "Borderline",
+			"image": "TheSlowRush.jpg",
+			"description": ""
+		},
+		{
+			"author": "Keane",
+			"song": "Somewhere Only We Know",
+			"image": "HopesAndFears.jpg",
+			"description": ""
+		},
+		{
+			"author": "Steppenwolf",
+			"song": "Born To Be Wild",
+			"image": "Steppenwolf.jpg",
+			"description": "The American Spirit"
+		},
+		{
+			"author": "The Rolling Stones",
+			"song": "Gimme Shelter",
+			"image": "LetItBleed.jpg",
+			"description": "War is Hell, and damn it sounds good"
+		},
+		{
+			"author": "Noir Désir",
+			"song": "Le vent nous portera",
+			"image": "DesVisagesDesFigures.jpg",
+			"description": "Fantastic music video, singer is a terrible person"
+		},
+		{
+			"author": "Dead Or Alive",
+			"song": "You Spin Me Round (Like a Record)",
+			"image": "Evolution.jpg",
+			"description": ""
+		},
+		{
+			"author": "Vitas",
+			"song": "7 элемент",
+			"image": "FilosofiyaChuda.jpg",
+			"description": "Nostalgia"
+		},
+		{
+			"author": "Bring Me The Horizon",
+			"song": "Can You Feel My Heart",
+			"image": "Sempiternal.jpg",
+			"description": "Gigachad"
+		},
+		{
+			"author": "Finger Eleven",
+			"song": "Paralyzer",
+			"image": "ThemVsYouVsMe.jpg",
+			"description": "It speaks to me"
+		}
+	]
+}

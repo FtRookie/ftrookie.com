@@ -1,0 +1,97 @@
+---
+import Basic from "@/components/BasicPage.astro";
+import LightboxBar from "@/components/LightboxBar.astro";
+import BigJohn from "@/media/underengineered/bigjohn.webp";
+import Felon from "@/media/underengineered/Felon.png";
+import Gundam from "@/media/underengineered/Gundam.jpg";
+import Sharou from "@/media/underengineered/sharou.png";
+import "@/styles/oecontributions.css";
+import "@/styles/projectpage.css";
+import { marked } from "marked";
+import type { LightboxImage } from "@/scripts/lightbox.types";
+import type { LiveFact } from "@/scripts/underengineered.types";
+
+const md = (s: string) => marked.parse(s) as string;
+
+const prose = {
+	origins: md(``),
+};
+
+interface Fact {
+	label: string;
+	value: string;
+	href?: string;
+	live?: LiveFact;
+	date?: string;
+}
+
+// From the Roblox games API and GitHub API, gathered 7 October 2026. Facts with `live`
+// are filled in by underengineered.ts on page load and show "Unknown" if that fails.
+const buildImages = [
+	{
+		image: BigJohn,
+		alt: "Big John",
+		title: "Big John",
+		description: "Thumbnail, A landmark of the Underengineered skyscape",
+	},
+	{
+		image: Felon,
+		alt: "Felon by Ericht",
+		title: "Felon",
+		description: "Su-57 Felon Thumbnail by Ericht, submitted via the Discord",
+	},
+	{
+		image: Gundam,
+		alt: "Gundam by Ericht",
+		title: "Gundam",
+		description: "Aerial Gundam Icon by Ericht, submitted via the Discord",
+	},
+	{
+		image: Sharou,
+		alt: "Thumbnail by Sharou",
+		title: "Sharou",
+		description: "Fremantle Class Patrol Boat Thumbnail by sharou, submitted via the Discord",
+	},
+] satisfies LightboxImage[];
+
+const facts = [
+	{
+		label: "Play",
+		value: "Underengineered on Roblox",
+		href: "https://www.roblox.com/games/86822363308738/Underengineered",
+	},
+	{ label: "Created", value: "2 May 2026", date: "2026-05-02" },
+	{ label: "Last updated", value: "Unknown", live: "updated" },
+	{ label: "Visits", value: "Unknown", live: "visits" },
+	{ label: "Favorites", value: "Unknown", live: "favorites" },
+	{ label: "Rating", value: "Unknown", live: "rating" },
+	{ label: "Source", value: "FtRookie/overengineered", href: "https://github.com/FtRookie/overengineered" },
+	{
+		label: "Forked from",
+		value: "anywaymachines/overengineered",
+		href: "https://github.com/anywaymachines/overengineered",
+	},
+	{ label: "Languages", value: "TypeScript" },
+	{ label: "Last push", value: "Unknown", live: "lastPush" },
+	{ label: "Stars / forks", value: "Unknown", live: "starsForks" },
+] satisfies Fact[];
+---
+
+<Basic title="OE Contributions" favicon="judgment" backHref="/projects">
+	<div id="content">
+		<Fragment set:html={prose.origins} />
+		<LightboxBar images={buildImages} />
+	</div>
+	<div id="info">
+		{facts.map(({ label, value, href, live, date }) => (
+			<div class="fact">
+				<h2>{label}:</h2>
+				<p data-live={live}>
+					{href ? <a href={href}>{value}</a> : date ? <time datetime={date}>{value}</time> : value}
+				</p>
+			</div>
+		))}
+	</div>
+</Basic>
+<script src="@/scripts/underengineered.ts"></script>
+<script src="@/scripts/oecontributions.ts"></script>

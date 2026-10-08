@@ -1,6 +1,6 @@
-import { initLightbox } from "./lightbox";
-import { queryById } from "./dom";
-import type { CollapsibleElement, ImageLI, Options, OptionsElements } from "./gallery.types";
+import { initLightbox } from "@/scripts/lightbox";
+import { queryById } from "@/scripts/dom";
+import type { CollapsibleElement, ImageLI, Options, OptionsElements } from "@/scripts/gallery.types";
 
 const sortDirectionIconTypes = {
 	date: "numerical",
@@ -65,7 +65,7 @@ const onload = () => {
 	}
 
 	for (const option of collapsibles) {
-		option.collapsible = option.querySelector("button")!;
+		option.collapsible = option.querySelector("summary")!;
 		option.collapser = option.querySelector("div")!;
 	}
 
@@ -133,15 +133,6 @@ const onload = () => {
 		currentSortDirection = currentSortDirection === "up" ? "down" : "up";
 		update();
 	};
-
-	for (const collapsible of collapsibles) {
-		const collapseButton = collapsible.collapsible;
-		collapseButton.onclick = () => {
-			const opening = collapsible.getAttribute("data-state") === "collapsed";
-			collapsible.setAttribute("data-state", opening ? "open" : "collapsed");
-			collapseButton.setAttribute("aria-expanded", String(opening));
-		};
-	}
 
 	optionsContainer.instance.addEventListener("change", (e) => {
 		if (!(e.target instanceof HTMLInputElement)) return;

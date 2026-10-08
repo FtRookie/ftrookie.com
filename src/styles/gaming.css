@@ -1,0 +1,47 @@
+/* "Most played" games: each is a <details> dropdown with the site's angle icons. */
+.game summary {
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+}
+
+.game summary::-webkit-details-marker {
+	display: none;
+}
+
+.game .fa-angle-down,
+.game[open] .fa-angle-right {
+	display: none;
+}
+
+.game[open] .fa-angle-down {
+	display: inline;
+}
+
+.game-body {
+	padding: 0.25rem 0 0.75rem 1.5rem;
+}
+
+.game-body p {
+	margin: 0.25rem 0;
+}
+
+.game-facts {
+	color: var(--tertiary-text);
+	font-size: 0.9em;
+}
+
+/* "Other games": two columns of links, one in portrait (same as the artists list). */
+.other-games {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.25rem 2rem;
+}
+
+@media (orientation: portrait) {
+	.other-games {
+		grid-template-columns: 1fr;
+	}
+}

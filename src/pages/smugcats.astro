@@ -1,12 +1,14 @@
 ---
-import Basic from "../components/BasicPage.astro";
-import PlaceholderImage from "../components/PlaceholderImage.astro";
+import Basic from "@/components/BasicPage.astro";
+import LightboxCaption from "@/components/LightboxCaption.astro";
+import PlaceholderImage from "@/components/PlaceholderImage.astro";
 import { getImage, Picture } from "astro:assets";
 import type { ImageMetadata } from "astro";
-import "../styles/smugcats.css";
+import "@/styles/smugcats.css";
 
 const images = import.meta.glob<{ default: ImageMetadata }>("/src/media/smugcats/*.{jpg,jpeg,png,gif,webp,avif}");
 
+//fixme: poopy in-file format helper
 const prettify = (path: string): string =>
 	path
 		.split("/")
@@ -14,6 +16,11 @@ const prettify = (path: string): string =>
 		.replace(/\.[^.]+$/, "")
 		.replace(/[-_]+/g, " ")
 		.replace(/\b\w/g, (c) => c.toUpperCase());
+
+// Optional lightbox descriptions, keyed by filename in src/media/smugcats/.
+const descriptions = {
+	// "start-doing-this.png": "description shown under the title",
+} satisfies Record<string, string>;
 
 const smugcats = await Promise.all(
 	Object.keys(images)
@@ -27,6 +34,8 @@ const smugcats = await Promise.all(
 			return {
 				image,
 				title: prettify(path),
+				// `satisfies` infers only the keys present, so widen it for lookup by any filename.
+				description: (descriptions as Record<string, string | undefined>)[path.split("/").pop()!],
 				src: full.src,
 				width: image.width,
 				height: image.height,
@@ -41,13 +50,11 @@ const smugcats = await Promise.all(
 	<br />
 	{smugcats.length > 0 ? (
 		<ul id="smugcats">
-			{smugcats.map(({ image, title, src, width, height }) => (
+			{smugcats.map(({ image, title, description, src, width, height }) => (
 				<li>
 					<a href={src} data-pswp-width={width} data-pswp-height={height} class="lightbox">
 						<Picture src={image} alt={title} loading="lazy" />
-						<span class="lightbox-caption" hidden>
-							<strong>{title}</strong>
-						</span>
+						<LightboxCaption title={title} description={description} />
 					</a>
 				</li>
 			))}
@@ -59,4 +66,4 @@ const smugcats = await Promise.all(
 		</div>
 	)}
 </Basic>
-<script src="../scripts/smugcats.ts"></script>
+<script src="@/scripts/smugcats.ts"></script>

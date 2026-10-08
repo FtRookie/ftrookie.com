@@ -1,5 +1,5 @@
 // Downloads album art for a song into src/media/albumcovers/ and prints the
-// entry to paste into the `albums` array in src/pages/likes/music.astro.
+// entry to paste into src/media/albumcovers/albums.json, under the song's genre.
 //
 // Usage: npm run cover -- "Artist" "Song" [--force] [--out <dir>]
 // Tries the iTunes Search API first, then Deezer. Neither needs an API key.
@@ -15,7 +15,6 @@
 import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import * as prettier from "prettier";
 
 const EXIT = { saved: 0, usage: 1, notFound: 2, network: 3, exists: 4, write: 5 };
 
@@ -97,20 +96,11 @@ function toFileStem(text) {
 		.replace(/[^A-Za-z0-9]/g, "");
 }
 
-// Formats the entry exactly as Prettier would inside the albums array (one line if it
-// fits within printWidth, wrapped otherwise), so pasting it needs no reformatting.
-async function formatEntry(album) {
-	const config = (await prettier.resolveConfig("src/pages/likes/music.astro")) ?? {};
-	// Prettier collapses a one-element array onto one line but always gives each object its
-	// own line when there are two, so format the entry twice and keep the first copy.
-	const json = JSON.stringify(album);
-	const formatted = await prettier.format(`const albums = [${json}, ${json}];\n`, {
-		...config,
-		parser: "typescript",
-		plugins: [],
-	});
-	const lines = formatted.split("\n").slice(1, -2);
-	return lines.slice(0, lines.length / 2).join("\n");
+// Multi-line JSON entry in the same style as src/media/albumcovers/albums.json (tab-indented,
+// one property per line), ready to paste into the array of the song's genre.
+function formatEntry(album) {
+	const indented = JSON.stringify(album, null, "\t").replace(/^/gm, "\t\t");
+	return `${indented},`;
 }
 
 let networkError = false;
@@ -188,10 +178,15 @@ async function main() {
 	}
 	console.log(`✓ ${match.source} matched "${match.track}" by ${match.artist}, album "${match.album}"`);
 
-	const albumName = match.album.replace(/\s*[([]feat\.[^)\]]*[)\]]/gi, "").replace(/\s+-\s+(Single|EP)$/i, "");
+	// Keep filenames short: drop "(feat. …)", edition tags like "(Deluxe Edition)" or
+	// "(Remastered 2019)", and " - Single" / " - EP".
+	const albumName = match.album
+		.replace(/\s*[([]feat\.[^)\]]*[)\]]/gi, "")
+		.replace(/\s*[([][^)\]]*\b(deluxe|edition|version|remaster(ed)?|anniversary|expanded)\b[^)\]]*[)\]]/gi, "")
+		.replace(/\s+-\s+(Single|EP)$/i, "");
 	const filename = `${toFileStem(albumName) || toFileStem(`${author} ${song}`) || "cover"}.jpg`;
 	const target = path.join(outDir, filename);
-	const entry = await formatEntry({ author: match.artist, song: match.track, image: filename });
+	const entry = formatEntry({ author: match.artist, song: match.track, image: filename });
 
 	const existed = existsSync(target);
 	if (existed && !force) {
@@ -219,7 +214,7 @@ async function main() {
 	}
 
 	console.log(`✓ ${existed ? "Overwrote" : "Saved"} ${target} (${(bytes.length / 1024).toFixed(0)} KB)`);
-	console.log(`\nAdd to the albums array in src/pages/likes/music.astro:\n${entry}\n`);
+	console.log(`\nAdd to src/media/albumcovers/albums.json, under the song's genre:\n${entry}\n`);
 	return EXIT.saved;
 }
 

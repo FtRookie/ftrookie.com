@@ -1,5 +1,6 @@
-export interface CollapsibleElement extends HTMLDivElement {
-	collapsible: HTMLButtonElement;
+/** A <details class="option"> filter panel; opening/closing is handled natively. */
+export interface CollapsibleElement extends HTMLDetailsElement {
+	collapsible: HTMLElement;
 	collapser: HTMLDivElement;
 }
 

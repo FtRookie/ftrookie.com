@@ -1,8 +1,8 @@
 ---
 import { Picture } from "astro:assets";
-import Head from "./Head.astro";
-import "../styles/global.css";
-import { bungers, type Bunger } from "../scripts/bunger";
+import Head from "@/components/Head.astro";
+import "@/styles/global.css";
+import { bungers, type Bunger } from "@/scripts/bunger";
 
 interface Props {
 	title?: string;
@@ -27,8 +27,8 @@ const faviconImage = bungers[favicon];
 		<title>{title}</title>
 		<link rel="icon" type="image/png" href={faviconImage.src} />
 		<meta charset="utf-8" />
-		<script src="../scripts/theme.ts"></script>
-		<script src="../scripts/navbar.ts"></script>
+		<script src="@/scripts/theme.ts"></script>
+		<script src="@/scripts/navbar.ts"></script>
 		<script src="https://kit.fontawesome.com/fba9df0135.js" is:inline data-astro-rerun></script>
 		<Head />
 	</head>
@@ -96,7 +96,6 @@ const faviconImage = bungers[favicon];
 			<main id="main">
 				<slot />
 			</main>
-			<br />
 			<footer class="credits" transition:animate="fade">
 				<a href="https://i3ym.ru">Thanks to i3ym for making this possible</a>
 			</footer>

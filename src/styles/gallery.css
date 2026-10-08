@@ -80,17 +80,27 @@
 	font-size: clamp(0.5rem, 1.5vmin, 1rem);
 }
 
-.option[data-state="open"] .collapser {
+.option[open] .collapser {
 	display: flex;
 }
 
-.option[data-state] .collapsible .fa-angle-right,
-.option[data-state] .collapsible .fa-angle-down {
+/* <summary> as a plain row: no native disclosure triangle (the angle icons replace it). */
+summary.collapsible {
+	display: block;
+	list-style: none;
+}
+
+summary.collapsible::-webkit-details-marker {
 	display: none;
 }
 
-.option[data-state="open"] .collapsible .fa-angle-down,
-.option[data-state="collapsed"] .collapsible .fa-angle-right {
+/* Angle right when closed, angle down when open. */
+.option .collapsible .fa-angle-down,
+.option[open] .collapsible .fa-angle-right {
+	display: none;
+}
+
+.option[open] .collapsible .fa-angle-down {
 	display: inline;
 }
 

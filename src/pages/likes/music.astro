@@ -1,48 +1,40 @@
 ---
-import Basic from "../../components/BasicPage.astro";
-import PlaceholderImage from "../../components/PlaceholderImage.astro";
-import "../../styles/music.css";
-import Album from "../../components/Album.astro";
+import Basic from "@/components/BasicPage.astro";
+import PlaceholderImage from "@/components/PlaceholderImage.astro";
+import "@/styles/music.css";
+import Album from "@/components/Album.astro";
+import albumsFile from "@/media/albumcovers/albums.json";
+import { getCompleteCollection } from "@/scripts/collections";
+import { GENRES, albumEntries } from "@/scripts/music";
 
-interface AlbumEntry {
-	author: string;
-	song: string;
-	image: string;
-}
+// Songs live in src/media/albumcovers/albums.json, grouped by genre and validated by the
+// `albums` collection (src/content.config.ts). Covers come from `npm run cover`.
+const sourceIds = albumEntries(albumsFile).map((entry) => entry.id);
+const loaded = new Map((await getCompleteCollection("albums", sourceIds)).map((entry) => [entry.id, entry.data]));
+const albums = sourceIds.map((id) => loaded.get(id)!);
+type AlbumEntry = (typeof albums)[number];
 
-const albums: AlbumEntry[] = [
-	{ author: "KaNa", song: "Mimage", image: "MimageEP.jpg" },
-	{
-		author: "Nhato",
-		song: "Tokyo Blue Pipe (KIWAMU Remix)",
-		image: "TokyoBluePipeRemixes.jpg",
-	},
-	{
-		author: "Shingo Nakamura",
-		song: "1247",
-		image: "ShingoNakamuraDays.jpg",
-	},
-	{
-		author: "Shingo Nakamura",
-		song: "Travelog",
-		image: "ShingoNakamuraDays.jpg",
-	},
-	{
-		author: "Nhato & Glascat",
-		song: "One Step Forward",
-		image: "OneStepForward.jpg",
-	},
-	{
-		author: "Кино",
-		song: "Группа Крови",
-		image: "GruppaKrovi.jpg",
-	},
-	{
-		author: "Кино",
-		song: "песня без слов",
-		image: "ZvezdaPoImeniSolntse.jpg",
-	},
-];
+// A genre with only one song isn't worth its own header, so it is listed under "Other".
+const countOf = (genre: AlbumEntry["genre"]) => albums.filter((a) => a.genre === genre).length;
+const groupOf = (genre: AlbumEntry["genre"]) => (countOf(genre) === 1 ? "Other" : genre);
+
+const groups = GENRES.map((genre) => ({ genre, albums: albums.filter((a) => groupOf(a.genre) === genre) })).filter(
+	(group) => group.albums.length > 0,
+);
+
+// #info is derived from `albums`, so it stays accurate as songs are added or removed.
+const tally = (names: string[]) =>
+	[...names.reduce((counts, name) => counts.set(name, (counts.get(name) ?? 0) + 1), new Map<string, number>())].sort(
+		(a, b) => b[1] - a[1],
+	);
+
+const topGenres = groups.filter((g) => g.genre !== "Other").sort((a, b) => b.albums.length - a.albums.length);
+// Artists credited on at least this many songs, features included.
+const MIN_SONGS_FOR_ARTIST = 3;
+const topArtists = tally(albums.flatMap((a) => a.author.split(", "))).filter(([, n]) => n >= MIN_SONGS_FOR_ARTIST);
+
+// Not derivable from `albums`: Otographic Music released 13 of the EDM tracks (from the Spotify export).
+const labels = ["Otographic Music"] satisfies string[];
 ---
 
 <Basic title="Music Taste" favicon="judgment" backHref="/likes">
@@ -50,32 +42,44 @@ const albums: AlbumEntry[] = [
 		<h2>I listen to many different genres</h2>
 		<p>I like to listen to activity-appropriate music, but also like just general listening, typically Pop music</p>
 		<PlaceholderImage />
-		<ul id="albums">
-			{albums.map((a) => (
-				<Album author={a.author} song={a.song} image={a.image} />
-			))}
-		</ul>
+		{groups.map(({ genre, albums }) => (
+			<details class="genre">
+				<summary>
+					<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+					<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+					<h3>{genre}</h3>
+					<span class="genre-count">({albums.length})</span>
+				</summary>
+				<ul class="albums">
+					{albums.map((a: AlbumEntry) => (
+						<Album author={a.author} song={a.song} image={a.image} description={a.description} />
+					))}
+				</ul>
+			</details>
+		))}
 	</div>
 	<div id="info">
-		<h2>Some notable genres</h2>
+		<h2>Most-liked genres</h2>
 		<ul>
-			<li>2010s Pop</li>
-			<li>EDM</li>
-			<li>Funk Wav</li>
-			<li>Rap</li>
-			<li>Hardstyle/Hardbass</li>
-			<li>Post-punk Rock</li>
+			{topGenres.map(({ genre, albums }) => (
+				<li>
+					{genre} ({albums.length})
+				</li>
+			))}
 		</ul>
-		<h2>Musical artists/groups I like</h2>
+		<h2>Artists/groups I like most</h2>
 		<ul>
-			<li>Calvin Harris</li>
-			<li>Daniel Caesar</li>
-			<li>The Weeknd</li>
-			<li>Bruno Mars</li>
-			<li>Metro Boomin</li>
-			<li>Kendrick Lamar</li>
-			<li>Кино</li>
-			<li>Otographic Music</li>
+			{topArtists.map(([artist, n]) => (
+				<li>
+					{artist} ({n})
+				</li>
+			))}
+		</ul>
+		<h2>Labels</h2>
+		<ul>
+			{labels.map((label) => (
+				<li>{label}</li>
+			))}
 		</ul>
 	</div>
 </Basic>

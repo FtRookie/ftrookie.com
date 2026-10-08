@@ -1,11 +1,11 @@
 ---
-import Basic from "../components/BasicPage.astro";
-import { bungers } from "../scripts/bunger";
+import Basic from "@/components/BasicPage.astro";
+import { bungers } from "@/scripts/bunger";
 import { Picture } from "astro:assets";
-import Yippee from "../media/bunger/yippee.png";
-import startdoingthis from "../media/smugcats/start-doing-this.png";
-import blehh from "../media/blehh.gif";
-import "../styles/home.css";
+import Yippee from "@/media/bunger/yippee.png";
+import startdoingthis from "@/media/smugcats/start-doing-this.png";
+import blehh from "@/media/blehh.gif";
+import "@/styles/home.css";
 ---
 
 <Basic title="FtRookie's Website" hero="FtRookie's Website" favicon="thinker">
@@ -62,4 +62,4 @@ import "../styles/home.css";
 		</p>
 	</div>
 </Basic>
-<script src="../scripts/home.ts"></script>
+<script src="@/scripts/home.ts"></script>

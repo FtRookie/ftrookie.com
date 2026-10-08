@@ -4,19 +4,31 @@
 }
 
 .imagebar {
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+	margin: 1.5rem auto;
 	display: flex;
 	flex-direction: row;
 }
 
+.imagebar a {
+	min-width: 0;
+}
+
 .imagebar img {
-	height: 100%;
-	width: auto;
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .chapterheader {
 	margin-top: 2rem;
 	display: block;
 	font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+#OETutorial {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	border: 0;
 }

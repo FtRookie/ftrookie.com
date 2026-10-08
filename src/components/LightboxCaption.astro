@@ -1,0 +1,20 @@
+---
+// Hidden caption read as HTML by the PhotoSwipe caption plugin (see "Lightbox" in CLAUDE.md).
+// Place it inside the a.lightbox trigger, after the thumbnail.
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<span class="lightbox-caption" hidden>
+	<strong>{title}</strong>
+	{description && (
+		<>
+			<br />
+			{description}
+		</>
+	)}
+</span>

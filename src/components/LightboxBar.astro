@@ -1,35 +1,37 @@
 ---
 import { Picture } from "astro:assets";
-import type { ImageMetadata } from "astro";
-
-interface LightboxImage {
-	image: ImageMetadata;
-	alt: string;
-	title: string;
-	description?: string;
-}
+import LightboxCaption from "@/components/LightboxCaption.astro";
+import type { LightboxImage } from "@/scripts/lightbox.types";
 
 interface Props {
 	images: LightboxImage[];
+	/** Row height on wide screens; the row scales down proportionally when narrower. */
 	height?: string;
+	loading?: "eager" | "lazy";
 }
 
-const { images, height = "auto" } = Astro.props;
+const { images, height, loading = "lazy" } = Astro.props;
+
+// Each item grows in proportion to its aspect ratio, so every image in the row ends up the
+// same height and the row is filled exactly without distorting any image.
+const ratios = images.map(({ image }) => image.width / image.height);
+const gap = "0.5rem";
+const maxWidth = height
+	? `calc(${height} * ${ratios.reduce((sum, r) => sum + r, 0)} + ${gap} * ${images.length - 1})`
+	: undefined;
 ---
 
-<div class="imagebar" style={`height:${height}`}>
-	{images.map(({ image, alt, title, description }) => (
-		<a href={image.src} data-pswp-width={image.width} data-pswp-height={image.height} class="lightbox">
-			<Picture src={image} alt={alt} />
-			<span class="lightbox-caption" hidden>
-				<strong>{title}</strong>
-				{description && (
-					<>
-						<br />
-						{description}
-					</>
-				)}
-			</span>
+<div class="imagebar" style={{ gap, maxWidth }}>
+	{images.map(({ image, alt, title, description }, i) => (
+		<a
+			href={image.src}
+			data-pswp-width={image.width}
+			data-pswp-height={image.height}
+			class="lightbox"
+			style={{ flex: `${ratios[i]} 1 0` }}
+		>
+			<Picture src={image} alt={alt} loading={loading} />
+			<LightboxCaption title={title} description={description} />
 		</a>
 	))}
 </div>

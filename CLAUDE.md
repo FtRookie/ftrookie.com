@@ -9,7 +9,7 @@ Personal portfolio site built with **Astro 6**, deployed as a static build via n
 - **Astro 6**, `output: "static"`, `@astrojs/node` adapter in standalone mode
 - **TypeScript** strict mode (`tsconfig.json` extends Astro's `strict` preset)
 - **PhotoSwipe 5** + `photoswipe-dynamic-caption-plugin` for image lightboxes (gallery, oecontributions pages) — see "Lightbox" under Content Patterns
-- **FontAwesome** CDN kit — loaded globally via `BasicPage.astro`, icons only appear on `gallery.astro`, `artists.astro`, and `socials.astro`
+- **FontAwesome** CDN kit — loaded globally via `BasicPage.astro`, icons only appear on `gallery.astro`, `artists.astro`, `socials.astro`, `likes/music.astro`, and `likes/gaming.astro`
 - **View Transitions** enabled via `<ClientRouter />` in `Head.astro`
 - Build: `npm run build` — compiles the site. Run `npx astro check` separately for full TypeScript diagnostics on `.astro` files.
 
@@ -158,8 +158,39 @@ export interface CollapsibleElement extends HTMLDivElement { ... }
 Use `import type` for anything that only exists at compile time:
 
 ```typescript
-import type { CollapsibleElement, ImageLI } from "./gallery.types";
+import type { CollapsibleElement, ImageLI } from "@/scripts/gallery.types";
 ```
+
+### Import paths
+
+Import anything under `src/` through the `@/` alias (mapped to `src/*` in `tsconfig.json`), never with relative `./` or `../` paths. This applies to frontmatter imports, `.ts` files, CSS imports, and `<script src>` tags:
+
+```astro
+---
+import Basic from "@/components/BasicPage.astro";
+import Yippee from "@/media/bunger/yippee.png";
+import "@/styles/home.css";
+---
+<script src="@/scripts/home.ts"></script>
+```
+
+`import.meta.glob` patterns keep the root-absolute `/src/...` form shown under "Dynamic imports with import.meta.glob".
+
+### Typed data lists use `satisfies`
+
+Every user-defined list in frontmatter (any array or map of entries you edit by hand: games, artists, projects, socials, image strips, facts, caption maps) ends in `satisfies T`, never a `: T` annotation and never untyped. Lists too large for frontmatter move to JSON loaded as a content collection with a zod schema instead (the gallery and music albums), since JSON imports get no `satisfies` checking:
+
+```typescript
+const buildImages = [
+    { image: Felon, alt: "Felon by Ericht", title: "Felon", description: "…" },
+] satisfies LightboxImage[];
+```
+
+This gives autocomplete for every field while typing an entry and flags missing fields and misspelt keys (`descripton` → "Did you mean 'description'?"). It is a compile-time check only: `npm run build` does not type-check, so run `npx astro check` to catch these errors.
+
+When a map may be empty or is looked up by arbitrary keys, `satisfies` infers only the keys present; widen it at the lookup site, e.g. `(descriptions as Record<string, string | undefined>)[file]`.
+
+Shared entry types live in `*.types.ts` (e.g. `LightboxImage` in `src/scripts/lightbox.types.ts`); types used by one page stay in its frontmatter.
 
 ### Discriminated unions
 
@@ -341,13 +372,17 @@ Do not copy-paste markup blocks for similar items. If you find yourself repeatin
 ### Adding album covers
 
 1. Fetch the cover with `npm run cover -- "Artist Name" "Song Title"`. It searches iTunes, then Deezer (no API key), saves a 1000px JPG into `src/media/albumcovers/`, and prints the matched album so a wrong match can be caught. It will not overwrite an existing file without `--force`. Exit status: 0 saved, 1 bad arguments, 2 no match, 3 network/HTTP error, 4 file already exists, 5 write failed (documented at the top of `scripts/fetch-cover.mjs`). Alternatively, drop an image file into `src/media/albumcovers/` by hand.
-2. Add an entry to the `albums` array in `src/pages/likes/music.astro`. The script prints this line ready to paste:
+2. Add the entry to `src/media/albumcovers/albums.json`, inside the array of its genre. The script prints this line ready to paste:
 
-```typescript
-{ author: "Artist Name", song: "Song Title", image: "filename.jpg" }
+```json
+{
+	"author": "Artist Name",
+	"song": "Song Title",
+	"image": "filename.jpg"
+},
 ```
 
-Astro will convert it to WebP automatically on next build.
+Add an optional `"description"` for a small caption under the title. The file is the `albums` content collection (schema in `src/content.config.ts`): genre keys must be one of `GENRES` in `src/scripts/music.ts` (which also sets the display order; add a new genre there first), and `image` must exist, or the build fails (and dev shows an error overlay via `getCompleteCollection`). The file is formatted as `JSON.stringify(data, null, "	")`: every entry multi-line, no blank lines; keep a genre's songs by the same first-listed artist next to each other. A genre with only one song is shown under "Other". Astro converts the covers to WebP on build.
 
 ### Adding gallery images
 
@@ -360,22 +395,19 @@ The build validates every entry against the zod schema and fails if the image fi
 
 ### Lightbox
 
-Every lightbox trigger follows one markup contract, rendered in `gallery.astro` and `LightboxBar.astro`:
+Every lightbox trigger follows one markup contract, rendered in `gallery.astro`, `smugcats.astro` and `LightboxBar.astro`:
 
 ```astro
 <a href={full.src} data-pswp-width={width} data-pswp-height={height} class="lightbox">
     <Picture src={thumb} alt={title} />
-    <span class="lightbox-caption" hidden>
-        <strong>{title}</strong>
-        <br />
-        {description}
-    </span>
+    <LightboxCaption title={title} description={description} />
 </a>
 ```
 
 - `data-pswp-width` / `data-pswp-height` are mandatory and must match the `href` image — PhotoSwipe sizes the slide from them *before* the file loads, which is what prevents the caption-first flash and relayout that GLightbox had. Take them from `ImageMetadata` (`image.width`) or `getImage()` (`full.attributes.width`).
 - The `<Picture>` thumbnail doubles as the placeholder while the full image loads.
-- The hidden `.lightbox-caption` span is read as HTML by the caption plugin, so title and description can be formatted freely.
+- Captions always go through `LightboxCaption.astro`, which renders the hidden `.lightbox-caption` span the caption plugin reads as HTML: a bold title, plus a line break and the description when one is given. Never hand-write the span.
+- Descriptions come from: `lightboxDescription` in `metadata.json` (gallery), the optional `description` on each `LightboxBar` image, and the `descriptions` map keyed by filename in `smugcats.astro`.
 - Initialise with `initLightbox("#gallery")` (any selector; multiple matches become separate galleries) and call `destroy()` on `astro:before-swap` with `{ once: true }`.
 - Chrome colours come from the `--lightbox-*` tokens in `global.css`; style the lightbox only through `photoswipe-theme.css` (`.pswp--site` scope), never `pswp__*` classes in page CSS.
 
@@ -385,7 +417,7 @@ Add an entry to the `artists` array in `src/pages/artists.astro`. The `imageUrl`
 
 ### Adding games
 
-Add an entry to the `recentGames` array in `src/pages/likes/gaming.astro`.
+Every game, Steam or not, lives in `src/data/games.json` (the `games` collection; schema in `src/content.config.ts`), mostly copied from the Steam library page. Only `name` is required, plus an `appId` (the number in the Steam store URL) or a `url`; everything else is optional and may be left out when unknown: `url` (another page, e.g. a non-Steam store or stats profile, linked by hostname next to "Steam page"), `hours`, `lastPlayed` (`YYYY-MM-DD`), `achievements` (`"61/66"`), and `notes` (Markdown) shown inside the game's dropdown. `gaming.astro` derives everything from the JSON: "Most played" (top `MOST_PLAYED_COUNT` by `hours`, each a dropdown), "Other games" (every game outside that top list, grouped by `genre` under `h3`s and sorted by playtime without showing it, as plain links to the Steam page, or `url` without an `appId`, in two columns; `genre` is one of `GAME_GENRES` in `src/scripts/games.ts` (FPS, Military, Story, Co-op), and games without one go under "Miscellaneous"), and "Recently played" (top `RECENT_COUNT` by `lastPlayed`, dated games only). The file is kept sorted by `hours`, unknown last. War Thunder's `hours` is StatShark's all-launcher playtime, not Steam's.
 
 ---
 
@@ -393,33 +425,44 @@ Add an entry to the `recentGames` array in `src/pages/likes/gaming.astro`.
 
 ```
 src/
-  content.config.ts        — content collections: bunger gallery (file loader + zod schema, image() helper)
+  content.config.ts        — content collections: bunger gallery, music albums, Steam games (file loaders + zod schemas, image() helper)
+  data/
+    games.json             — Steam library export for the gaming page (games collection)
   components/
-    Album.astro            — album cover card (used in music)
+    Album.astro            — album cover card: cover ImageMetadata, "author - song" title, optional description (used in music)
     BasicPage.astro        — root layout: navbar (showNavbar prop) or back link (backHref prop), hero, theme toggle, footer
-    LightboxBar.astro      — horizontal strip of lightbox anchors (used in oecontributions)
+    LightboxBar.astro      — horizontal strip of lightbox anchors, sized by aspect ratio (used in oecontributions, underengineered)
+    LightboxCaption.astro  — the hidden caption span every lightbox trigger uses (title + optional description)
     PlaceholderImage.astro — saywhaaat placeholder Picture for pages with sparse content
     Head.astro             — <head> meta: OG tags, ClientRouter (no export const partial)
   pages/
     home.astro, gallery.astro, projects.astro, artists.astro, socials.astro
     likes/                 — gaming, music, coding, pcbuilding
-    project/               — website, oecontributions
+    project/               — website, oecontributions, underengineered
+    api/roblox/[endpoint].ts — on-demand (prerender = false) same-origin proxy for Roblox's games/votes API, locked to the Underengineered universe, 5-minute in-memory cache
   scripts/
     home.ts                — clanker prompt + live clock (clears interval on astro:before-swap)
     theme.ts               — dark/light mode; wires theme toggle button (and its aria-pressed) on astro:after-swap
     navbar.ts              — shows/hides the nav overflow arrows and scrolls the nav on click; initializes on astro:page-load
     gallery.ts             — PhotoSwipe init + sort/filter logic (reads data-metadata-* off the DOM); initializes on astro:page-load
     gallery.types.ts       — TypeScript interfaces for gallery.ts (CollapsibleElement, ImageLI, etc.)
+    lightbox.types.ts      — LightboxImage: entry type for LightboxBar image arrays (image, alt, title, description?)
     lightbox.ts            — shared PhotoSwipe config: initLightbox(gallerySelector) → options, chrome icons, caption plugin; used by gallery.ts + oecontributions.ts
     photoswipe-dynamic-caption-plugin.d.ts — ambient types for the caption plugin (ships none)
     oecontributions.ts     — PhotoSwipe init for .imagebar elements on astro:page-load
+    underengineered.ts     — refreshes [data-live] facts on the underengineered page (Roblox via /api/roblox, GitHub directly); keeps build-time values on failure
+    underengineered.types.ts — LiveFact union for the data-live keys
+    roblox.ts              — UNDERENGINEERED_UNIVERSE_ID and robloxGameIcon() (Thumbnails API; icon URLs expire after ~180 days)
+    music.ts               — GENRES (order + allowed albums.json keys), AlbumSource type, albumEntries() parser for the albums collection
+    collections.ts         — getCompleteCollection(): getCollection that throws when entries were dropped by schema errors (visible in dev)
+    buildFetch.ts          — withFallback()/remoteImage(): build-time fetches warn and fall back to a placeholder instead of failing the build
   styles/
     global.css             — theme vars (incl. --lightbox-* tokens), typography, navbar, layout — edit here for site-wide changes
     photoswipe-theme.css   — lightbox chrome (square buttons, centred spinner, caption type), scoped to .pswp--site
     home.css, gallery.css, artists.css, etc. — page-specific styles
   media/
     bunger/                — character PNG assets + metadata.json (gallery collection data)
-    albumcovers/           — album cover images (processed by Astro into WebP)
+    albumcovers/           — album cover images (processed by Astro into WebP) + albums.json (music page songs, grouped by genre)
     *.gif, *.png           — misc media (GIFs passed through; PNGs converted to WebP)
 scripts/
   fetch-cover.mjs          — `npm run cover`: downloads album art from iTunes/Deezer into src/media/albumcovers/
