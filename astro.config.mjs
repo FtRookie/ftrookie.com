@@ -9,6 +9,12 @@ export default defineConfig({
 		mode: "standalone",
 	}),
 	image: {
-		domains: ["pbs.twimg.com", "storage.ko-fi.com", "tr.rbxcdn.com", "avatars.githubusercontent.com"],
+		domains: [
+			"pbs.twimg.com",
+			"storage.ko-fi.com",
+			"tr.rbxcdn.com",
+			"avatars.githubusercontent.com",
+			"shared.akamai.steamstatic.com",
+		],
 	},
 });

@@ -3,7 +3,10 @@ import Basic from "@/components/BasicPage.astro";
 import PlaceholderImage from "@/components/PlaceholderImage.astro";
 import gamesFile from "@/data/games.json";
 import { getCompleteCollection } from "@/scripts/collections";
+import placeholder from "@/media/saywhat.png";
+import { withFallback } from "@/scripts/buildFetch";
 import { GAME_GENRES, gameId } from "@/scripts/games";
+import { Picture } from "astro:assets";
 import "@/styles/gaming.css";
 import { marked } from "marked";
 
@@ -21,8 +24,39 @@ const MOST_PLAYED_COUNT = 10;
 const timedGames = games.filter((game): game is typeof game & { hours: number } => game.hours !== undefined);
 const datedGames = games.filter((game): game is typeof game & { lastPlayed: string } => game.lastPlayed !== undefined);
 
+// Steam headers are always 460x215, so the size is given instead of probed (inferRemoteSize hangs on
+// some of them); the fetch only checks the image downloads. The current header has a hashed path that
+// only the store API returns; the unhashed URL still works but can serve years-old artwork, so it is
+// only used when the API has no data for the game.
+const STEAM_HEADER = { width: 460, height: 215 };
+const steamHeader = (name: string, appId: number) =>
+	withFallback(
+		`Steam header for ${name}`,
+		async () => {
+			const details = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}&filters=basic`)
+				.then((res) => (res.ok ? res.json() : undefined))
+				.catch(() => undefined);
+			const url: string =
+				details?.[appId]?.data?.header_image ??
+				`https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appId}/header.jpg`;
+			const res = await fetch(url, { method: "HEAD" });
+			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			return url;
+		},
+		placeholder,
+	);
+
 const recentGames = [...datedGames].sort((a, b) => b.lastPlayed.localeCompare(a.lastPlayed)).slice(0, RECENT_COUNT);
-const mostPlayed = [...timedGames].sort((a, b) => b.hours - a.hours).slice(0, MOST_PLAYED_COUNT);
+const mostPlayed = await Promise.all(
+	[...timedGames]
+		.sort((a, b) => b.hours - a.hours)
+		.slice(0, MOST_PLAYED_COUNT)
+		.map(async (game) => ({
+			...game,
+			// Steam store header, shown inside the dropdown; placeholder if it fails to download.
+			header: game.appId !== undefined ? await steamHeader(game.name, game.appId) : undefined,
+		})),
+);
 // Everything outside the top list, grouped by genre and sorted by playtime (unknown last); hours aren't shown.
 const otherGames = games
 	.filter((game) => !mostPlayed.some((top) => top.name === game.name))
@@ -64,11 +98,24 @@ const formatHours = (hours: number) => (hours < 1 ? `${Math.round(hours * 60)} m
 						<summary>
 							<i class="fa-solid fa-angle-right" aria-hidden="true"></i>
 							<i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-							<span>
+							<h3>
 								{game.name} ({formatHours(game.hours)})
-							</span>
+							</h3>
 						</summary>
 						<div class="game-body">
+							{typeof game.header === "string" && (
+								<Picture
+									src={game.header}
+									{...STEAM_HEADER}
+									fallbackFormat="jpg"
+									alt={game.name}
+									class="game-header"
+									loading="lazy"
+								/>
+							)}
+							{typeof game.header === "object" && (
+								<Picture src={game.header} alt="" class="game-header" loading="lazy" />
+							)}
 							{game.notes && <Fragment set:html={marked.parse(game.notes)} />}
 							<p class="game-facts">
 								{game.lastPlayed && (
