@@ -6,6 +6,7 @@ import { remoteImage } from "@/scripts/buildFetch";
 import { robloxGameIcon, UNDERENGINEERED_UNIVERSE_ID } from "@/scripts/roblox";
 import "@/styles/projects.css";
 import type { ImageMetadata } from "astro";
+import saywhaaat from "@/media/saywhat.png";
 
 interface Project {
 	title: string;
@@ -38,7 +39,14 @@ const projects = [
 		blurb: "An unofficial continuation of OverEngineered",
 		href: "/project/underengineered",
 		image: await remoteImage("Underengineered Roblox icon", () => robloxGameIcon(UNDERENGINEERED_UNIVERSE_ID)),
-		alt: "anywaymachines",
+		alt: "Gundam",
+	},
+	{
+		title: "OPERATORS",
+		blurb: "Coming soon",
+		href: "/project/OPERATORS",
+		image: saywhaaat,
+		alt: "OPERATORS",
 	},
 ] satisfies Project[];
 ---
